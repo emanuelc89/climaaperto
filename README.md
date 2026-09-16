@@ -2,7 +2,6 @@
 
 Un'API pubblica e documentata che raccoglie dati ufficiali su rischi climatici da fonti europee e internazionali, pensata per essere **usata da altri programmi** (sviluppatori, giornalisti, ONG) — non solo guardata su un sito.
 
-> Nome di lavoro, cambialo pure: sostituisci "ClimaAperto" ovunque compaia nel repository con il nome che scegli.
 
 ## Perché esiste
 
