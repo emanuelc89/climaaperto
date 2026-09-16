@@ -1,0 +1,34 @@
+name: Aggiorna incendi
+
+on:
+  schedule:
+    - cron: '0 */3 * * *'   # ogni 3 ore
+  workflow_dispatch: {}      # permette anche l'esecuzione manuale da GitHub
+
+jobs:
+  aggiorna:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del repository
+        uses: actions/checkout@v4
+
+      - name: Imposta Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Installa le dipendenze
+        run: pip install -r requirements.txt
+
+      - name: Scarica ed elabora i dati incendi
+        env:
+          NASA_FIRMS_MAP_KEY: ${{ secrets.NASA_FIRMS_MAP_KEY }}
+        run: python scripts/fetch_incendi.py
+
+      - name: Salva i dati aggiornati nel repository
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/incendi.json
+          git diff --staged --quiet || git commit -m "Aggiornamento automatico dati incendi"
+          git push
