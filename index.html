@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ClimaAperto — Incendi attivi</title>
+<meta name="description" content="Incendi attivi rilevati da satellite (NASA FIRMS), aggiornati automaticamente ogni 3 ore. Dato ufficiale, aperto, documentato.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='9' fill='%23D9642B'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+
+<style>
+  :root{
+    --notte:#12141C;
+    --notte-alta:#1A1D28;
+    --testo:#EDE6DA;
+    --testo-soft:#9AA0AC;
+    --linea:#2B2F3A;
+    --verde-ok:#4FA97C;
+    --basso:#8A2A12;
+    --medio:#D9642B;
+    --alto:#F2B705;
+    --molto-alto:#FCE38A;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--notte);
+    color:var(--testo);
+    font-family:"Manrope", system-ui, sans-serif;
+    line-height:1.55;
+  }
+  a{color:var(--alto);}
+  .mono{font-family:"JetBrains Mono", monospace;}
+  .wrap{max-width:920px; margin:0 auto; padding:0 24px;}
+
+  header{padding:48px 0 28px; border-bottom:1px solid var(--linea);}
+  .eyebrow-links{
+    display:flex; gap:18px; font-family:"JetBrains Mono", monospace;
+    font-size:13px; margin-bottom:22px;
+  }
+  .eyebrow-links a{text-decoration:none; border-bottom:1px solid currentColor;}
+  h1{font-size:clamp(26px,4vw,34px); margin:0 0 6px; font-weight:700;}
+  .sottotitolo{color:var(--testo-soft); margin:0 0 26px; max-width:560px;}
+
+  .stato{
+    display:flex; align-items:center; gap:10px;
+    font-family:"JetBrains Mono", monospace; font-size:14px;
+    background:var(--notte-alta); border:1px solid var(--linea);
+    padding:12px 16px; width:fit-content;
+  }
+  .stato .pallino{width:9px; height:9px; border-radius:50%; background:var(--verde-ok); flex:none;}
+  .stato .pallino.attivo{background:var(--medio);}
+  .stato-sep{color:var(--linea); margin:0 4px;}
+
+  section{padding:36px 0; border-bottom:1px solid var(--linea);}
+  section:last-of-type{border-bottom:none;}
+  .section-label{
+    font-family:"JetBrains Mono", monospace; font-size:13px;
+    color:var(--testo-soft); margin:0 0 18px;
+  }
+
+  #mappa{
+    height:420px; width:100%;
+    border:1px solid var(--linea);
+    background:var(--notte-alta);
+  }
+  .legenda{
+    display:flex; flex-wrap:wrap; gap:18px; align-items:center;
+    margin-top:14px; font-size:13px; color:var(--testo-soft);
+  }
+  .legenda-voce{display:flex; align-items:center; gap:7px;}
+  .legenda-pallino{width:10px; height:10px; border-radius:50%;}
+  .legenda-nota{font-size:12px; color:var(--testo-soft); margin-top:10px; font-style:italic;}
+
+  .lista{border:1px solid var(--linea);}
+  .lista-riga{
+    display:grid;
+    grid-template-columns:1fr 1fr 90px 70px;
+    gap:10px;
+    padding:11px 16px;
+    border-bottom:1px solid var(--linea);
+    font-size:13.5px;
+  }
+  .lista-riga:last-child{border-bottom:none;}
+  .lista-riga.intestazione{
+    font-family:"JetBrains Mono", monospace; font-size:11.5px;
+    color:var(--testo-soft); background:var(--notte-alta);
+  }
+  .lista-riga .coord, .lista-riga .frp{font-family:"JetBrains Mono", monospace;}
+  .pallino-riga{width:8px; height:8px; border-radius:50%; display:inline-block; margin-right:7px;}
+
+  .vuoto{
+    display:flex; align-items:center; gap:12px;
+    padding:20px; border:1px solid var(--linea); background:var(--notte-alta);
+  }
+  .vuoto .pallino{width:9px; height:9px; border-radius:50%; background:var(--verde-ok); flex:none;}
+
+  .errore{
+    padding:16px; border:1px solid var(--medio); color:var(--medio); font-size:14px;
+  }
+
+  footer{padding:36px 0 60px; font-size:13px; color:var(--testo-soft);}
+  footer p{margin:0 0 8px;}
+
+  @media (max-width:560px){
+    .lista-riga{grid-template-columns:1fr 70px; font-size:12.5px;}
+    .lista-riga .ora, .lista-riga .satellite{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header>
+    <nav class="eyebrow-links">
+      <a href="./data/incendi.json">JSON grezzo</a>
+      <a href="https://github.com/emanuelc89/climaaperto" target="_blank" rel="noopener">Codice sorgente</a>
+      <a href="./LICENSE">Licenza</a>
+    </nav>
+    <h1>ClimaAperto — Incendi attivi</h1>
+    <p class="sottotitolo">Rilevamenti satellitari NASA FIRMS, aggiornati in automatico ogni 3 ore. Dato ufficiale, gratuito, pensato per essere riusato.</p>
+    <div class="stato mono" id="riga-stato">
+      <span class="pallino" id="pallino-stato"></span>
+      <span id="testo-stato">Caricamento…</span>
+    </div>
+  </header>
+
+  <section id="sezione-mappa">
+    <p class="section-label">// MAPPA</p>
+    <div id="mappa"></div>
+    <div class="legenda">
+      <div class="legenda-voce"><span class="legenda-pallino" style="background:var(--basso)"></span> bassa intensità</div>
+      <div class="legenda-voce"><span class="legenda-pallino" style="background:var(--medio)"></span> media</div>
+      <div class="legenda-voce"><span class="legenda-pallino" style="background:var(--alto)"></span> alta</div>
+      <div class="legenda-voce"><span class="legenda-pallino" style="background:var(--molto-alto)"></span> molto alta</div>
+    </div>
+    <p class="legenda-nota">Scala di lettura semplificata basata sulla potenza radiativa (FRP) rilevata dal satellite — non è una classificazione ufficiale di gravità dell'incendio.</p>
+  </section>
+
+  <section id="sezione-lista">
+    <p class="section-label">// ULTIMI RILEVAMENTI</p>
+    <div id="contenitore-lista"></div>
+  </section>
+
+  <footer>
+    <p>Fonte dati: <a href="https://firms.modaps.eosdis.nasa.gov/" target="_blank" rel="noopener">NASA FIRMS</a> (VIIRS). Mappa: © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">contributori OpenStreetMap</a>.</p>
+    <p>Codice distribuito secondo i termini della <a href="./LICENSE">PolyForm Strict License 1.0.0</a> — uso non commerciale, senza redistribuzione né modifica.</p>
+  </footer>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+  function coloreIntensita(frp) {
+    if (frp == null) return 'var(--basso)';
+    if (frp < 5) return getComputedStyle(document.documentElement).getPropertyValue('--basso');
+    if (frp < 20) return getComputedStyle(document.documentElement).getPropertyValue('--medio');
+    if (frp < 50) return getComputedStyle(document.documentElement).getPropertyValue('--alto');
+    return getComputedStyle(document.documentElement).getPropertyValue('--molto-alto');
+  }
+
+  function formattaTimestamp(dataStr, oraStr) {
+    if (!dataStr) return '—';
+    const ora = (oraStr || '').padStart(4, '0');
+    const oreLeggibili = ora.length === 4 ? `${ora.slice(0,2)}:${ora.slice(2)}` : ora;
+    return `${dataStr} · ${oreLeggibili} UTC`;
+  }
+
+  async function inizializza() {
+    const statoTesto = document.getElementById('testo-stato');
+    const statoPallino = document.getElementById('pallino-stato');
+    const contenitoreLista = document.getElementById('contenitore-lista');
+
+    let dati;
+    try {
+      const risposta = await fetch('./data/incendi.json', { cache: 'no-store' });
+      if (!risposta.ok) throw new Error('risposta non valida');
+      dati = await risposta.json();
+    } catch (err) {
+      statoTesto.textContent = 'Dati non disponibili al momento';
+      contenitoreLista.innerHTML = '<div class="errore">Impossibile caricare data/incendi.json. Se il progetto è appena stato pubblicato, attendi il primo aggiornamento automatico o esegui il workflow manualmente da GitHub Actions.</div>';
+      // Mappa vuota centrata sull'Italia comunque, per non lasciare un buco nella pagina.
+      L.map('mappa', { attributionControl: true }).setView([42.5, 12.5], 5)
+        .addLayer(L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }));
+      return;
+    }
+
+    const incendi = (dati.incendi || []).slice().sort((a, b) => {
+      const chiaveA = `${a.data_rilevamento || ''}${a.ora_rilevamento_utc || ''}`;
+      const chiaveB = `${b.data_rilevamento || ''}${b.ora_rilevamento_utc || ''}`;
+      return chiaveB.localeCompare(chiaveA);
+    });
+
+    const aggiornato = dati.aggiornato_utc ? new Date(dati.aggiornato_utc) : null;
+    const oraAggiornamento = aggiornato ? aggiornato.toLocaleString('it-IT', { dateStyle: 'medium', timeStyle: 'short' }) : '—';
+
+    if (incendi.length === 0) {
+      statoPallino.classList.remove('attivo');
+      statoTesto.textContent = `Nessun incendio attivo rilevato — aggiornato il ${oraAggiornamento}`;
+      contenitoreLista.innerHTML = '<div class="vuoto"><span class="pallino"></span> Nessun rilevamento nell\'area e nel periodo monitorati.</div>';
+    } else {
+      statoPallino.classList.add('attivo');
+      statoTesto.textContent = `${incendi.length} rilevamenti nelle ultime 24h — aggiornato il ${oraAggiornamento}`;
+
+      const righe = incendi.slice(0, 50).map(item => `
+        <div class="lista-riga">
+          <div class="coord"><span class="pallino-riga" style="background:${coloreIntensita(item.intensita_radiativa_mw)}"></span>${item.latitudine.toFixed(3)}, ${item.longitudine.toFixed(3)}</div>
+          <div class="ora">${formattaTimestamp(item.data_rilevamento, item.ora_rilevamento_utc)}</div>
+          <div class="frp">${item.intensita_radiativa_mw != null ? item.intensita_radiativa_mw.toFixed(1) + ' MW' : '—'}</div>
+          <div class="satellite">${item.satellite || '—'}</div>
+        </div>
+      `).join('');
+
+      contenitoreLista.innerHTML = `
+        <div class="lista">
+          <div class="lista-riga intestazione">
+            <div>Coordinate</div><div>Rilevato</div><div>Intensità</div><div>Sat.</div>
+          </div>
+          ${righe}
+        </div>
+        ${incendi.length > 50 ? `<p class="legenda-nota">Mostrati i 50 più recenti su ${incendi.length} totali — l'elenco completo è nel JSON grezzo.</p>` : ''}
+      `;
+    }
+
+    const mappa = L.map('mappa').setView([42.5, 12.5], 5);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap',
+      maxZoom: 12,
+    }).addTo(mappa);
+
+    if (incendi.length > 0) {
+      const gruppo = L.featureGroup();
+      incendi.forEach(item => {
+        L.circleMarker([item.latitudine, item.longitudine], {
+          radius: 5,
+          color: coloreIntensita(item.intensita_radiativa_mw),
+          fillColor: coloreIntensita(item.intensita_radiativa_mw),
+          fillOpacity: 0.85,
+          weight: 1,
+        })
+        .bindPopup(`<strong>${formattaTimestamp(item.data_rilevamento, item.ora_rilevamento_utc)}</strong><br>Intensità: ${item.intensita_radiativa_mw != null ? item.intensita_radiativa_mw.toFixed(1) + ' MW' : 'n/d'}<br>Satellite: ${item.satellite || 'n/d'}`)
+        .addTo(gruppo);
+      });
+      gruppo.addTo(mappa);
+      mappa.fitBounds(gruppo.getBounds().pad(0.3));
+    }
+  }
+
+  inizializza();
+</script>
+
+</body>
+</html>
