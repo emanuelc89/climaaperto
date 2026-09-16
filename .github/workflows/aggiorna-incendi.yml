@@ -2,7 +2,7 @@ name: Aggiorna incendi
 
 on:
   schedule:
-    - cron: '0 */3 * * *'   # ogni 3 ore
+    - cron: '4,14,24,34,44,54 * * * *'   # ogni 10 minuti, sfalsato dal minuto :00 per evitare il picco di carico orario di GitHub
   workflow_dispatch: {}      # permette anche l'esecuzione manuale da GitHub
 
 jobs:
