@@ -141,6 +141,13 @@
       <div class="legenda-voce"><span class="legenda-pallino" style="background:var(--molto-alto)"></span> molto alta</div>
     </div>
     <p class="legenda-nota">Scala di lettura semplificata basata sulla potenza radiativa (FRP) rilevata dal satellite — non è una classificazione ufficiale di gravità dell'incendio.</p>
+
+    <p class="section-label" style="margin-top:28px;">// LIVELLO UFFICIALE — RISCHIO INCENDI (COPERNICUS EFFIS)</p>
+    <p style="color:var(--testo-soft); font-size:14px; max-width:620px; margin:0 0 14px;">
+      Attivabile dal controllo in alto a destra sulla mappa: la previsione ufficiale del Fire Weather Index per oggi, richiesta in tempo reale al server Copernicus EFFIS ogni volta che apri questa pagina — non è un dato salvato da noi.
+    </p>
+    <img src="https://maps.effis.emergency.copernicus.eu/effis?language=eng&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=mf010.fwi&amp;format=image/png&amp;STYLE=default" alt="Legenda ufficiale Fire Weather Index — Copernicus EFFIS" style="max-width:260px; border:1px solid var(--linea); background:#fff; padding:4px; display:block;">
+    <p class="legenda-nota">Nota tecnica: EFFIS non permette di interrogare un punto preciso della mappa per ottenere un valore numerico (il livello non è configurato come interrogabile sul loro server) — per questo qui vedi la mappa ufficiale sovrapposta, non un valore aggiunto al JSON prodotto da questo progetto.</p>
   </section>
 
   <section id="sezione-lista">
@@ -172,6 +179,27 @@
     return `${dataStr} · ${oreLeggibili} UTC`;
   }
 
+  function aggiungiLivelloRischio(mappaObj) {
+    // Sovrappone la mappa ufficiale Copernicus EFFIS del Fire Weather Index
+    // (previsione di rischio incendi) come livello opzionale, disattivato di
+    // default. Richiesta live al server EFFIS ogni volta che si attiva:
+    // non salviamo né cachiamo questo dato.
+    //
+    // Nota: EFFIS non permette di interrogare un punto preciso per ottenere
+    // un valore numerico (il livello non è "queryable" sul loro server), per
+    // questo qui vediamo la mappa ufficiale, non un dato nel JSON.
+    const oggiUTC = new Date().toISOString().split('T')[0];
+    const livelloFWI = L.tileLayer.wms('https://maps.effis.emergency.copernicus.eu/effis', {
+      layers: 'mf010.fwi',
+      format: 'image/png',
+      transparent: true,
+      version: '1.1.1',
+      time: oggiUTC,
+      attribution: '© Copernicus EFFIS (JRC)',
+    });
+    L.control.layers(null, { 'Rischio incendi oggi (EFFIS)': livelloFWI }, { collapsed: false }).addTo(mappaObj);
+  }
+
   async function inizializza() {
     const statoTesto = document.getElementById('testo-stato');
     const statoPallino = document.getElementById('pallino-stato');
@@ -186,8 +214,9 @@
       statoTesto.textContent = 'Dati non disponibili al momento';
       contenitoreLista.innerHTML = '<div class="errore">Impossibile caricare data/incendi.json. Se il progetto è appena stato pubblicato, attendi il primo aggiornamento automatico o esegui il workflow manualmente da GitHub Actions.</div>';
       // Mappa vuota centrata sull'Italia comunque, per non lasciare un buco nella pagina.
-      L.map('mappa', { attributionControl: true }).setView([42.5, 12.5], 5)
-        .addLayer(L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }));
+      const mappaErrore = L.map('mappa', { attributionControl: true }).setView([42.5, 12.5], 5);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(mappaErrore);
+      aggiungiLivelloRischio(mappaErrore);
       return;
     }
 
@@ -233,6 +262,7 @@
       attribution: '© OpenStreetMap',
       maxZoom: 12,
     }).addTo(mappa);
+    aggiungiLivelloRischio(mappa);
 
     if (incendi.length > 0) {
       const gruppo = L.featureGroup();

@@ -2,6 +2,7 @@
 
 Un'API pubblica e documentata che raccoglie dati ufficiali su rischi climatici da fonti europee e internazionali, pensata per essere **usata da altri programmi** (sviluppatori, giornalisti, ONG) — non solo guardata su un sito.
 
+> Nome di lavoro, cambialo pure: sostituisci "ClimaAperto" ovunque compaia nel repository con il nome che scegli.
 
 ## Perché esiste
 
@@ -50,7 +51,7 @@ Il codice è distribuito secondo i termini della **PolyForm Strict License 1.0.0
 
 ## Roadmap
 
-- [ ] v1: incendi attivi (NASA FIRMS) — bounding box Italia, poi estendibile all'Europa
-- [ ] v2: rischio/statistiche incendi ufficiali (EFFIS)
+- [x] v1: incendi attivi (NASA FIRMS) — bounding box Italia, aggiornamento automatico ogni 3 ore, JSON pubblico + pagina di visualizzazione
+- [x] v2: rischio incendi ufficiale (EFFIS) — mostrato come livello mappa in tempo reale (WMS), non come dato nel JSON: il layer `mf010.fwi` di EFFIS non è configurato come interrogabile puntualmente sul loro server (`QUERY_LAYERS` restituisce `LayerNotDefined`), quindi non è possibile estrarne un valore numerico via GetFeatureInfo. Verificato anche il servizio WFS: non risulta attivo su questo endpoint.
 - [ ] v3: indicatore di siccità (EDO)
 - [ ] Pagina di documentazione stile "API docs" per sviluppatori terzi
