@@ -22,11 +22,17 @@ Ogni fonte resta sempre dichiarata nel JSON prodotto (campo `fonte`), così chi 
 
 ## Come funziona
 
-Stessa architettura di [Allerta Meteo Toscana](https://github.com/emanuelc89/allerta-meteo-toscana): uno script Python, schedulato con GitHub Actions, scarica i dati dalla fonte ufficiale, li normalizza in un JSON pulito, e li salva nel repository come file statico versionato. Con GitHub Pages attivo, quel file diventa un URL stabile che chiunque può interrogare via HTTP — è la tua "API", senza bisogno di un server sempre acceso.
+Stessa architettura di [Allerta Meteo Toscana](https://github.com/emanuelc89/allerta-meteo-toscana): uno script Python scarica i dati dalla fonte ufficiale, li normalizza in un JSON pulito, e li salva nel repository come file statico versionato. Con GitHub Pages attivo, quel file diventa un URL stabile che chiunque può interrogare via HTTP — è la tua "API", senza bisogno di un server sempre acceso.
 
 ```
 scripts/fetch_incendi.py  →  data/incendi.json  →  pubblicato via GitHub Pages
 ```
+
+### Perché un Cloudflare Worker per lo schedule, non `on: schedule` di GitHub
+
+Lo schedule nativo di GitHub Actions (`on: schedule`) su questo repository non è mai partito da solo, nemmeno con un intervallo di 3 ore — confermato osservando la tab Actions per diverse ore senza nessuna esecuzione autonoma. È un limite documentato di GitHub: sui repository pubblici, soprattutto quelli nuovi, gli schedule possono essere ritardati o saltati del tutto durante i picchi di carico, senza garanzia di orario.
+
+La soluzione (già validata sul progetto Allerta Meteo Toscana): il workflow `.github/workflows/aggiorna-incendi.yml` ha **solo** `workflow_dispatch` come trigger, e un piccolo Cloudflare Worker (`infra/trigger-worker.js`), con un proprio Cron Trigger ogni 10 minuti, chiama l'API di GitHub per avviarlo. I Cron Trigger di Cloudflare Workers si sono dimostrati affidabili dove quelli di GitHub non lo sono stati.
 
 ## Endpoint (una volta pubblicato)
 

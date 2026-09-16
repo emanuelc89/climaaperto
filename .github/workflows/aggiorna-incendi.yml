@@ -1,9 +1,10 @@
 name: Aggiorna incendi
 
 on:
-  schedule:
-    - cron: '4,14,24,34,44,54 * * * *'   # ogni 10 minuti, sfalsato dal minuto :00 per evitare il picco di carico orario di GitHub
-  workflow_dispatch: {}      # permette anche l'esecuzione manuale da GitHub
+  workflow_dispatch: {}      # avviato dal Cloudflare Worker (vedi infra/trigger-worker.js) ogni 10 minuti;
+                              # nessun "on: schedule" qui apposta, per avere una sola fonte di verità
+                              # sullo schedule ed evitare due esecuzioni sovrapposte che si scontrerebbero
+                              # sul git push finale
 
 jobs:
   aggiorna:
