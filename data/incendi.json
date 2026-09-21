@@ -2,8 +2,8 @@
   "fonte": "NASA FIRMS (VIIRS_SNPP_NRT)",
   "fonte_url": "https://firms.modaps.eosdis.nasa.gov/",
   "area_bbox": "6.6,35.3,18.6,47.1",
-  "aggiornato_utc": "2026-09-21T14:30:37+00:00",
-  "numero_rilevamenti": 51,
+  "aggiornato_utc": "2026-09-21T14:40:38+00:00",
+  "numero_rilevamenti": 52,
   "incendi": [
     {
       "latitudine": 40.5196,
@@ -390,6 +390,15 @@
       "ora_rilevamento_utc": "1147",
       "confidenza": "n",
       "intensita_radiativa_mw": 9.94,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 46.95657,
+      "longitudine": 15.37094,
+      "data_rilevamento": "2026-09-21",
+      "ora_rilevamento_utc": "1147",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 3.19,
       "satellite": "N"
     },
     {
