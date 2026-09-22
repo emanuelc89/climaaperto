@@ -2,7 +2,7 @@
   "fonte": "NASA FIRMS (VIIRS_SNPP_NRT)",
   "fonte_url": "https://firms.modaps.eosdis.nasa.gov/",
   "area_bbox": "6.6,35.3,18.6,47.1",
-  "aggiornato_utc": "2026-09-22T22:10:36+00:00",
+  "aggiornato_utc": "2026-09-22T22:20:35+00:00",
   "numero_rilevamenti": 123,
   "incendi": [
     {
