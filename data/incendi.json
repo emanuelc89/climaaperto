@@ -2,7 +2,494 @@
   "fonte": "NASA FIRMS (VIIRS_SNPP_NRT)",
   "fonte_url": "https://firms.modaps.eosdis.nasa.gov/",
   "area_bbox": "6.6,35.3,18.6,47.1",
-  "aggiornato_utc": "2026-09-23T04:30:45+00:00",
-  "numero_rilevamenti": 0,
-  "incendi": []
+  "aggiornato_utc": "2026-09-23T04:40:35+00:00",
+  "numero_rilevamenti": 54,
+  "incendi": [
+    {
+      "latitudine": 40.66091,
+      "longitudine": 16.99632,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "126",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 2.85,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 40.85671,
+      "longitudine": 17.32675,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "126",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 0.26,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 41.08971,
+      "longitudine": 14.5941,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "126",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 1.4,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 41.09074,
+      "longitudine": 14.58894,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "126",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 2.09,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 41.09127,
+      "longitudine": 14.6054,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "126",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 0.73,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 41.09237,
+      "longitudine": 14.59986,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "126",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 0.56,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 41.16546,
+      "longitudine": 14.67084,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "126",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 5.19,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 41.20873,
+      "longitudine": 14.15872,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "126",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 1.0,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 41.20929,
+      "longitudine": 14.17516,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "126",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 1.29,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 41.2128,
+      "longitudine": 14.17628,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "126",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 0.53,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 41.31848,
+      "longitudine": 15.23754,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "126",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 1.06,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 41.62761,
+      "longitudine": 14.96965,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "126",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 0.7,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 41.80768,
+      "longitudine": 15.2263,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "126",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 1.71,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 42.18825,
+      "longitudine": 12.81226,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "126",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 10.26,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 42.18911,
+      "longitudine": 12.80744,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "126",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 10.26,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 42.56961,
+      "longitudine": 12.67701,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "126",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 0.56,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 43.36249,
+      "longitudine": 12.54713,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "126",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 0.35,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 43.36581,
+      "longitudine": 12.54807,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "126",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 0.35,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 43.54173,
+      "longitudine": 16.44197,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "126",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 1.35,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 44.37739,
+      "longitudine": 8.29001,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "126",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 0.73,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 45.28057,
+      "longitudine": 14.53075,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "126",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 0.78,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 45.28393,
+      "longitudine": 14.53198,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "126",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 0.78,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 45.38179,
+      "longitudine": 11.95143,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "126",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 1.34,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 45.38256,
+      "longitudine": 11.94658,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "126",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 1.28,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 45.48013,
+      "longitudine": 10.2126,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "126",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 0.8,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 45.51841,
+      "longitudine": 11.49987,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "126",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 0.65,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 45.81653,
+      "longitudine": 16.04801,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "126",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 0.46,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 46.06736,
+      "longitudine": 13.6273,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "126",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 1.1,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 46.22719,
+      "longitudine": 13.07755,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "126",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 1.36,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 46.22802,
+      "longitudine": 13.0726,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "126",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 1.36,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 47.06776,
+      "longitudine": 8.26719,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "126",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 2.44,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 47.06988,
+      "longitudine": 8.26605,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "126",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 4.78,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 47.07131,
+      "longitudine": 8.26814,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "126",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 2.44,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 36.08586,
+      "longitudine": 6.80714,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "128",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 0.55,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 36.15808,
+      "longitudine": 10.28331,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "128",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 0.65,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 36.42941,
+      "longitudine": 6.62075,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "128",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 0.54,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 36.43281,
+      "longitudine": 6.62146,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "128",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 0.54,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 36.7604,
+      "longitudine": 7.30967,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "128",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 1.74,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 37.53717,
+      "longitudine": 13.33815,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "128",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 0.49,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 38.79252,
+      "longitudine": 15.21082,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "128",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 3.24,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 38.79624,
+      "longitudine": 15.21251,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "128",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 3.24,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 39.08025,
+      "longitudine": 9.01833,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "128",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 0.34,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 39.08355,
+      "longitudine": 9.01916,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "128",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 1.4,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 40.06763,
+      "longitudine": 15.66867,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "128",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 2.44,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 40.07138,
+      "longitudine": 15.67012,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "128",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 2.44,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 40.11732,
+      "longitudine": 15.58712,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "128",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 0.83,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 40.12115,
+      "longitudine": 15.58812,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "128",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 0.83,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 40.73004,
+      "longitudine": 14.8515,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "128",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 3.01,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 40.73133,
+      "longitudine": 14.86432,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "128",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 2.62,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 40.7326,
+      "longitudine": 14.858,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "128",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 1.56,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 40.73495,
+      "longitudine": 14.86553,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "128",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 2.62,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 40.76488,
+      "longitudine": 14.73512,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "128",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 0.36,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 40.77779,
+      "longitudine": 14.85708,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "128",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 1.07,
+      "satellite": "N"
+    },
+    {
+      "latitudine": 40.7815,
+      "longitudine": 14.85785,
+      "data_rilevamento": "2026-09-23",
+      "ora_rilevamento_utc": "128",
+      "confidenza": "n",
+      "intensita_radiativa_mw": 0.97,
+      "satellite": "N"
+    }
+  ]
 }
