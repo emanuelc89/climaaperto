@@ -431,22 +431,78 @@
   mappa.on('click', () => mappa.scrollWheelZoom.enable());
   mappa.getContainer().addEventListener('mouseleave', () => mappa.scrollWheelZoom.disable());
 
+  // Livelli Copernicus come UN'UNICA immagine per la vista corrente, invece di tante
+  // piastrelle 256x256. Con le piastrelle, a ogni zoom partivano decine di richieste
+  // in parallelo e il server ne perdeva alcune (quadrati vuoti che "vanno e vengono").
+  // Qui: una richiesta per vista, la nuova immagine sostituisce la vecchia solo quando
+  // è arrivata del tutto, e in caso di errore si riprova una volta.
+  mappa.createPane('copernicus');
+  mappa.getPane('copernicus').style.zIndex = 350; // sopra la mappa di base, sotto i punti di calore
+  mappa.getPane('copernicus').style.pointerEvents = 'none';
+
+  const LivelloWMSImmagine = L.Layer.extend({
+    initialize(url, parametri, opzioni) {
+      this._url = url;
+      this._parametri = parametri;
+      L.setOptions(this, opzioni);
+      this._richiesta = 0;
+    },
+    getAttribution() { return this.options.attribution; },
+    onAdd(map) {
+      map.on('moveend', this._aggiorna, this);
+      this._aggiorna();
+    },
+    onRemove(map) {
+      map.off('moveend', this._aggiorna, this);
+      this._richiesta++;
+      if (this._immagine) map.removeLayer(this._immagine);
+      this._immagine = null;
+    },
+    _aggiorna(evento, tentativo = 0) {
+      const map = this._map;
+      if (!map) return;
+      const numero = ++this._richiesta;
+      const confini = map.getBounds();
+      const crs = map.options.crs;
+      const so = crs.project(confini.getSouthWest());
+      const ne = crs.project(confini.getNorthEast());
+      const dimensione = map.getSize();
+      const densita = Math.min(window.devicePixelRatio || 1, 2);
+      const larghezza = Math.min(Math.round(dimensione.x * densita), 2048);
+      const altezza = Math.min(Math.round(dimensione.y * densita), 2048);
+      // Parametri in MAIUSCOLO: il WMS di EDO accetta solo quelli, EFFIS li accetta entrambi.
+      const parametri = Object.assign({
+        SERVICE: 'WMS', REQUEST: 'GetMap', VERSION: '1.1.1', SRS: 'EPSG:3857', STYLES: '',
+        FORMAT: 'image/png', TRANSPARENT: 'TRUE',
+        BBOX: [so.x, so.y, ne.x, ne.y].join(','), WIDTH: larghezza, HEIGHT: altezza,
+      }, this._parametri);
+      const nuova = L.imageOverlay(`${this._url}?${new URLSearchParams(parametri)}`, confini, {
+        opacity: this.options.opacity, pane: 'copernicus', interactive: false,
+      });
+      nuova.once('load', () => {
+        if (numero !== this._richiesta) { map.removeLayer(nuova); return; } // superata da una vista più recente
+        if (this._immagine) map.removeLayer(this._immagine);
+        this._immagine = nuova;
+      });
+      nuova.once('error', () => {
+        map.removeLayer(nuova);
+        if (numero === this._richiesta && tentativo < 1) setTimeout(() => this._aggiorna(null, tentativo + 1), 1500);
+      });
+      nuova.addTo(map);
+    },
+  });
+
   const oggiUTC = new Date().toISOString().split('T')[0];
   const livelli = {
     calore: L.layerGroup(),
     // EFFIS: previsione ufficiale del Fire Weather Index, richiesta live al server Copernicus.
-    rischio: L.tileLayer.wms('https://maps.effis.emergency.copernicus.eu/effis', {
-      layers: 'mf010.fwi', format: 'image/png', transparent: true, version: '1.1.1',
-      time: oggiUTC, opacity: 0.7, attribution: '© Copernicus EFFIS (JRC)',
-    }),
+    rischio: new LivelloWMSImmagine('https://maps.effis.emergency.copernicus.eu/effis',
+      { LAYERS: 'mf010.fwi', TIME: oggiUTC },
+      { opacity: 0.7, attribution: '© Copernicus EFFIS (JRC)' }),
     // EDO: Combined Drought Indicator v4.1, livello "cdiad" (Watch/Warning/Alert).
-    // Il filtro davanti al WMS di EDO accetta solo parametri in MAIUSCOLO:
-    // con quelli minuscoli (default di Leaflet) risponde con un errore che Chrome blocca (CORB).
-    siccita: L.tileLayer.wms('https://drought.emergency.copernicus.eu/api/wms', {
-      layers: 'cdiad', format: 'image/png', transparent: true, version: '1.1.1',
-      uppercase: true, opacity: 0.75,
-      attribution: '© EU, Copernicus EMS, European Drought Observatory (CC BY 4.0)',
-    }),
+    siccita: new LivelloWMSImmagine('https://drought.emergency.copernicus.eu/api/wms',
+      { LAYERS: 'cdiad' },
+      { opacity: 0.75, attribution: '© EU, Copernicus EMS, European Drought Observatory (CC BY 4.0)' }),
   };
   livelli.calore.addTo(mappa);
 
