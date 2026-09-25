@@ -57,7 +57,8 @@ Il codice è distribuito secondo i termini della **PolyForm Strict License 1.0.0
 
 ## Roadmap
 
-- [x] v1: incendi attivi (NASA FIRMS) — bounding box Italia, aggiornamento automatico ogni 3 ore, JSON pubblico + pagina di visualizzazione
+- [x] v1: incendi attivi (NASA FIRMS) — area Europa (rettangolo lon -25/45, lat 34/72), controllo automatico ogni 10 minuti via Cloudflare Worker, JSON pubblico compatto + pagina di visualizzazione
+- [ ] Monitorare la dimensione del repository: ogni aggiornamento del JSON resta nella cronologia Git. Se si avvicina a 1 GB, passare alla pubblicazione con `actions/deploy-pages` senza salvare il JSON nei commit
 - [x] v2: rischio incendi ufficiale (EFFIS) — mostrato come livello mappa in tempo reale (WMS), non come dato nel JSON: il layer `mf010.fwi` di EFFIS non è configurato come interrogabile puntualmente sul loro server (`QUERY_LAYERS` restituisce `LayerNotDefined`), quindi non è possibile estrarne un valore numerico via GetFeatureInfo. Verificato anche il servizio WFS: non risulta attivo su questo endpoint.
 - [x] v3: indicatore di siccità (EDO, Combined Drought Indicator v4.1, livello `cdiad`) — mostrato come livello mappa (WMS). Il servizio WCS di EDO, che darebbe i valori numerici, è documentato ma al momento restituisce errore 500 lato server su ogni richiesta `GetCoverage` (anche senza parametri opzionali) e `msLoadMap(): Unable to access file` su `GetCapabilities`. Da ritestare periodicamente: se torna attivo, si può aggiungere l'estrazione dei valori nel JSON.
 - [ ] Pagina di documentazione stile "API docs" per sviluppatori terzi

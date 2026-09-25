@@ -40,10 +40,12 @@ MAP_KEY = os.environ.get("NASA_FIRMS_MAP_KEY")
 SENSORE = os.environ.get("SENSORE_FIRMS", "VIIRS_SNPP_NRT")
 
 # Area geografica come "lon_min,lat_min,lon_max,lat_max".
-# Di default: bounding box approssimativo dell'Italia.
+# Di default: rettangolo che contiene l'Europa (dall'Islanda al Caucaso,
+# da Creta alla Scandinavia). Essendo un rettangolo, include anche la costa
+# del Nord Africa e parte della Turchia.
 # Sovrascrivibile con la variabile d'ambiente AREA_BBOX per estendere
 # ad altri paesi o a tutta Europa.
-AREA_BBOX = os.environ.get("AREA_BBOX", "6.6,35.3,18.6,47.1")
+AREA_BBOX = os.environ.get("AREA_BBOX", "-25,34,45,72")
 
 # Quanti giorni indietro interrogare (il piano gratuito standard
 # copre tipicamente 1-10 giorni per richiesta).
@@ -113,7 +115,9 @@ def salva_json(incendi):
         "incendi": incendi,
     }
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
-        json.dump(output, f, ensure_ascii=False, indent=2)
+        # JSON compatto (senza spazi): con l'area europea i rilevamenti sono molti,
+        # e ogni versione del file resta nella cronologia di Git.
+        json.dump(output, f, ensure_ascii=False, separators=(",", ":"))
     print(f"Salvati {len(incendi)} rilevamenti in {OUTPUT_PATH}")
 
 

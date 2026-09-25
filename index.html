@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ClimaAperto | Incendi e siccità in Italia visti dai satelliti</title>
+<title>ClimaAperto | Incendi e siccità in Europa visti dai satelliti</title>
 <meta name="description" content="Punti di calore rilevati dai satelliti NASA, rischio incendi e siccità dal servizio europeo Copernicus. Dati ufficiali, aggiornati in automatico.">
 <meta name="theme-color" content="#ECEEEF" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#161B1F" media="(prefers-color-scheme: dark)">
@@ -269,7 +269,7 @@
 
   <main>
     <section class="apertura">
-      <h1>Incendi e siccità in Italia, visti dai satelliti</h1>
+      <h1>Incendi e siccità in Europa, visti dai satelliti</h1>
       <p class="intro colonna">Punti di calore rilevati dalla NASA, rischio incendi e siccità dal servizio europeo Copernicus. Dati ufficiali, aggiornati in automatico.</p>
 
       <p class="stato" id="stato" data-tono="attesa" aria-live="polite">
@@ -340,15 +340,15 @@
           </div>
         </details>
         <details>
-          <summary>Perché vedo punti fuori dall'Italia?</summary>
+          <summary>Perché vedo punti fuori dall'Europa?</summary>
           <div class="risposta">
-            <p>L'area monitorata è un rettangolo che contiene l'Italia, non il suo confine esatto. Per questo include anche parti dei paesi vicini e del Nord Africa.</p>
+            <p>L'area monitorata è un rettangolo che contiene l'Europa, dall'Islanda al Caucaso e da Creta alla Scandinavia, non i suoi confini esatti. Per questo include anche la costa del Nord Africa e parte della Turchia.</p>
           </div>
         </details>
         <details>
           <summary>Ogni quanto si aggiornano i dati?</summary>
           <div class="risposta">
-            <p>I punti di calore vengono controllati ogni 10 minuti, ma i satelliti passano sopra l'Italia solo alcune volte al giorno: spesso un controllo non trova novità.</p>
+            <p>I punti di calore vengono controllati ogni 10 minuti, ma i satelliti passano sopra ciascuna zona solo alcune volte al giorno: spesso un controllo non trova novità.</p>
             <p>Il rischio incendi è la previsione ufficiale del giorno. La siccità viene aggiornata dal servizio europeo ogni 10 giorni. Entrambi i livelli vengono richiesti ai server Copernicus ogni volta che attivi il livello.</p>
           </div>
         </details>
@@ -421,7 +421,9 @@
   }
 
   // --- Mappa -----------------------------------------------------------
-  const mappa = L.map('mappa', { scrollWheelZoom: false }).setView([42.3, 12.5], 5);
+  // preferCanvas: con l'area europea i punti possono essere migliaia, il canvas li disegna in modo più leggero dell'SVG.
+  const zoomIniziale = window.innerWidth < 720 ? 3 : 4;
+  const mappa = L.map('mappa', { scrollWheelZoom: false, preferCanvas: true }).setView([51, 12], zoomIniziale);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap', maxZoom: 12,
   }).addTo(mappa);
@@ -556,8 +558,6 @@
     document.getElementById('mostra-altri').addEventListener('click', mostraAltri);
     mostraAltri();
 
-    const gruppo = L.featureGroup(rilevamenti.map(r => r.marcatore));
-    mappa.fitBounds(gruppo.getBounds().pad(0.25), { maxZoom: 7 });
   }
 
   carica();
