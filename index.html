@@ -3,315 +3,564 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ClimaAperto — Incendi attivi</title>
-<meta name="description" content="Incendi attivi rilevati da satellite (NASA FIRMS), aggiornati automaticamente ogni 3 ore. Dato ufficiale, aperto, documentato.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='9' fill='%23D9642B'/%3E%3C/svg%3E">
+<title>ClimaAperto | Incendi e siccità in Italia visti dai satelliti</title>
+<meta name="description" content="Punti di calore rilevati dai satelliti NASA, rischio incendi e siccità dal servizio europeo Copernicus. Dati ufficiali, aggiornati in automatico.">
+<meta name="theme-color" content="#ECEEEF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161B1F" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='9' fill='%23C8401E'/%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,500..800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 
 <style>
   :root{
-    --notte:#12141C;
-    --notte-alta:#1A1D28;
-    --testo:#EDE6DA;
-    --testo-soft:#9AA0AC;
-    --linea:#2B2F3A;
-    --verde-ok:#4FA97C;
-    --basso:#8A2A12;
-    --medio:#D9642B;
-    --alto:#F2B705;
-    --molto-alto:#FCE38A;
+    --cenere:#ECEEEF;
+    --carta:#FFFFFF;
+    --grafite:#1E2A32;
+    --grafite-soft:#56656E;
+    --linea:#D3D8DB;
+    --brace:#C8401E;
+    --salvia:#2F7A6A;
+    --i1:#F2C14E;
+    --i2:#E8872F;
+    --i3:#C8401E;
+    --i4:#7E1A12;
+    --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+    --testo:"Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
   }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --cenere:#161B1F;
+      --carta:#1F262B;
+      --grafite:#E6EAEC;
+      --grafite-soft:#9AA7AE;
+      --linea:#2E373D;
+      --brace:#F0643C;
+      --salvia:#5FB8A3;
+    }
+  }
+
   *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
   body{
     margin:0;
-    background:var(--notte);
-    color:var(--testo);
-    font-family:"Manrope", system-ui, sans-serif;
+    background:var(--cenere);
+    color:var(--grafite);
+    font-family:var(--testo);
+    font-size:17px;
     line-height:1.55;
   }
-  a{color:var(--alto);}
-  .mono{font-family:"JetBrains Mono", monospace;}
-  .wrap{max-width:920px; margin:0 auto; padding:0 24px;}
+  a{color:inherit; text-underline-offset:3px;}
+  a:hover{color:var(--brace);}
+  :focus-visible{outline:3px solid var(--brace); outline-offset:2px; border-radius:4px;}
+  .contenitore{max-width:1180px; margin:0 auto; padding:0 20px;}
+  .colonna{max-width:68ch;}
 
-  header{padding:48px 0 28px; border-bottom:1px solid var(--linea);}
-  .eyebrow-links{
-    display:flex; gap:18px; font-family:"JetBrains Mono", monospace;
-    font-size:13px; margin-bottom:22px;
+  /* Testata */
+  .testata{
+    display:flex; justify-content:space-between; align-items:center; gap:16px;
+    padding:18px 0; flex-wrap:wrap;
   }
-  .eyebrow-links a{text-decoration:none; border-bottom:1px solid currentColor;}
-  h1{font-size:clamp(26px,4vw,34px); margin:0 0 6px; font-weight:700;}
-  .sottotitolo{color:var(--testo-soft); margin:0 0 26px; max-width:560px;}
+  .marchio{
+    font-family:var(--display); font-weight:700; font-size:19px;
+    display:flex; align-items:center; gap:9px; text-decoration:none;
+  }
+  .marchio::before{
+    content:""; width:12px; height:12px; border-radius:50%; background:var(--brace);
+  }
+  .testata nav{display:flex; gap:20px; font-size:15px;}
+
+  /* Apertura */
+  .apertura{padding:28px 0 22px;}
+  h1{
+    font-family:var(--display);
+    font-weight:800;
+    font-size:clamp(30px, 5.4vw, 54px);
+    line-height:1.05;
+    letter-spacing:-0.02em;
+    margin:0 0 14px;
+    max-width:16ch;
+  }
+  .intro{margin:0; color:var(--grafite-soft); font-size:18px;}
 
   .stato{
-    display:flex; align-items:center; gap:10px;
-    font-family:"JetBrains Mono", monospace; font-size:14px;
-    background:var(--notte-alta); border:1px solid var(--linea);
-    padding:12px 16px; width:fit-content;
+    margin:26px 0 0;
+    font-family:var(--display);
+    font-weight:600;
+    font-size:clamp(21px, 3vw, 28px);
+    line-height:1.25;
+    display:flex; gap:12px; align-items:baseline;
   }
-  .stato .pallino{width:9px; height:9px; border-radius:50%; background:var(--verde-ok); flex:none;}
-  .stato .pallino.attivo{background:var(--medio);}
-  .stato-sep{color:var(--linea); margin:0 4px;}
+  .stato-pallino{
+    width:13px; height:13px; border-radius:50%; flex:none;
+    background:var(--grafite-soft); transform:translateY(-2px);
+  }
+  .stato[data-tono="calore"] .stato-pallino{background:var(--brace);}
+  .stato[data-tono="calmo"] .stato-pallino{background:var(--salvia);}
+  .aggiornamento{margin:6px 0 0 25px; color:var(--grafite-soft); font-size:15px;}
 
-  section{padding:36px 0; border-bottom:1px solid var(--linea);}
-  section:last-of-type{border-bottom:none;}
-  .section-label{
-    font-family:"JetBrains Mono", monospace; font-size:13px;
-    color:var(--testo-soft); margin:0 0 18px;
-  }
-
-  #mappa{
-    height:420px; width:100%;
-    border:1px solid var(--linea);
-    background:var(--notte-alta);
-  }
-  .legenda{
-    display:flex; flex-wrap:wrap; gap:18px; align-items:center;
-    margin-top:14px; font-size:13px; color:var(--testo-soft);
-  }
-  .legenda-voce{display:flex; align-items:center; gap:7px;}
-  .legenda-pallino{width:10px; height:10px; border-radius:50%;}
-  .legenda-nota{font-size:12px; color:var(--testo-soft); margin-top:10px; font-style:italic;}
-
-  .lista{border:1px solid var(--linea);}
-  .lista-riga{
+  /* Livelli */
+  .livelli{
     display:grid;
-    grid-template-columns:1fr 1fr 90px 70px;
+    grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
     gap:10px;
-    padding:11px 16px;
-    border-bottom:1px solid var(--linea);
-    font-size:13.5px;
+    margin:26px 0 12px;
   }
-  .lista-riga:last-child{border-bottom:none;}
-  .lista-riga.intestazione{
-    font-family:"JetBrains Mono", monospace; font-size:11.5px;
-    color:var(--testo-soft); background:var(--notte-alta);
-  }
-  .lista-riga .coord, .lista-riga .frp{font-family:"JetBrains Mono", monospace;}
-  .pallino-riga{width:8px; height:8px; border-radius:50%; display:inline-block; margin-right:7px;}
-
-  .vuoto{
+  .livello{
     display:flex; align-items:center; gap:12px;
-    padding:20px; border:1px solid var(--linea); background:var(--notte-alta);
+    text-align:left;
+    font:inherit; color:inherit;
+    background:var(--carta);
+    border:2px solid var(--linea);
+    border-radius:12px;
+    padding:12px 14px;
+    cursor:pointer;
+    min-height:60px;
   }
-  .vuoto .pallino{width:9px; height:9px; border-radius:50%; background:var(--verde-ok); flex:none;}
+  .livello:hover{border-color:var(--grafite-soft);}
+  .livello[aria-pressed="true"]{border-color:var(--grafite);}
+  .interruttore{
+    width:38px; height:22px; border-radius:999px; flex:none;
+    background:var(--linea); position:relative;
+  }
+  .interruttore::after{
+    content:""; position:absolute; top:3px; left:3px;
+    width:16px; height:16px; border-radius:50%; background:var(--carta);
+    transition:transform .15s ease;
+  }
+  .livello[aria-pressed="true"] .interruttore{background:var(--grafite);}
+  .livello[aria-pressed="true"] .interruttore::after{transform:translateX(16px);}
+  .livello-testo strong{display:block; font-size:16px; line-height:1.2;}
+  .livello-testo span{display:block; font-size:13.5px; color:var(--grafite-soft); line-height:1.3; margin-top:2px;}
 
-  .errore{
-    padding:16px; border:1px solid var(--medio); color:var(--medio); font-size:14px;
+  /* Mappa */
+  #mappa{
+    height:min(62vh, 620px);
+    min-height:360px;
+    border-radius:14px;
+    border:1px solid var(--linea);
+    background:var(--carta);
+    z-index:0;
+  }
+  .leaflet-container{font-family:var(--testo);}
+  .leaflet-popup-content{font-size:14.5px; line-height:1.45;}
+  .leaflet-popup-content strong{font-size:15.5px;}
+
+  /* Legende */
+  .legende{
+    display:flex; flex-wrap:wrap; gap:14px 36px;
+    margin:14px 0 0; padding:16px 18px;
+    background:var(--carta); border-radius:10px;
+  }
+  .legenda h3{font-size:14px; margin:0 0 8px; font-weight:700;}
+  .scala{display:flex; flex-wrap:wrap; gap:6px 16px; font-size:14px; align-items:center;}
+  .scala span{display:flex; align-items:center; gap:7px;}
+  .punto{border-radius:50%; display:inline-block; box-shadow:0 0 0 1.5px var(--carta), 0 0 0 2.5px rgba(0,0,0,.25); flex:none;}
+  .legenda img{display:block; max-width:220px; border-radius:6px; background:#fff; padding:4px;}
+  .legenda p{margin:8px 0 0; font-size:13px; color:var(--grafite-soft); max-width:38ch;}
+
+  /* Sezioni */
+  .sezione{padding:52px 0 8px;}
+  h2{
+    font-family:var(--display); font-weight:700;
+    font-size:clamp(24px, 3.2vw, 32px);
+    letter-spacing:-0.01em; line-height:1.15;
+    margin:0 0 8px;
+  }
+  .sottotitolo{margin:0 0 22px; color:var(--grafite-soft);}
+
+  /* Elenco rilevamenti */
+  .elenco{list-style:none; margin:0; padding:0; background:var(--carta); border-radius:12px; overflow:hidden;}
+  .elenco li + li{border-top:1px solid var(--linea);}
+  .rilevamento{
+    width:100%; font:inherit; color:inherit; background:none; border:0; text-align:left; cursor:pointer;
+    display:grid;
+    grid-template-columns:18px minmax(150px,1.2fr) minmax(150px,1fr) minmax(130px,.9fr) auto;
+    gap:14px; align-items:center;
+    padding:14px 18px;
+  }
+  .rilevamento:hover{background:var(--cenere);}
+  .rilevamento .quando{font-weight:700;}
+  .rilevamento .dove{color:var(--grafite-soft); font-size:15px; font-variant-numeric:tabular-nums;}
+  .rilevamento .forza{font-size:15px; font-variant-numeric:tabular-nums;}
+  .rilevamento .vai{font-size:14px; color:var(--grafite-soft); text-decoration:underline; text-underline-offset:3px;}
+  .rilevamento:hover .vai{color:var(--brace);}
+  .altri{
+    margin-top:14px;
+    font:inherit; font-weight:700; color:var(--grafite);
+    background:transparent; border:2px solid var(--grafite); border-radius:8px;
+    padding:10px 18px; cursor:pointer;
+  }
+  .altri:hover{background:var(--grafite); color:var(--carta);}
+  .messaggio{
+    background:var(--carta); border-radius:12px; padding:20px 22px; margin:0;
+    border-left:4px solid var(--salvia);
+  }
+  .messaggio.errore{border-left-color:var(--brace);}
+
+  /* Domande */
+  .domande{border-top:1px solid var(--linea);}
+  .domande details{border-bottom:1px solid var(--linea);}
+  .domande summary{
+    cursor:pointer; list-style:none;
+    padding:18px 36px 18px 0; position:relative;
+    font-weight:700; font-size:18px;
+  }
+  .domande summary::-webkit-details-marker{display:none;}
+  .domande summary::after{
+    content:"+"; position:absolute; right:6px; top:50%; transform:translateY(-50%);
+    font-family:var(--display); font-size:26px; font-weight:500; color:var(--grafite-soft);
+  }
+  .domande details[open] summary::after{content:"–";}
+  .domande .risposta{padding:0 0 20px; color:var(--grafite-soft);}
+  .domande .risposta p{margin:0 0 10px;}
+  .domande code{
+    font-family:ui-monospace, Consolas, monospace; font-size:14px;
+    background:var(--carta); padding:2px 6px; border-radius:4px; word-break:break-all;
   }
 
-  footer{padding:36px 0 60px; font-size:13px; color:var(--testo-soft);}
-  footer p{margin:0 0 8px;}
+  footer{padding:48px 0 60px; font-size:14px; color:var(--grafite-soft);}
+  footer p{margin:0 0 8px; max-width:80ch;}
 
-  @media (max-width:560px){
-    .lista-riga{grid-template-columns:1fr 70px; font-size:12.5px;}
-    .lista-riga .ora, .lista-riga .satellite{display:none;}
+  /* Mobile */
+  @media (max-width:720px){
+    body{font-size:16px;}
+    .contenitore{padding:0 14px;}
+    .testata nav{gap:14px; font-size:14px;}
+    .apertura{padding:14px 0 16px;}
+    .intro{font-size:16.5px;}
+    .aggiornamento{margin-left:0;}
+    .stato{gap:10px;}
+    #mappa{height:58vh; min-height:320px; border-radius:10px;}
+    .legende{padding:14px;}
+    .rilevamento{
+      grid-template-columns:14px 1fr auto;
+      grid-template-areas:
+        "pallino quando forza"
+        ".       dove   dove";
+      gap:2px 10px; padding:13px 14px;
+    }
+    .rilevamento .pallino-cella{grid-area:pallino;}
+    .rilevamento .quando{grid-area:quando;}
+    .rilevamento .dove{grid-area:dove; font-size:14px;}
+    .rilevamento .forza{grid-area:forza; text-align:right; font-size:14px;}
+    .rilevamento .vai{display:none;}
+    .domande summary{font-size:16.5px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .interruttore::after{transition:none;}
   }
 </style>
 </head>
 <body>
 
-<div class="wrap">
+<div class="contenitore">
 
-  <header>
-    <nav class="eyebrow-links">
-      <a href="./data/incendi.json">JSON grezzo</a>
+  <header class="testata">
+    <a class="marchio" href="./">ClimaAperto</a>
+    <nav>
+      <a href="./data/incendi.json">Dati in JSON</a>
       <a href="https://github.com/emanuelc89/climaaperto" target="_blank" rel="noopener">Codice sorgente</a>
-      <a href="./LICENSE">Licenza</a>
     </nav>
-    <h1>ClimaAperto — Incendi attivi</h1>
-    <p class="sottotitolo">Rilevamenti satellitari NASA FIRMS, controllati automaticamente ogni 10 minuti. Dato ufficiale, gratuito, pensato per essere riusato.</p>
-    <div class="stato mono" id="riga-stato">
-      <span class="pallino" id="pallino-stato"></span>
-      <span id="testo-stato">Caricamento…</span>
-    </div>
   </header>
 
-  <section id="sezione-mappa">
-    <p class="section-label">// MAPPA</p>
-    <div id="mappa"></div>
-    <div class="legenda">
-      <div class="legenda-voce"><span class="legenda-pallino" style="background:var(--basso)"></span> bassa intensità</div>
-      <div class="legenda-voce"><span class="legenda-pallino" style="background:var(--medio)"></span> media</div>
-      <div class="legenda-voce"><span class="legenda-pallino" style="background:var(--alto)"></span> alta</div>
-      <div class="legenda-voce"><span class="legenda-pallino" style="background:var(--molto-alto)"></span> molto alta</div>
+  <main>
+    <section class="apertura">
+      <h1>Incendi e siccità in Italia, visti dai satelliti</h1>
+      <p class="intro colonna">Punti di calore rilevati dalla NASA, rischio incendi e siccità dal servizio europeo Copernicus. Dati ufficiali, aggiornati in automatico.</p>
+
+      <p class="stato" id="stato" data-tono="attesa" aria-live="polite">
+        <span class="stato-pallino" aria-hidden="true"></span>
+        <span id="stato-testo">Caricamento dei dati in corso</span>
+      </p>
+      <p class="aggiornamento" id="aggiornamento"></p>
+    </section>
+
+    <div class="livelli" role="group" aria-label="Livelli della mappa">
+      <button class="livello" type="button" data-livello="calore" aria-pressed="true">
+        <span class="interruttore" aria-hidden="true"></span>
+        <span class="livello-testo"><strong>Punti di calore</strong><span>NASA FIRMS, controllati ogni 10 minuti</span></span>
+      </button>
+      <button class="livello" type="button" data-livello="rischio" aria-pressed="false">
+        <span class="interruttore" aria-hidden="true"></span>
+        <span class="livello-testo"><strong>Rischio incendi oggi</strong><span>Copernicus EFFIS, previsione del giorno</span></span>
+      </button>
+      <button class="livello" type="button" data-livello="siccita" aria-pressed="false">
+        <span class="interruttore" aria-hidden="true"></span>
+        <span class="livello-testo"><strong>Siccità</strong><span>Copernicus EDO, aggiornata ogni 10 giorni</span></span>
+      </button>
     </div>
-    <p class="legenda-nota">Scala di lettura semplificata basata sulla potenza radiativa (FRP) rilevata dal satellite — non è una classificazione ufficiale di gravità dell'incendio.</p>
 
-    <p class="section-label" style="margin-top:28px;">// LIVELLO UFFICIALE — RISCHIO INCENDI (COPERNICUS EFFIS)</p>
-    <p style="color:var(--testo-soft); font-size:14px; max-width:620px; margin:0 0 14px;">
-      Attivabile dal controllo in alto a destra sulla mappa: la previsione ufficiale del Fire Weather Index per oggi, richiesta in tempo reale al server Copernicus EFFIS ogni volta che apri questa pagina — non è un dato salvato da noi.
-    </p>
-    <img src="https://maps.effis.emergency.copernicus.eu/effis?language=eng&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=mf010.fwi&amp;format=image/png&amp;STYLE=default" alt="Legenda ufficiale Fire Weather Index — Copernicus EFFIS" style="max-width:260px; border:1px solid var(--linea); background:#fff; padding:4px; display:block;">
-    <p class="legenda-nota">Nota tecnica: EFFIS non permette di interrogare un punto preciso della mappa per ottenere un valore numerico (il livello non è configurato come interrogabile sul loro server) — per questo qui vedi la mappa ufficiale sovrapposta, non un valore aggiunto al JSON prodotto da questo progetto.</p>
+    <div id="mappa" role="region" aria-label="Mappa di punti di calore, rischio incendi e siccità"></div>
 
-    <p class="section-label" style="margin-top:28px;">// LIVELLO UFFICIALE — SICCITÀ (COPERNICUS EDO)</p>
-    <p style="color:var(--testo-soft); font-size:14px; max-width:620px; margin:0 0 14px;">
-      Attivabile dallo stesso controllo sulla mappa: il Combined Drought Indicator (CDI) dell'European Drought Observatory, che combina precipitazioni, umidità del suolo e stato della vegetazione. Classi: <strong>Watch</strong> (precipitazioni scarse), <strong>Warning</strong> (anche il suolo è in deficit d'acqua), <strong>Alert</strong> (anche la vegetazione ne risente). Aggiornato ogni 10 giorni.
-    </p>
-    <img src="https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&amp;VERSION=1.1.1&amp;REQUEST=GetLegendGraphic&amp;LAYER=cdiad&amp;FORMAT=image/png" alt="Legenda ufficiale Combined Drought Indicator — Copernicus EDO" style="max-width:260px; border:1px solid var(--linea); background:#fff; padding:4px; display:block;" onerror="this.style.display='none'">
-    <p class="legenda-nota">Nota tecnica: il servizio WCS di EDO, che permetterebbe di estrarre i valori numerici per un punto, al momento risponde con un errore interno del loro server (verificato su tutte le varianti di richiesta). Per questo il dato è mostrato come mappa ufficiale sovrapposta. Dati © EU, Copernicus EMS, licenza CC BY 4.0.</p>
-  </section>
+    <div class="legende">
+      <div class="legenda" id="legenda-calore">
+        <h3>Punti di calore, per intensità</h3>
+        <div class="scala">
+          <span><i class="punto" style="width:10px;height:10px;background:var(--i1)"></i>bassa</span>
+          <span><i class="punto" style="width:12px;height:12px;background:var(--i2)"></i>media</span>
+          <span><i class="punto" style="width:15px;height:15px;background:var(--i3)"></i>alta</span>
+          <span><i class="punto" style="width:18px;height:18px;background:var(--i4)"></i>molto alta</span>
+        </div>
+      </div>
+      <div class="legenda" id="legenda-rischio" hidden>
+        <h3>Rischio incendi (indice FWI)</h3>
+        <img src="https://maps.effis.emergency.copernicus.eu/effis?language=eng&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=mf010.fwi&amp;format=image/png&amp;STYLE=default" alt="Legenda ufficiale del rischio incendi: da basso a estremo" loading="lazy" onerror="this.remove()">
+      </div>
+      <div class="legenda" id="legenda-siccita" hidden>
+        <h3>Siccità (indicatore CDI)</h3>
+        <img src="https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&amp;VERSION=1.1.1&amp;REQUEST=GetLegendGraphic&amp;LAYER=cdiad&amp;FORMAT=image/png" alt="Legenda ufficiale della siccità: Watch, Warning, Alert" loading="lazy" onerror="this.remove()">
+        <p>Watch: piove poco. Warning: anche il suolo è secco. Alert: ne risente anche la vegetazione.</p>
+      </div>
+    </div>
 
-  <section id="sezione-lista">
-    <p class="section-label">// ULTIMI RILEVAMENTI</p>
-    <div id="contenitore-lista"></div>
-  </section>
+    <section class="sezione" aria-labelledby="titolo-elenco">
+      <h2 id="titolo-elenco">Ultimi punti di calore</h2>
+      <p class="sottotitolo">Dal più recente. Tocca un rilevamento per vederlo sulla mappa.</p>
+      <div id="contenitore-elenco"></div>
+    </section>
+
+    <section class="sezione" aria-labelledby="titolo-domande">
+      <h2 id="titolo-domande">Come leggere questi dati</h2>
+      <div class="domande colonna">
+        <details>
+          <summary>Cos'è un punto di calore?</summary>
+          <div class="risposta">
+            <p>È una zona in cui il satellite ha misurato una temperatura anomala rispetto a ciò che la circonda. Nella maggior parte dei casi si tratta di un incendio, ma può essere anche una combustione agricola o una fonte di calore industriale.</p>
+            <p>Il rilevamento viene dal sensore VIIRS del satellite Suomi NPP, tramite il servizio NASA FIRMS.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Cosa indica l'intensità?</summary>
+          <div class="risposta">
+            <p>È la potenza radiativa misurata dal satellite, in megawatt. Le quattro fasce (bassa, media, alta, molto alta) sono una semplificazione di questo progetto per rendere la mappa leggibile: non sono una classificazione ufficiale della gravità di un incendio.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Perché vedo punti fuori dall'Italia?</summary>
+          <div class="risposta">
+            <p>L'area monitorata è un rettangolo che contiene l'Italia, non il suo confine esatto. Per questo include anche parti dei paesi vicini e del Nord Africa.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Ogni quanto si aggiornano i dati?</summary>
+          <div class="risposta">
+            <p>I punti di calore vengono controllati ogni 10 minuti, ma i satelliti passano sopra l'Italia solo alcune volte al giorno: spesso un controllo non trova novità.</p>
+            <p>Il rischio incendi è la previsione ufficiale del giorno. La siccità viene aggiornata dal servizio europeo ogni 10 giorni. Entrambi i livelli vengono richiesti ai server Copernicus ogni volta che attivi il livello.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Posso riusare questi dati?</summary>
+          <div class="risposta">
+            <p>Sì. I punti di calore sono disponibili in JSON a questo indirizzo, sempre aggiornato:</p>
+            <p><code id="url-json">https://emanuelc89.github.io/climaaperto/data/incendi.json</code></p>
+            <p>Per il rischio incendi e la siccità cita la fonte: © Copernicus EMS, Commissione europea.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Limiti noti</summary>
+          <div class="risposta">
+            <p>Rischio incendi e siccità sono mostrati come mappe ufficiali sovrapposte e non come valori numerici nel JSON: il servizio EFFIS non permette di interrogare un singolo punto, e il servizio dati di EDO al momento risponde con un errore interno. I dettagli sono nel README del progetto.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>Fonte dati: <a href="https://firms.modaps.eosdis.nasa.gov/" target="_blank" rel="noopener">NASA FIRMS</a> (VIIRS). Mappa: © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">contributori OpenStreetMap</a>.</p>
-    <p>Codice distribuito secondo i termini della <a href="./LICENSE">PolyForm Strict License 1.0.0</a> — uso non commerciale, senza redistribuzione né modifica.</p>
+    <p>Fonti: <a href="https://firms.modaps.eosdis.nasa.gov/" target="_blank" rel="noopener">NASA FIRMS</a>, <a href="https://forest-fire.emergency.copernicus.eu/" target="_blank" rel="noopener">Copernicus EFFIS</a>, <a href="https://drought.emergency.copernicus.eu/" target="_blank" rel="noopener">Copernicus EDO</a> (CC BY 4.0). Mappa di base: © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">contributori OpenStreetMap</a>.</p>
+    <p>Codice sotto <a href="https://github.com/emanuelc89/climaaperto/blob/main/LICENSE" target="_blank" rel="noopener">PolyForm Strict License 1.0.0</a>: uso non commerciale consentito, senza redistribuzione né modifiche.</p>
   </footer>
 
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
-  function coloreIntensita(frp) {
-    if (frp == null) return 'var(--basso)';
-    if (frp < 5) return getComputedStyle(document.documentElement).getPropertyValue('--basso');
-    if (frp < 20) return getComputedStyle(document.documentElement).getPropertyValue('--medio');
-    if (frp < 50) return getComputedStyle(document.documentElement).getPropertyValue('--alto');
-    return getComputedStyle(document.documentElement).getPropertyValue('--molto-alto');
+  const riduciMovimento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const css = nome => getComputedStyle(document.documentElement).getPropertyValue(nome).trim();
+
+  // Fasce di intensità (FRP, megawatt): semplificazione di questo progetto.
+  const FASCE = [
+    { nome: 'bassa',      colore: '--i1', raggio: 5 },
+    { nome: 'media',      colore: '--i2', raggio: 6.5 },
+    { nome: 'alta',       colore: '--i3', raggio: 8 },
+    { nome: 'molto alta', colore: '--i4', raggio: 10 },
+  ];
+  function fascia(frp) {
+    if (frp == null || frp < 5) return FASCE[0];
+    if (frp < 20) return FASCE[1];
+    if (frp < 50) return FASCE[2];
+    return FASCE[3];
   }
 
-  function formattaTimestamp(dataStr, oraStr) {
-    if (!dataStr) return '—';
-    const ora = (oraStr || '').padStart(4, '0');
-    const oreLeggibili = ora.length === 4 ? `${ora.slice(0,2)}:${ora.slice(2)}` : ora;
-    return `${dataStr} · ${oreLeggibili} UTC`;
+  // Data e ora del rilevamento: FIRMS le fornisce in UTC, le mostriamo in ora italiana.
+  function momentoRilevamento(item) {
+    if (!item.data_rilevamento) return null;
+    const [a, m, g] = item.data_rilevamento.split('-').map(Number);
+    const hhmm = String(item.ora_rilevamento_utc ?? '0').padStart(4, '0');
+    return new Date(Date.UTC(a, m - 1, g, Number(hhmm.slice(0, 2)), Number(hhmm.slice(2, 4))));
+  }
+  const formatoData = new Intl.DateTimeFormat('it-IT', {
+    day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Rome',
+  });
+  function relativo(data) {
+    const rtf = new Intl.RelativeTimeFormat('it', { numeric: 'auto' });
+    const secondi = Math.round((data - new Date()) / 1000);
+    const assoluti = Math.abs(secondi);
+    if (assoluti < 60) return 'adesso';
+    if (assoluti < 3600) return rtf.format(Math.round(secondi / 60), 'minute');
+    if (assoluti < 86400) return rtf.format(Math.round(secondi / 3600), 'hour');
+    return rtf.format(Math.round(secondi / 86400), 'day');
+  }
+  const numero = (n, cifre = 1) => n.toLocaleString('it-IT', { maximumFractionDigits: cifre, minimumFractionDigits: cifre });
+  function coordinate(lat, lon) {
+    return `${numero(Math.abs(lat), 3)}° ${lat >= 0 ? 'N' : 'S'}, ${numero(Math.abs(lon), 3)}° ${lon >= 0 ? 'E' : 'O'}`;
   }
 
-  function aggiungiLivelloRischio(mappaObj) {
-    // Sovrappone la mappa ufficiale Copernicus EFFIS del Fire Weather Index
-    // (previsione di rischio incendi) come livello opzionale, disattivato di
-    // default. Richiesta live al server EFFIS ogni volta che si attiva:
-    // non salviamo né cachiamo questo dato.
-    //
-    // Nota: EFFIS non permette di interrogare un punto preciso per ottenere
-    // un valore numerico (il livello non è "queryable" sul loro server), per
-    // questo qui vediamo la mappa ufficiale, non un dato nel JSON.
-    const oggiUTC = new Date().toISOString().split('T')[0];
-    const livelloFWI = L.tileLayer.wms('https://maps.effis.emergency.copernicus.eu/effis', {
-      layers: 'mf010.fwi',
-      format: 'image/png',
-      transparent: true,
-      version: '1.1.1',
-      time: oggiUTC,
-      attribution: '© Copernicus EFFIS (JRC)',
+  // --- Mappa -----------------------------------------------------------
+  const mappa = L.map('mappa', { scrollWheelZoom: false }).setView([42.3, 12.5], 5);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap', maxZoom: 12,
+  }).addTo(mappa);
+  // La rotella zooma solo dopo aver cliccato sulla mappa: così scorrere la pagina non resta "incastrato".
+  mappa.on('click', () => mappa.scrollWheelZoom.enable());
+  mappa.getContainer().addEventListener('mouseleave', () => mappa.scrollWheelZoom.disable());
+
+  const oggiUTC = new Date().toISOString().split('T')[0];
+  const livelli = {
+    calore: L.layerGroup(),
+    // EFFIS: previsione ufficiale del Fire Weather Index, richiesta live al server Copernicus.
+    rischio: L.tileLayer.wms('https://maps.effis.emergency.copernicus.eu/effis', {
+      layers: 'mf010.fwi', format: 'image/png', transparent: true, version: '1.1.1',
+      time: oggiUTC, opacity: 0.7, attribution: '© Copernicus EFFIS (JRC)',
+    }),
+    // EDO: Combined Drought Indicator v4.1, livello "cdiad" (Watch/Warning/Alert).
+    // Il filtro davanti al WMS di EDO accetta solo parametri in MAIUSCOLO:
+    // con quelli minuscoli (default di Leaflet) risponde con un errore che Chrome blocca (CORB).
+    siccita: L.tileLayer.wms('https://drought.emergency.copernicus.eu/api/wms', {
+      layers: 'cdiad', format: 'image/png', transparent: true, version: '1.1.1',
+      uppercase: true, opacity: 0.75,
+      attribution: '© EU, Copernicus EMS, European Drought Observatory (CC BY 4.0)',
+    }),
+  };
+  livelli.calore.addTo(mappa);
+
+  function impostaLivello(nome, acceso) {
+    const pulsante = document.querySelector(`[data-livello="${nome}"]`);
+    pulsante.setAttribute('aria-pressed', String(acceso));
+    document.getElementById(`legenda-${nome}`).hidden = !acceso;
+    if (acceso) mappa.addLayer(livelli[nome]); else mappa.removeLayer(livelli[nome]);
+  }
+  document.querySelectorAll('[data-livello]').forEach(pulsante => {
+    pulsante.addEventListener('click', () => {
+      impostaLivello(pulsante.dataset.livello, pulsante.getAttribute('aria-pressed') !== 'true');
     });
-    // Siccità: Combined Drought Indicator v4.1 dell'European Drought Observatory
-    // (Copernicus EMS/JRC). Livello "cdiad" = le tre classi principali
-    // (Watch / Warning / Alert). Senza parametro TIME il server restituisce
-    // l'ultima mappa disponibile (il CDI si aggiorna ogni 10 giorni).
-    // Il servizio WCS di EDO (che darebbe i valori numerici) al momento
-    // risponde con errore 500 lato server, per questo usiamo il WMS visivo.
-    const livelloCDI = L.tileLayer.wms('https://drought.emergency.copernicus.eu/api/wms', {
-      layers: 'cdiad',
-      format: 'image/png',
-      transparent: true,
-      version: '1.1.1',
-      opacity: 0.75,
-      // Il filtro davanti al WMS di EDO accetta solo parametri in MAIUSCOLO
-      // (SERVICE, LAYERS, BBOX...): con quelli minuscoli, default di Leaflet,
-      // risponde con un errore testuale che Chrome blocca (CORB).
-      uppercase: true,
-      attribution: '© EU, Copernicus EMS — European Drought Observatory (CC BY 4.0)',
-    });
+  });
 
-    L.control.layers(null, {
-      'Rischio incendi oggi (EFFIS)': livelloFWI,
-      'Siccità — indicatore CDI (EDO)': livelloCDI,
-    }, { collapsed: false }).addTo(mappaObj);
+  // --- Dati ------------------------------------------------------------
+  const PASSO = 20;
+  let rilevamenti = [];
+  let mostrati = 0;
+
+  function vaiAlRilevamento(indice) {
+    const r = rilevamenti[indice];
+    if (document.querySelector('[data-livello="calore"]').getAttribute('aria-pressed') !== 'true') {
+      impostaLivello('calore', true);
+    }
+    const destinazione = [r.item.latitudine, r.item.longitudine];
+    if (riduciMovimento) mappa.setView(destinazione, 9); else mappa.flyTo(destinazione, 9, { duration: 0.8 });
+    r.marcatore.openPopup();
+    document.getElementById('mappa').scrollIntoView({ behavior: riduciMovimento ? 'auto' : 'smooth', block: 'center' });
   }
 
-  async function inizializza() {
-    const statoTesto = document.getElementById('testo-stato');
-    const statoPallino = document.getElementById('pallino-stato');
-    const contenitoreLista = document.getElementById('contenitore-lista');
+  function mostraAltri() {
+    const lista = document.getElementById('lista-rilevamenti');
+    rilevamenti.slice(mostrati, mostrati + PASSO).forEach((r, i) => {
+      const indice = mostrati + i;
+      const f = fascia(r.item.intensita_radiativa_mw);
+      const li = document.createElement('li');
+      li.innerHTML = `
+        <button class="rilevamento" type="button">
+          <span class="pallino-cella"><i class="punto" style="width:12px;height:12px;background:var(${f.colore})"></i></span>
+          <span class="quando">${r.momento ? formatoData.format(r.momento) : 'Data non disponibile'}</span>
+          <span class="dove">${coordinate(r.item.latitudine, r.item.longitudine)}</span>
+          <span class="forza">Intensità ${f.nome}${r.item.intensita_radiativa_mw != null ? ` (${numero(r.item.intensita_radiativa_mw)} MW)` : ''}</span>
+          <span class="vai">Vedi sulla mappa</span>
+        </button>`;
+      li.querySelector('button').addEventListener('click', () => vaiAlRilevamento(indice));
+      lista.appendChild(li);
+    });
+    mostrati = Math.min(mostrati + PASSO, rilevamenti.length);
+    const pulsante = document.getElementById('mostra-altri');
+    const restanti = rilevamenti.length - mostrati;
+    pulsante.hidden = restanti <= 0;
+    pulsante.textContent = `Mostra altri ${Math.min(PASSO, restanti)} di ${restanti}`;
+  }
+
+  async function carica() {
+    const stato = document.getElementById('stato');
+    const statoTesto = document.getElementById('stato-testo');
+    const aggiornamento = document.getElementById('aggiornamento');
+    const contenitore = document.getElementById('contenitore-elenco');
 
     let dati;
     try {
       const risposta = await fetch('./data/incendi.json', { cache: 'no-store' });
-      if (!risposta.ok) throw new Error('risposta non valida');
+      if (!risposta.ok) throw new Error(`HTTP ${risposta.status}`);
       dati = await risposta.json();
     } catch (err) {
-      statoTesto.textContent = 'Dati non disponibili al momento';
-      contenitoreLista.innerHTML = '<div class="errore">Impossibile caricare data/incendi.json. Se il progetto è appena stato pubblicato, attendi il primo aggiornamento automatico o esegui il workflow manualmente da GitHub Actions.</div>';
-      // Mappa vuota centrata sull'Italia comunque, per non lasciare un buco nella pagina.
-      const mappaErrore = L.map('mappa', { attributionControl: true }).setView([42.5, 12.5], 5);
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(mappaErrore);
-      aggiungiLivelloRischio(mappaErrore);
+      stato.dataset.tono = 'attesa';
+      statoTesto.textContent = 'I punti di calore non sono disponibili in questo momento';
+      contenitore.innerHTML = '<p class="messaggio errore">Il file dei dati non risponde. Ricarica la pagina tra qualche minuto: gli altri livelli della mappa restano utilizzabili.</p>';
       return;
     }
 
-    const incendi = (dati.incendi || []).slice().sort((a, b) => {
-      const chiaveA = `${a.data_rilevamento || ''}${a.ora_rilevamento_utc || ''}`;
-      const chiaveB = `${b.data_rilevamento || ''}${b.ora_rilevamento_utc || ''}`;
-      return chiaveB.localeCompare(chiaveA);
+    if (dati.aggiornato_utc) {
+      const agg = new Date(dati.aggiornato_utc);
+      aggiornamento.textContent = `Ultimo controllo ${relativo(agg)} (${formatoData.format(agg)})`;
+    }
+
+    rilevamenti = (dati.incendi || [])
+      .map(item => ({ item, momento: momentoRilevamento(item) }))
+      .sort((a, b) => (b.momento || 0) - (a.momento || 0));
+
+    rilevamenti.forEach(r => {
+      const f = fascia(r.item.intensita_radiativa_mw);
+      const colore = css(f.colore);
+      r.marcatore = L.circleMarker([r.item.latitudine, r.item.longitudine], {
+        radius: f.raggio, color: '#ffffff', weight: 1, fillColor: colore, fillOpacity: 0.9,
+      }).bindPopup(`
+        <strong>${r.momento ? formatoData.format(r.momento) : 'Data non disponibile'}</strong><br>
+        Intensità ${f.nome}${r.item.intensita_radiativa_mw != null ? ` (${numero(r.item.intensita_radiativa_mw)} MW)` : ''}<br>
+        ${coordinate(r.item.latitudine, r.item.longitudine)}<br>
+        Satellite: ${r.item.satellite || 'n/d'}`)
+        .addTo(livelli.calore);
     });
 
-    const aggiornato = dati.aggiornato_utc ? new Date(dati.aggiornato_utc) : null;
-    const oraAggiornamento = aggiornato ? aggiornato.toLocaleString('it-IT', { dateStyle: 'medium', timeStyle: 'short' }) : '—';
-
-    if (incendi.length === 0) {
-      statoPallino.classList.remove('attivo');
-      statoTesto.textContent = `Nessun incendio attivo rilevato — aggiornato il ${oraAggiornamento}`;
-      contenitoreLista.innerHTML = '<div class="vuoto"><span class="pallino"></span> Nessun rilevamento nell\'area e nel periodo monitorati.</div>';
-    } else {
-      statoPallino.classList.add('attivo');
-      statoTesto.textContent = `${incendi.length} rilevamenti nelle ultime 24h — aggiornato il ${oraAggiornamento}`;
-
-      const righe = incendi.slice(0, 50).map(item => `
-        <div class="lista-riga">
-          <div class="coord"><span class="pallino-riga" style="background:${coloreIntensita(item.intensita_radiativa_mw)}"></span>${item.latitudine.toFixed(3)}, ${item.longitudine.toFixed(3)}</div>
-          <div class="ora">${formattaTimestamp(item.data_rilevamento, item.ora_rilevamento_utc)}</div>
-          <div class="frp">${item.intensita_radiativa_mw != null ? item.intensita_radiativa_mw.toFixed(1) + ' MW' : '—'}</div>
-          <div class="satellite">${item.satellite || '—'}</div>
-        </div>
-      `).join('');
-
-      contenitoreLista.innerHTML = `
-        <div class="lista">
-          <div class="lista-riga intestazione">
-            <div>Coordinate</div><div>Rilevato</div><div>Intensità</div><div>Sat.</div>
-          </div>
-          ${righe}
-        </div>
-        ${incendi.length > 50 ? `<p class="legenda-nota">Mostrati i 50 più recenti su ${incendi.length} totali — l'elenco completo è nel JSON grezzo.</p>` : ''}
-      `;
+    if (rilevamenti.length === 0) {
+      stato.dataset.tono = 'calmo';
+      statoTesto.textContent = 'Nessun punto di calore rilevato nelle ultime 24 ore';
+      contenitore.innerHTML = '<p class="messaggio">Nessun rilevamento nell\'area monitorata. Quando un satellite ne individuerà uno, comparirà qui e sulla mappa.</p>';
+      return;
     }
 
-    const mappa = L.map('mappa').setView([42.5, 12.5], 5);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '© OpenStreetMap',
-      maxZoom: 12,
-    }).addTo(mappa);
-    aggiungiLivelloRischio(mappa);
+    stato.dataset.tono = 'calore';
+    statoTesto.textContent = rilevamenti.length === 1
+      ? '1 punto di calore rilevato nelle ultime 24 ore'
+      : `${rilevamenti.length.toLocaleString('it-IT')} punti di calore rilevati nelle ultime 24 ore`;
 
-    if (incendi.length > 0) {
-      const gruppo = L.featureGroup();
-      incendi.forEach(item => {
-        L.circleMarker([item.latitudine, item.longitudine], {
-          radius: 5,
-          color: coloreIntensita(item.intensita_radiativa_mw),
-          fillColor: coloreIntensita(item.intensita_radiativa_mw),
-          fillOpacity: 0.85,
-          weight: 1,
-        })
-        .bindPopup(`<strong>${formattaTimestamp(item.data_rilevamento, item.ora_rilevamento_utc)}</strong><br>Intensità: ${item.intensita_radiativa_mw != null ? item.intensita_radiativa_mw.toFixed(1) + ' MW' : 'n/d'}<br>Satellite: ${item.satellite || 'n/d'}`)
-        .addTo(gruppo);
-      });
-      gruppo.addTo(mappa);
-      mappa.fitBounds(gruppo.getBounds().pad(0.3));
-    }
+    contenitore.innerHTML = '<ul class="elenco" id="lista-rilevamenti"></ul><button class="altri" id="mostra-altri" type="button" hidden></button>';
+    document.getElementById('mostra-altri').addEventListener('click', mostraAltri);
+    mostraAltri();
+
+    const gruppo = L.featureGroup(rilevamenti.map(r => r.marcatore));
+    mappa.fitBounds(gruppo.getBounds().pad(0.25), { maxZoom: 7 });
   }
 
-  inizializza();
+  carica();
 </script>
 
 </body>
