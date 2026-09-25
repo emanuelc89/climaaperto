@@ -216,6 +216,10 @@
       transparent: true,
       version: '1.1.1',
       opacity: 0.75,
+      // Il filtro davanti al WMS di EDO accetta solo parametri in MAIUSCOLO
+      // (SERVICE, LAYERS, BBOX...): con quelli minuscoli, default di Leaflet,
+      // risponde con un errore testuale che Chrome blocca (CORB).
+      uppercase: true,
       attribution: '© EU, Copernicus EMS — European Drought Observatory (CC BY 4.0)',
     });
 
