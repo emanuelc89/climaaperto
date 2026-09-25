@@ -148,6 +148,13 @@
     </p>
     <img src="https://maps.effis.emergency.copernicus.eu/effis?language=eng&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=mf010.fwi&amp;format=image/png&amp;STYLE=default" alt="Legenda ufficiale Fire Weather Index — Copernicus EFFIS" style="max-width:260px; border:1px solid var(--linea); background:#fff; padding:4px; display:block;">
     <p class="legenda-nota">Nota tecnica: EFFIS non permette di interrogare un punto preciso della mappa per ottenere un valore numerico (il livello non è configurato come interrogabile sul loro server) — per questo qui vedi la mappa ufficiale sovrapposta, non un valore aggiunto al JSON prodotto da questo progetto.</p>
+
+    <p class="section-label" style="margin-top:28px;">// LIVELLO UFFICIALE — SICCITÀ (COPERNICUS EDO)</p>
+    <p style="color:var(--testo-soft); font-size:14px; max-width:620px; margin:0 0 14px;">
+      Attivabile dallo stesso controllo sulla mappa: il Combined Drought Indicator (CDI) dell'European Drought Observatory, che combina precipitazioni, umidità del suolo e stato della vegetazione. Classi: <strong>Watch</strong> (precipitazioni scarse), <strong>Warning</strong> (anche il suolo è in deficit d'acqua), <strong>Alert</strong> (anche la vegetazione ne risente). Aggiornato ogni 10 giorni.
+    </p>
+    <img src="https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&amp;VERSION=1.1.1&amp;REQUEST=GetLegendGraphic&amp;LAYER=cdiad&amp;FORMAT=image/png" alt="Legenda ufficiale Combined Drought Indicator — Copernicus EDO" style="max-width:260px; border:1px solid var(--linea); background:#fff; padding:4px; display:block;" onerror="this.style.display='none'">
+    <p class="legenda-nota">Nota tecnica: il servizio WCS di EDO, che permetterebbe di estrarre i valori numerici per un punto, al momento risponde con un errore interno del loro server (verificato su tutte le varianti di richiesta). Per questo il dato è mostrato come mappa ufficiale sovrapposta. Dati © EU, Copernicus EMS, licenza CC BY 4.0.</p>
   </section>
 
   <section id="sezione-lista">
@@ -197,7 +204,25 @@
       time: oggiUTC,
       attribution: '© Copernicus EFFIS (JRC)',
     });
-    L.control.layers(null, { 'Rischio incendi oggi (EFFIS)': livelloFWI }, { collapsed: false }).addTo(mappaObj);
+    // Siccità: Combined Drought Indicator v4.1 dell'European Drought Observatory
+    // (Copernicus EMS/JRC). Livello "cdiad" = le tre classi principali
+    // (Watch / Warning / Alert). Senza parametro TIME il server restituisce
+    // l'ultima mappa disponibile (il CDI si aggiorna ogni 10 giorni).
+    // Il servizio WCS di EDO (che darebbe i valori numerici) al momento
+    // risponde con errore 500 lato server, per questo usiamo il WMS visivo.
+    const livelloCDI = L.tileLayer.wms('https://drought.emergency.copernicus.eu/api/wms', {
+      layers: 'cdiad',
+      format: 'image/png',
+      transparent: true,
+      version: '1.1.1',
+      opacity: 0.75,
+      attribution: '© EU, Copernicus EMS — European Drought Observatory (CC BY 4.0)',
+    });
+
+    L.control.layers(null, {
+      'Rischio incendi oggi (EFFIS)': livelloFWI,
+      'Siccità — indicatore CDI (EDO)': livelloCDI,
+    }, { collapsed: false }).addTo(mappaObj);
   }
 
   async function inizializza() {
