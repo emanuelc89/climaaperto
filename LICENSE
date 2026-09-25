@@ -1,5 +1,10 @@
 Copyright (c) 2026 Emanuel Ciuro
 
+Ambito: questa licenza si applica al CODICE del progetto (pagina web, script,
+workflow, Worker). I DATI pubblicati nella cartella data/ sono distribuiti
+separatamente con licenza Creative Commons Attribuzione 4.0 Internazionale
+(CC BY 4.0): vedi il file LICENSE-DATA.md.
+
 # PolyForm Strict License 1.0.0
 
 <https://polyformproject.org/licenses/strict/1.0.0>

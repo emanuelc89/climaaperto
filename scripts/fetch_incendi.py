@@ -109,6 +109,9 @@ def salva_json(incendi):
     output = {
         "fonte": f"NASA FIRMS ({SENSORE})",
         "fonte_url": "https://firms.modaps.eosdis.nasa.gov/",
+        "licenza": "CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)",
+        "attribuzione_obbligatoria": "Dati: ClimaAperto di Emanuel Ciuro (https://emanuelc89.github.io/climaaperto/), elaborazione di dati NASA FIRMS",
+        "disclaimer_fonte": "https://www.earthdata.nasa.gov/engage/open-data-services-software-policies/data-use-policy",
         "area_bbox": AREA_BBOX,
         "aggiornato_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "numero_rilevamenti": len(incendi),

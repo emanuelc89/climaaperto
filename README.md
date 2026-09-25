@@ -51,9 +51,17 @@ https://<tuo-utente>.github.io/<nome-repo>/data/incendi.json
 
 ## Licenza
 
-Il codice è distribuito secondo i termini della **PolyForm Strict License 1.0.0** (testo completo in `LICENSE`): chiunque può leggerlo e usarlo per scopi non commerciali, ma non può ridistribuirlo né modificarlo/crearne derivati. Non è una licenza open source in senso tecnico (l'OSI non la classifica come tale) — è codice sorgente pubblico a scopo di trasparenza, portfolio e riuso non commerciale.
+Il progetto ha due licenze distinte.
 
-**Importante — codice vs. dati:** questa licenza copre il *codice*. Chi si limita a interrogare l'endpoint pubblico via HTTP sta usando un dato, non il software, e non è vincolato da questa licenza. Se vuoi che chiunque (comprese aziende) possa liberamente riusare i *dati* esposti da `data/incendi.json`, valuta di dichiarare esplicitamente qui una licenza dati separata (es. Creative Commons CC-BY 4.0) — codice e dati sono due cose diverse, con licenze indipendenti.
+**Codice: PolyForm Strict License 1.0.0** (file `LICENSE`). Il codice è pubblico per trasparenza e consultazione, ma non può essere copiato, modificato né ridistribuito. Non è una licenza open source in senso tecnico (l'OSI non la classifica come tale).
+
+**Dati: Creative Commons Attribuzione 4.0 (CC BY 4.0)** (file `LICENSE-DATA.md`). I dati in `data/` possono essere riusati liberamente, anche da giornali, siti e ricercatori, **solo citando la fonte** con questa formula:
+
+> Dati: ClimaAperto di Emanuel Ciuro (https://emanuelc89.github.io/climaaperto/), elaborazione di dati NASA FIRMS
+
+Licenza e formula di citazione sono riportate anche dentro ogni file JSON (campi `licenza` e `attribuzione_obbligatoria`), così accompagnano i dati ovunque vengano scaricati.
+
+Citare, linkare o scrivere di ClimaAperto è sempre libero.
 
 ## Roadmap
 
