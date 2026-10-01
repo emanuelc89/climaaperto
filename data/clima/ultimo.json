@@ -1,0 +1,312 @@
+{
+ "giorno": "2026-09-30",
+ "generato_utc": "2026-10-01T09:53:05+00:00",
+ "completo": true,
+ "metodo": "media delle analisi ECMWF (IFS, passo 0) delle ore 00/06/12/18 UTC, confrontata con il normale 1991-2020 da ERA5 calcolato allo stesso modo",
+ "fonte_presente": "ECMWF Open Data, analisi IFS, licenza CC BY 4.0",
+ "fonte_normale": "ERA5, Copernicus Climate Change Service (C3S), licenza CC BY 4.0",
+ "licenza": "CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)",
+ "attribuzione_obbligatoria": "Dati: ClimaAperto di Emanuel Ciuro (https://emanuelc89.github.io/climaaperto/), elaborazione di analisi ECMWF Open Data e di dati ERA5 Copernicus C3S (CC BY 4.0)",
+ "citta": [
+  {
+   "slug": "roma",
+   "nome": "Roma",
+   "punto_griglia": {
+    "lat": 42.0,
+    "lon": 12.5
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 17.28,
+    "06": 16.08,
+    "12": 26.62,
+    "18": 21.46
+   },
+   "normale": 18.72,
+   "media_giornaliera": 20.36,
+   "anomalia": 1.64,
+   "classe": "nella_norma",
+   "frase": "Il 30 settembre nell'area di Roma la temperatura media è stata di 20 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "milano",
+   "nome": "Milano",
+   "punto_griglia": {
+    "lat": 45.25,
+    "lon": 9.25
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 17.34,
+    "06": 15.17,
+    "12": 25.62,
+    "18": 21.11
+   },
+   "normale": 17.42,
+   "media_giornaliera": 19.81,
+   "anomalia": 2.39,
+   "classe": "caldo",
+   "frase": "Il 30 settembre nell'area di Milano la temperatura media è stata di 20 °C, circa 2 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020)."
+  },
+  {
+   "slug": "napoli",
+   "nome": "Napoli",
+   "punto_griglia": {
+    "lat": 41.0,
+    "lon": 14.5
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 16.4,
+    "06": 15.86,
+    "12": 26.9,
+    "18": 20.4
+   },
+   "normale": 18.17,
+   "media_giornaliera": 19.89,
+   "anomalia": 1.72,
+   "classe": "nella_norma",
+   "frase": "Il 30 settembre nell'area di Napoli la temperatura media è stata di 20 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "torino",
+   "nome": "Torino",
+   "punto_griglia": {
+    "lat": 45.0,
+    "lon": 7.75
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 17.56,
+    "06": 15.96,
+    "12": 24.9,
+    "18": 20.52
+   },
+   "normale": 15.97,
+   "media_giornaliera": 19.73,
+   "anomalia": 3.76,
+   "classe": "caldo",
+   "frase": "Il 30 settembre nell'area di Torino la temperatura media è stata di 20 °C, circa 4 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 5% dei giorni più caldi di questo periodo negli ultimi 30 anni."
+  },
+  {
+   "slug": "bologna",
+   "nome": "Bologna",
+   "punto_griglia": {
+    "lat": 44.5,
+    "lon": 11.5
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 15.24,
+    "06": 14.8,
+    "12": 25.0,
+    "18": 19.86
+   },
+   "normale": 17.96,
+   "media_giornaliera": 18.73,
+   "anomalia": 0.77,
+   "classe": "nella_norma",
+   "frase": "Il 30 settembre nell'area di Bologna la temperatura media è stata di 19 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "firenze",
+   "nome": "Firenze",
+   "punto_griglia": {
+    "lat": 43.75,
+    "lon": 11.25
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 14.28,
+    "06": 13.14,
+    "12": 25.94,
+    "18": 21.11
+   },
+   "normale": 16.62,
+   "media_giornaliera": 18.62,
+   "anomalia": 2.0,
+   "classe": "nella_norma",
+   "frase": "Il 30 settembre nell'area di Firenze la temperatura media è stata di 19 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "bari",
+   "nome": "Bari",
+   "punto_griglia": {
+    "lat": 41.0,
+    "lon": 16.75
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 15.15,
+    "06": 16.58,
+    "12": 24.28,
+    "18": 18.65
+   },
+   "normale": 19.19,
+   "media_giornaliera": 18.66,
+   "anomalia": -0.53,
+   "classe": "nella_norma",
+   "frase": "Il 30 settembre nell'area di Bari la temperatura media è stata di 19 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "catania",
+   "nome": "Catania",
+   "punto_griglia": {
+    "lat": 37.5,
+    "lon": 15.0
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 17.96,
+    "06": 18.61,
+    "12": 25.5,
+    "18": 20.74
+   },
+   "normale": 21.08,
+   "media_giornaliera": 20.7,
+   "anomalia": -0.38,
+   "classe": "nella_norma",
+   "frase": "Il 30 settembre nell'area di Catania la temperatura media è stata di 21 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "verona",
+   "nome": "Verona",
+   "punto_griglia": {
+    "lat": 45.25,
+    "lon": 11.0
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 15.71,
+    "06": 14.99,
+    "12": 24.97,
+    "18": 20.68
+   },
+   "normale": 17.65,
+   "media_giornaliera": 19.09,
+   "anomalia": 1.44,
+   "classe": "nella_norma",
+   "frase": "Il 30 settembre nell'area di Verona la temperatura media è stata di 19 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "venezia",
+   "nome": "Venezia",
+   "punto_griglia": {
+    "lat": 45.5,
+    "lon": 12.25
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 17.4,
+    "06": 15.58,
+    "12": 25.19,
+    "18": 20.86
+   },
+   "normale": 18.04,
+   "media_giornaliera": 19.76,
+   "anomalia": 1.72,
+   "classe": "nella_norma",
+   "frase": "Il 30 settembre nell'area di Venezia la temperatura media è stata di 20 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "padova",
+   "nome": "Padova",
+   "punto_griglia": {
+    "lat": 45.5,
+    "lon": 11.75
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 14.46,
+    "06": 13.96,
+    "12": 24.0,
+    "18": 19.15
+   },
+   "normale": 17.28,
+   "media_giornaliera": 17.89,
+   "anomalia": 0.61,
+   "classe": "nella_norma",
+   "frase": "Il 30 settembre nell'area di Padova la temperatura media è stata di 18 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "cagliari",
+   "nome": "Cagliari",
+   "punto_griglia": {
+    "lat": 39.25,
+    "lon": 9.0
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 21.78,
+    "06": 22.02,
+    "12": 27.0,
+    "18": 24.24
+   },
+   "normale": 20.3,
+   "media_giornaliera": 23.76,
+   "anomalia": 3.46,
+   "classe": "caldo",
+   "frase": "Il 30 settembre nell'area di Cagliari la temperatura media è stata di 24 °C, circa 3 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 5% dei giorni più caldi di questo periodo negli ultimi 30 anni."
+  }
+ ]
+}
