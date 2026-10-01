@@ -1,0 +1,161 @@
+{
+ "_nota": "Elenco delle citta' della funzione 'temperatura rispetto al normale'. lat/lon sono il punto di griglia ERA5/ECMWF (0,25 gradi) scelto sulla terraferma. Escluse per ora Genova, Trieste, Messina e Palermo: i punti di griglia vicini cadono in mare o in montagna.",
+ "citta": {
+  "roma": {
+   "nome": "Roma",
+   "lat": 42.0,
+   "lon": 12.5,
+   "centro_citta": {
+    "lat": 41.89,
+    "lon": 12.49
+   },
+   "distanza_dal_centro_km": 12,
+   "escursione_estiva_c": 11.2,
+   "punto_di_terra": true,
+   "mostra_assoluto": true
+  },
+  "milano": {
+   "nome": "Milano",
+   "lat": 45.25,
+   "lon": 9.25,
+   "centro_citta": {
+    "lat": 45.46,
+    "lon": 9.19
+   },
+   "distanza_dal_centro_km": 24,
+   "escursione_estiva_c": 10.2,
+   "punto_di_terra": true,
+   "mostra_assoluto": true
+  },
+  "napoli": {
+   "nome": "Napoli",
+   "lat": 41.0,
+   "lon": 14.5,
+   "centro_citta": {
+    "lat": 40.85,
+    "lon": 14.27
+   },
+   "distanza_dal_centro_km": 25,
+   "escursione_estiva_c": 9.9,
+   "punto_di_terra": true,
+   "mostra_assoluto": true
+  },
+  "torino": {
+   "nome": "Torino",
+   "lat": 45.0,
+   "lon": 7.75,
+   "centro_citta": {
+    "lat": 45.07,
+    "lon": 7.69
+   },
+   "distanza_dal_centro_km": 9,
+   "escursione_estiva_c": 9.7,
+   "punto_di_terra": true,
+   "mostra_assoluto": true
+  },
+  "bologna": {
+   "nome": "Bologna",
+   "lat": 44.5,
+   "lon": 11.5,
+   "centro_citta": {
+    "lat": 44.49,
+    "lon": 11.34
+   },
+   "distanza_dal_centro_km": 13,
+   "escursione_estiva_c": 10.9,
+   "punto_di_terra": true,
+   "mostra_assoluto": true
+  },
+  "firenze": {
+   "nome": "Firenze",
+   "lat": 43.75,
+   "lon": 11.25,
+   "centro_citta": {
+    "lat": 43.77,
+    "lon": 11.25
+   },
+   "distanza_dal_centro_km": 2,
+   "escursione_estiva_c": 10.8,
+   "punto_di_terra": true,
+   "mostra_assoluto": true
+  },
+  "bari": {
+   "nome": "Bari",
+   "lat": 41.0,
+   "lon": 16.75,
+   "centro_citta": {
+    "lat": 41.12,
+    "lon": 16.87
+   },
+   "distanza_dal_centro_km": 17,
+   "escursione_estiva_c": 9.1,
+   "punto_di_terra": true,
+   "mostra_assoluto": true
+  },
+  "catania": {
+   "nome": "Catania",
+   "lat": 37.5,
+   "lon": 15.0,
+   "centro_citta": {
+    "lat": 37.5,
+    "lon": 15.09
+   },
+   "distanza_dal_centro_km": 8,
+   "escursione_estiva_c": 9.6,
+   "punto_di_terra": true,
+   "mostra_assoluto": true
+  },
+  "verona": {
+   "nome": "Verona",
+   "lat": 45.25,
+   "lon": 11.0,
+   "centro_citta": {
+    "lat": 45.44,
+    "lon": 10.99
+   },
+   "distanza_dal_centro_km": 21,
+   "escursione_estiva_c": 9.5,
+   "punto_di_terra": true,
+   "mostra_assoluto": true
+  },
+  "venezia": {
+   "nome": "Venezia",
+   "lat": 45.5,
+   "lon": 12.25,
+   "centro_citta": {
+    "lat": 45.44,
+    "lon": 12.34
+   },
+   "distanza_dal_centro_km": 10,
+   "escursione_estiva_c": 5.4,
+   "punto_di_terra": true,
+   "mostra_assoluto": true
+  },
+  "padova": {
+   "nome": "Padova",
+   "lat": 45.5,
+   "lon": 11.75,
+   "centro_citta": {
+    "lat": 45.41,
+    "lon": 11.88
+   },
+   "distanza_dal_centro_km": 14,
+   "escursione_estiva_c": 10.3,
+   "punto_di_terra": true,
+   "mostra_assoluto": true
+  },
+  "cagliari": {
+   "nome": "Cagliari",
+   "lat": 39.25,
+   "lon": 9.0,
+   "centro_citta": {
+    "lat": 39.22,
+    "lon": 9.12
+   },
+   "distanza_dal_centro_km": 11,
+   "escursione_estiva_c": 9.1,
+   "punto_di_terra": true,
+   "mostra_assoluto": true
+  }
+ }
+}
