@@ -19,6 +19,10 @@ jobs:
         run: pip install ecmwf-opendata eccodes
 
       - name: Elabora la giornata di ieri
+        env:
+          # Dai server di GitHub la copia AWS risponde "503 Slow Down": si parte da Google,
+          # e AWS, Azure e il server ECMWF restano come riserva.
+          SORGENTE_ECMWF: google
         run: python scripts/clima_giornata.py
 
       - name: Salva i dati aggiornati nel repository
