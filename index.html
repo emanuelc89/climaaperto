@@ -23,6 +23,7 @@
     --linea:#D3D8DB;
     --brace:#C8401E;
     --salvia:#2F7A6A;
+    --gelo:#3B6EA5;
     --i1:#F2C14E;
     --i2:#E8872F;
     --i3:#C8401E;
@@ -39,6 +40,7 @@
       --linea:#2E373D;
       --brace:#F0643C;
       --salvia:#5FB8A3;
+      --gelo:#7FB0E8;
     }
   }
 
@@ -200,6 +202,28 @@
   }
   .messaggio.errore{border-left-color:var(--brace);}
 
+  /* Temperatura vs normale */
+  .clima-griglia{
+    display:grid; grid-template-columns:repeat(auto-fill, minmax(230px, 1fr)); gap:12px;
+    list-style:none; margin:0; padding:0;
+  }
+  .clima-scheda{
+    background:var(--carta); border-radius:12px; padding:16px 18px;
+    border-left:5px solid var(--linea);
+  }
+  .clima-scheda[data-classe="caldo"], .clima-scheda[data-classe="molto_caldo"]{border-left-color:var(--brace);}
+  .clima-scheda[data-classe="freddo"], .clima-scheda[data-classe="molto_freddo"]{border-left-color:var(--gelo);}
+  .clima-scheda[data-classe="nella_norma"]{border-left-color:var(--salvia);}
+  .clima-scheda[data-classe="eccezionale"]{border-left-color:var(--i4);}
+  .clima-scheda h3{margin:0 0 4px; font-size:17px;}
+  .clima-valore{
+    font-family:var(--display); font-weight:700; font-size:26px; line-height:1.1; margin:0 0 8px;
+  }
+  .clima-scheda[data-classe="caldo"] .clima-valore, .clima-scheda[data-classe="molto_caldo"] .clima-valore{color:var(--brace);}
+  .clima-scheda[data-classe="freddo"] .clima-valore, .clima-scheda[data-classe="molto_freddo"] .clima-valore{color:var(--gelo);}
+  .clima-scheda p{margin:0; font-size:14px; color:var(--grafite-soft);}
+  .clima-nota{margin:14px 0 0; font-size:13.5px; color:var(--grafite-soft); max-width:70ch;}
+
   /* Domande */
   .domande{border-top:1px solid var(--linea);}
   .domande details{border-bottom:1px solid var(--linea);}
@@ -323,6 +347,13 @@
       <div id="contenitore-elenco"></div>
     </section>
 
+    <section class="sezione" aria-labelledby="titolo-clima">
+      <h2 id="titolo-clima">Ieri, più caldo o più freddo del normale?</h2>
+      <p class="sottotitolo" id="clima-sottotitolo">La temperatura media di ieri in 12 città, confrontata con il normale 1991-2020 dello stesso periodo.</p>
+      <div id="contenitore-clima"></div>
+      <p class="clima-nota">Il valore è la media di un'area di circa 28 km attorno alla città, non quella di una stazione in centro. Per questo contano gli scostamenti dal normale più dei gradi assoluti. Sotto i 2 gradi di scostamento, la giornata è "nella norma".</p>
+    </section>
+
     <section class="sezione" aria-labelledby="titolo-domande">
       <h2 id="titolo-domande">Come leggere questi dati</h2>
       <div class="domande colonna">
@@ -357,9 +388,18 @@
           <div class="risposta">
             <p>Sì, citando la fonte. I punti di calore sono disponibili in JSON a questo indirizzo, sempre aggiornato:</p>
             <p><code id="url-json">https://emanuelc89.github.io/climaaperto/data/incendi.json</code></p>
+            <p>La temperatura rispetto al normale, con una frase pronta per città, è qui:</p>
+            <p><code>https://emanuelc89.github.io/climaaperto/data/clima/ultimo.json</code></p>
             <p>I dati sono rilasciati con licenza <a href="https://creativecommons.org/licenses/by/4.0/deed.it" target="_blank" rel="noopener">CC BY 4.0</a>: puoi usarli in articoli, siti e ricerche, a condizione di riportare questa citazione:</p>
             <p><code>Dati: ClimaAperto di Emanuel Ciuro (https://emanuelc89.github.io/climaaperto/), elaborazione di dati NASA FIRMS</code></p>
             <p>Per il rischio incendi e la siccità cita invece la fonte originale: © Copernicus EMS, Commissione europea. Il codice della pagina non è riutilizzabile: <a href="https://github.com/emanuelc89/climaaperto/blob/main/LICENSE-DATA.md" target="_blank" rel="noopener">tutti i dettagli</a>.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Da dove viene "più caldo del normale"?</summary>
+          <div class="risposta">
+            <p>Il presente viene dalle analisi del centro europeo ECMWF (il punto di partenza delle previsioni, alle 00, 06, 12 e 18 UTC), il "normale" dai dati ERA5 di Copernicus sul periodo 1991-2020, calcolato allo stesso modo. Abbiamo verificato il metodo confrontandolo con le stazioni ufficiali di tre città toscane: le anomalie coincidono nel 90% dei casi.</p>
+            <p>Mancano per ora Genova, Trieste, Messina e Palermo: strette tra mare e monti, la griglia di 28 km non le rappresenta bene. Non è una previsione: descrive il giorno appena concluso.</p>
           </div>
         </details>
         <details>
@@ -373,7 +413,7 @@
   </main>
 
   <footer>
-    <p>Fonti: <a href="https://firms.modaps.eosdis.nasa.gov/" target="_blank" rel="noopener">NASA FIRMS</a>, <a href="https://forest-fire.emergency.copernicus.eu/" target="_blank" rel="noopener">Copernicus EFFIS</a>, <a href="https://drought.emergency.copernicus.eu/" target="_blank" rel="noopener">Copernicus EDO</a> (CC BY 4.0). Mappa di base: © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">contributori OpenStreetMap</a>.</p>
+    <p>Fonti: <a href="https://firms.modaps.eosdis.nasa.gov/" target="_blank" rel="noopener">NASA FIRMS</a>, <a href="https://forest-fire.emergency.copernicus.eu/" target="_blank" rel="noopener">Copernicus EFFIS</a>, <a href="https://drought.emergency.copernicus.eu/" target="_blank" rel="noopener">Copernicus EDO</a>, <a href="https://www.ecmwf.int/en/forecasts/datasets/open-data" target="_blank" rel="noopener">ECMWF Open Data</a> e <a href="https://cds.climate.copernicus.eu/" target="_blank" rel="noopener">ERA5 Copernicus C3S</a> (CC BY 4.0). Mappa di base: © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">contributori OpenStreetMap</a>.</p>
     <p>Un progetto di Emanuel Ciuro. Dati riutilizzabili con licenza <a href="https://github.com/emanuelc89/climaaperto/blob/main/LICENSE-DATA.md" target="_blank" rel="noopener">CC BY 4.0</a>, citando ClimaAperto e NASA FIRMS. Codice protetto dalla <a href="https://github.com/emanuelc89/climaaperto/blob/main/LICENSE" target="_blank" rel="noopener">PolyForm Strict License 1.0.0</a>: non copiabile né modificabile.</p>
   </footer>
 
@@ -618,7 +658,39 @@
 
   }
 
+  // --- Temperatura rispetto al normale -------------------------------------
+  async function caricaClima() {
+    const contenitore = document.getElementById('contenitore-clima');
+    const sottotitolo = document.getElementById('clima-sottotitolo');
+    let dati;
+    try {
+      const risposta = await fetch('./data/clima/ultimo.json', { cache: 'no-store' });
+      if (!risposta.ok) throw new Error(`HTTP ${risposta.status}`);
+      dati = await risposta.json();
+    } catch (err) {
+      contenitore.innerHTML = '<p class="messaggio">Il confronto con il normale non è ancora disponibile. Viene aggiornato ogni mattina.</p>';
+      return;
+    }
+    const giorno = new Date(dati.giorno + 'T12:00:00Z');
+    sottotitolo.textContent = `${giorno.toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long' })}: la temperatura media in ${dati.citta.length} città, confrontata con il normale 1991-2020 dello stesso periodo.`;
+
+    const etichetta = v => {
+      if (v.classe === 'nella_norma') return 'nella norma';
+      if (v.anomalia == null) return 'dato incompleto';
+      const g = Math.round(Math.abs(v.anomalia));
+      return `${v.anomalia > 0 ? '+' : '−'}${g} °C`;
+    };
+    const ordinate = dati.citta.slice().sort((a, b) => Math.abs(b.anomalia ?? 0) - Math.abs(a.anomalia ?? 0));
+    contenitore.innerHTML = `<ul class="clima-griglia">${ordinate.map(v => `
+      <li class="clima-scheda" data-classe="${v.classe}">
+        <h3>${v.nome}</h3>
+        <p class="clima-valore">${etichetta(v)}</p>
+        <p>${v.frase}</p>
+      </li>`).join('')}</ul>`;
+  }
+
   carica();
+  caricaClima();
 </script>
 
 </body>

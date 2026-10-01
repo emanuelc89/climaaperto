@@ -57,7 +57,7 @@ Il progetto ha due licenze distinte.
 
 **Dati: Creative Commons Attribuzione 4.0 (CC BY 4.0)** (file `LICENSE-DATA.md`). I dati in `data/` possono essere riusati liberamente, anche da giornali, siti e ricercatori, **solo citando la fonte** con questa formula:
 
-> Dati: ClimaAperto di Emanuel Ciuro (https://emanuelc89.github.io/climaaperto/), elaborazione di dati NASA FIRMS
+> Dati: ClimaAperto di Emanuel Ciuro (https://emanuelc89.github.io/climaaperto/), elaborazione di dati NASA FIRMS, ECMWF Open Data e ERA5 Copernicus C3S
 
 Licenza e formula di citazione sono riportate anche dentro ogni file JSON (campi `licenza` e `attribuzione_obbligatoria`), così accompagnano i dati ovunque vengano scaricati.
 
@@ -69,4 +69,7 @@ Citare, linkare o scrivere di ClimaAperto è sempre libero.
 - [ ] Monitorare la dimensione del repository: ogni aggiornamento del JSON resta nella cronologia Git. Se si avvicina a 1 GB, passare alla pubblicazione con `actions/deploy-pages` senza salvare il JSON nei commit
 - [x] v2: rischio incendi ufficiale (EFFIS) — mostrato come livello mappa in tempo reale (WMS), non come dato nel JSON: il layer `mf010.fwi` di EFFIS non è configurato come interrogabile puntualmente sul loro server (`QUERY_LAYERS` restituisce `LayerNotDefined`), quindi non è possibile estrarne un valore numerico via GetFeatureInfo. Verificato anche il servizio WFS: non risulta attivo su questo endpoint.
 - [x] v3: indicatore di siccità (EDO, Combined Drought Indicator v4.1, livello `cdiad`) — mostrato come livello mappa (WMS). Il servizio WCS di EDO, che darebbe i valori numerici, è documentato ma al momento restituisce errore 500 lato server su ogni richiesta `GetCoverage` (anche senza parametri opzionali) e `msLoadMap(): Unable to access file` su `GetCapabilities`. Da ritestare periodicamente: se torna attivo, si può aggiungere l'estrazione dei valori nel JSON.
+- [x] v4: temperatura di ieri rispetto al normale 1991-2020 in 12 città italiane (`data/clima/ultimo.json`, `scripts/clima_giornata.py`). Presente dalle analisi ECMWF Open Data (passo 0, ore 00/06/12/18 UTC), normale da ERA5 calcolato allo stesso modo (`clima/normali/`). Metodo validato contro le stazioni LaMMA di Firenze, Livorno e Arezzo (correlazione delle anomalie mensili 0,92-0,94) e coerenza ECMWF/ERA5 verificata su 62 analisi (scarto medio entro ±0,5 °C). Pioggia esclusa (correlazione 0,74-0,83, insufficiente). Escluse Genova, Trieste, Messina e Palermo: i punti di griglia vicini cadono in mare o in montagna.
 - [ ] Pagina di documentazione stile "API docs" per sviluppatori terzi
+- [ ] Riquadro incorporabile per giornali e comuni (temperatura vs normale)
+- [ ] Piene fluviali previste (GloFAS, Copernicus EMS): da valutare accesso e licenza

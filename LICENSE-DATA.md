@@ -8,11 +8,14 @@ Puoi copiarli, ridistribuirli e riusarli, anche in articoli, siti, app e ricerch
 
 Usa questa formula, o una equivalente che contenga gli stessi elementi:
 
-> Dati: ClimaAperto di Emanuel Ciuro (https://emanuelc89.github.io/climaaperto/), elaborazione di dati NASA FIRMS
+> Dati: ClimaAperto di Emanuel Ciuro (https://emanuelc89.github.io/climaaperto/), elaborazione di dati NASA FIRMS, ECMWF Open Data e ERA5 Copernicus C3S
 
 Deve comparire in modo visibile vicino ai dati o nella sezione fonti del tuo lavoro, con il link a ClimaAperto. Indica anche se hai modificato i dati.
 
 ## Fonte originale
+
+I dati sulla temperatura rispetto al normale (`data/clima/`) derivano dalle analisi ECMWF Open Data (licenza CC BY 4.0, da citare come "ECMWF") e dai dati ERA5 del Copernicus Climate Change Service (C3S), licenza CC BY 4.0. Chi li riusa deve citare, oltre a ClimaAperto, ECMWF e Copernicus C3S, come già fatto nella formula sopra.
+
 
 I punti di calore derivano da NASA FIRMS (Fire Information for Resource Management System), sensore VIIRS. NASA richiede che chi ridistribuisce i dati FIRMS ne citi la provenienza e riporti o colleghi il relativo disclaimer: https://www.earthdata.nasa.gov/engage/open-data-services-software-policies/data-use-policy
 

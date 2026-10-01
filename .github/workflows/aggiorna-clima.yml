@@ -1,0 +1,31 @@
+name: Aggiorna clima
+
+on:
+  workflow_dispatch: {}      # avviato dal Cloudflare Worker (infra/trigger-worker.js) due volte al giorno
+
+jobs:
+  aggiorna:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del repository
+        uses: actions/checkout@v4
+
+      - name: Imposta Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Installa le dipendenze
+        run: pip install ecmwf-opendata eccodes
+
+      - name: Elabora la giornata di ieri
+        run: python scripts/clima_giornata.py
+
+      - name: Salva i dati aggiornati nel repository
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/clima
+          git diff --staged --quiet || git commit -m "Aggiornamento automatico temperatura vs normale"
+          git pull --rebase origin main
+          git push
