@@ -672,7 +672,20 @@
       return;
     }
     const giorno = new Date(dati.giorno + 'T12:00:00Z');
-    sottotitolo.textContent = `${giorno.toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long' })}: la temperatura media in ${dati.citta.length} città, confrontata con il normale 1991-2020 dello stesso periodo.`;
+    const dataLunga = giorno.toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long' });
+    sottotitolo.textContent = `${dataLunga}: la temperatura media in ${dati.citta.length} città, confrontata con il normale 1991-2020 dello stesso periodo.`;
+
+    // Il titolo dice "Ieri" solo se il dato e' davvero quello di ieri (data italiana).
+    // Se e' piu' vecchio, il titolo diventa neutro; da 2 giorni di ritardo in su compare un avviso.
+    const ieriItalia = new Date(Date.now() - 86400000).toLocaleDateString('sv-SE', { timeZone: 'Europe/Rome' });
+    const giorniDiRitardo = Math.round((new Date(ieriItalia + 'T12:00:00Z') - giorno) / 86400000);
+    if (giorniDiRitardo > 0) {
+      document.getElementById('titolo-clima').textContent = 'Più caldo o più freddo del normale?';
+    }
+    if (giorniDiRitardo >= 2) {
+      sottotitolo.insertAdjacentHTML('afterend',
+        `<p class="clima-nota"><strong>Aggiornamento in ritardo.</strong> Il dato più recente disponibile è quello di ${dataLunga}.</p>`);
+    }
 
     const etichetta = v => {
       if (v.classe === 'nella_norma') return 'nella norma';
