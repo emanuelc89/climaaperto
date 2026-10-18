@@ -1,0 +1,312 @@
+{
+ "giorno": "2026-10-17",
+ "generato_utc": "2026-10-18T07:21:21+00:00",
+ "completo": true,
+ "metodo": "media delle analisi ECMWF (IFS, passo 0) delle ore 00/06/12/18 UTC, confrontata con il normale 1991-2020 da ERA5 calcolato allo stesso modo",
+ "fonte_presente": "ECMWF Open Data, analisi IFS, licenza CC BY 4.0",
+ "fonte_normale": "ERA5, Copernicus Climate Change Service (C3S), licenza CC BY 4.0",
+ "licenza": "CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)",
+ "attribuzione_obbligatoria": "Dati: ClimaAperto di Emanuel Ciuro (https://emanuelc89.github.io/climaaperto/), elaborazione di analisi ECMWF Open Data e di dati ERA5 Copernicus C3S (CC BY 4.0)",
+ "citta": [
+  {
+   "slug": "roma",
+   "nome": "Roma",
+   "punto_griglia": {
+    "lat": 42.0,
+    "lon": 12.5
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 14.08,
+    "06": 12.75,
+    "12": 22.66,
+    "18": 18.2
+   },
+   "normale": 16.48,
+   "media_giornaliera": 16.92,
+   "anomalia": 0.44,
+   "classe": "nella_norma",
+   "frase": "Il 17 ottobre nell'area di Roma la temperatura media è stata di 17 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "milano",
+   "nome": "Milano",
+   "punto_griglia": {
+    "lat": 45.25,
+    "lon": 9.25
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 15.61,
+    "06": 11.56,
+    "12": 21.31,
+    "18": 17.17
+   },
+   "normale": 14.25,
+   "media_giornaliera": 16.41,
+   "anomalia": 2.16,
+   "classe": "caldo",
+   "frase": "Il 17 ottobre nell'area di Milano la temperatura media è stata di 16 °C, circa 2 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020)."
+  },
+  {
+   "slug": "napoli",
+   "nome": "Napoli",
+   "punto_griglia": {
+    "lat": 41.0,
+    "lon": 14.5
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 14.58,
+    "06": 12.06,
+    "12": 21.97,
+    "18": 16.07
+   },
+   "normale": 16.0,
+   "media_giornaliera": 16.17,
+   "anomalia": 0.17,
+   "classe": "nella_norma",
+   "frase": "Il 17 ottobre nell'area di Napoli la temperatura media è stata di 16 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "torino",
+   "nome": "Torino",
+   "punto_griglia": {
+    "lat": 45.0,
+    "lon": 7.75
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 12.36,
+    "06": 11.44,
+    "12": 21.41,
+    "18": 16.82
+   },
+   "normale": 12.9,
+   "media_giornaliera": 15.51,
+   "anomalia": 2.61,
+   "classe": "caldo",
+   "frase": "Il 17 ottobre nell'area di Torino la temperatura media è stata di 16 °C, circa 3 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020)."
+  },
+  {
+   "slug": "bologna",
+   "nome": "Bologna",
+   "punto_griglia": {
+    "lat": 44.5,
+    "lon": 11.5
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 12.99,
+    "06": 11.16,
+    "12": 20.72,
+    "18": 16.13
+   },
+   "normale": 14.96,
+   "media_giornaliera": 15.25,
+   "anomalia": 0.29,
+   "classe": "nella_norma",
+   "frase": "Il 17 ottobre nell'area di Bologna la temperatura media è stata di 15 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "firenze",
+   "nome": "Firenze",
+   "punto_griglia": {
+    "lat": 43.75,
+    "lon": 11.25
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 12.39,
+    "06": 11.35,
+    "12": 22.31,
+    "18": 17.76
+   },
+   "normale": 14.19,
+   "media_giornaliera": 15.95,
+   "anomalia": 1.76,
+   "classe": "nella_norma",
+   "frase": "Il 17 ottobre nell'area di Firenze la temperatura media è stata di 16 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "bari",
+   "nome": "Bari",
+   "punto_griglia": {
+    "lat": 41.0,
+    "lon": 16.75
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 12.45,
+    "06": 11.1,
+    "12": 19.78,
+    "18": 13.29
+   },
+   "normale": 16.92,
+   "media_giornaliera": 14.16,
+   "anomalia": -2.76,
+   "classe": "freddo",
+   "frase": "Il 17 ottobre nell'area di Bari la temperatura media è stata di 14 °C, circa 3 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
+  },
+  {
+   "slug": "catania",
+   "nome": "Catania",
+   "punto_griglia": {
+    "lat": 37.5,
+    "lon": 15.0
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 16.45,
+    "06": 16.81,
+    "12": 22.66,
+    "18": 19.23
+   },
+   "normale": 18.96,
+   "media_giornaliera": 18.79,
+   "anomalia": -0.17,
+   "classe": "nella_norma",
+   "frase": "Il 17 ottobre nell'area di Catania la temperatura media è stata di 19 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "verona",
+   "nome": "Verona",
+   "punto_griglia": {
+    "lat": 45.25,
+    "lon": 11.0
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 13.58,
+    "06": 12.13,
+    "12": 20.91,
+    "18": 17.35
+   },
+   "normale": 14.57,
+   "media_giornaliera": 15.99,
+   "anomalia": 1.42,
+   "classe": "nella_norma",
+   "frase": "Il 17 ottobre nell'area di Verona la temperatura media è stata di 16 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "venezia",
+   "nome": "Venezia",
+   "punto_griglia": {
+    "lat": 45.5,
+    "lon": 12.25
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 12.8,
+    "06": 12.03,
+    "12": 20.85,
+    "18": 17.32
+   },
+   "normale": 15.39,
+   "media_giornaliera": 15.75,
+   "anomalia": 0.36,
+   "classe": "nella_norma",
+   "frase": "Il 17 ottobre nell'area di Venezia la temperatura media è stata di 16 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "padova",
+   "nome": "Padova",
+   "punto_griglia": {
+    "lat": 45.5,
+    "lon": 11.75
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 12.86,
+    "06": 11.31,
+    "12": 20.6,
+    "18": 16.07
+   },
+   "normale": 14.25,
+   "media_giornaliera": 15.21,
+   "anomalia": 0.96,
+   "classe": "nella_norma",
+   "frase": "Il 17 ottobre nell'area di Padova la temperatura media è stata di 15 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "cagliari",
+   "nome": "Cagliari",
+   "punto_griglia": {
+    "lat": 39.25,
+    "lon": 9.0
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 17.05,
+    "06": 15.6,
+    "12": 25.41,
+    "18": 22.01
+   },
+   "normale": 18.46,
+   "media_giornaliera": 20.02,
+   "anomalia": 1.56,
+   "classe": "nella_norma",
+   "frase": "Il 17 ottobre nell'area di Cagliari la temperatura media è stata di 20 °C, nella norma per questo periodo dell'anno."
+  }
+ ]
+}
