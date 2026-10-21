@@ -1,0 +1,312 @@
+{
+ "giorno": "2026-10-20",
+ "generato_utc": "2026-10-21T07:20:56+00:00",
+ "completo": true,
+ "metodo": "media delle analisi ECMWF (IFS, passo 0) delle ore 00/06/12/18 UTC, confrontata con il normale 1991-2020 da ERA5 calcolato allo stesso modo",
+ "fonte_presente": "ECMWF Open Data, analisi IFS, licenza CC BY 4.0",
+ "fonte_normale": "ERA5, Copernicus Climate Change Service (C3S), licenza CC BY 4.0",
+ "licenza": "CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)",
+ "attribuzione_obbligatoria": "Dati: ClimaAperto di Emanuel Ciuro (https://emanuelc89.github.io/climaaperto/), elaborazione di analisi ECMWF Open Data e di dati ERA5 Copernicus C3S (CC BY 4.0)",
+ "citta": [
+  {
+   "slug": "roma",
+   "nome": "Roma",
+   "punto_griglia": {
+    "lat": 42.0,
+    "lon": 12.5
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 14.54,
+    "06": 11.96,
+    "12": 23.95,
+    "18": 19.19
+   },
+   "normale": 16.12,
+   "media_giornaliera": 17.41,
+   "anomalia": 1.29,
+   "classe": "nella_norma",
+   "frase": "Il 20 ottobre nell'area di Roma la temperatura media è stata di 17 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "milano",
+   "nome": "Milano",
+   "punto_griglia": {
+    "lat": 45.25,
+    "lon": 9.25
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 13.85,
+    "06": 13.96,
+    "12": 18.45,
+    "18": 16.19
+   },
+   "normale": 13.73,
+   "media_giornaliera": 15.61,
+   "anomalia": 1.88,
+   "classe": "nella_norma",
+   "frase": "Il 20 ottobre nell'area di Milano la temperatura media è stata di 16 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "napoli",
+   "nome": "Napoli",
+   "punto_griglia": {
+    "lat": 41.0,
+    "lon": 14.5
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 12.22,
+    "06": 12.46,
+    "12": 23.2,
+    "18": 17.94
+   },
+   "normale": 15.62,
+   "media_giornaliera": 16.45,
+   "anomalia": 0.83,
+   "classe": "nella_norma",
+   "frase": "Il 20 ottobre nell'area di Napoli la temperatura media è stata di 16 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "torino",
+   "nome": "Torino",
+   "punto_griglia": {
+    "lat": 45.0,
+    "lon": 7.75
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 13.32,
+    "06": 12.71,
+    "12": 13.7,
+    "18": 13.44
+   },
+   "normale": 12.4,
+   "media_giornaliera": 13.29,
+   "anomalia": 0.89,
+   "classe": "nella_norma",
+   "frase": "Il 20 ottobre nell'area di Torino la temperatura media è stata di 13 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "bologna",
+   "nome": "Bologna",
+   "punto_griglia": {
+    "lat": 44.5,
+    "lon": 11.5
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 12.88,
+    "06": 11.46,
+    "12": 21.2,
+    "18": 17.94
+   },
+   "normale": 14.45,
+   "media_giornaliera": 15.87,
+   "anomalia": 1.42,
+   "classe": "nella_norma",
+   "frase": "Il 20 ottobre nell'area di Bologna la temperatura media è stata di 16 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "firenze",
+   "nome": "Firenze",
+   "punto_griglia": {
+    "lat": 43.75,
+    "lon": 11.25
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 11.91,
+    "06": 9.96,
+    "12": 20.2,
+    "18": 16.94
+   },
+   "normale": 13.81,
+   "media_giornaliera": 14.75,
+   "anomalia": 0.94,
+   "classe": "nella_norma",
+   "frase": "Il 20 ottobre nell'area di Firenze la temperatura media è stata di 15 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "bari",
+   "nome": "Bari",
+   "punto_griglia": {
+    "lat": 41.0,
+    "lon": 16.75
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 13.54,
+    "06": 15.21,
+    "12": 23.7,
+    "18": 17.69
+   },
+   "normale": 16.52,
+   "media_giornaliera": 17.53,
+   "anomalia": 1.01,
+   "classe": "nella_norma",
+   "frase": "Il 20 ottobre nell'area di Bari la temperatura media è stata di 18 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "catania",
+   "nome": "Catania",
+   "punto_griglia": {
+    "lat": 37.5,
+    "lon": 15.0
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 18.41,
+    "06": 19.46,
+    "12": 22.7,
+    "18": 21.19
+   },
+   "normale": 18.58,
+   "media_giornaliera": 20.44,
+   "anomalia": 1.86,
+   "classe": "nella_norma",
+   "frase": "Il 20 ottobre nell'area di Catania la temperatura media è stata di 20 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "verona",
+   "nome": "Verona",
+   "punto_griglia": {
+    "lat": 45.25,
+    "lon": 11.0
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 12.91,
+    "06": 11.96,
+    "12": 21.2,
+    "18": 16.69
+   },
+   "normale": 14.05,
+   "media_giornaliera": 15.69,
+   "anomalia": 1.64,
+   "classe": "nella_norma",
+   "frase": "Il 20 ottobre nell'area di Verona la temperatura media è stata di 16 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "venezia",
+   "nome": "Venezia",
+   "punto_griglia": {
+    "lat": 45.5,
+    "lon": 12.25
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 14.82,
+    "06": 12.46,
+    "12": 20.7,
+    "18": 19.44
+   },
+   "normale": 14.95,
+   "media_giornaliera": 16.85,
+   "anomalia": 1.9,
+   "classe": "nella_norma",
+   "frase": "Il 20 ottobre nell'area di Venezia la temperatura media è stata di 17 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "padova",
+   "nome": "Padova",
+   "punto_griglia": {
+    "lat": 45.5,
+    "lon": 11.75
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 13.19,
+    "06": 10.96,
+    "12": 20.45,
+    "18": 17.69
+   },
+   "normale": 13.74,
+   "media_giornaliera": 15.57,
+   "anomalia": 1.83,
+   "classe": "nella_norma",
+   "frase": "Il 20 ottobre nell'area di Padova la temperatura media è stata di 16 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "cagliari",
+   "nome": "Cagliari",
+   "punto_griglia": {
+    "lat": 39.25,
+    "lon": 9.0
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 21.79,
+    "06": 21.46,
+    "12": 23.95,
+    "18": 20.94
+   },
+   "normale": 18.13,
+   "media_giornaliera": 22.03,
+   "anomalia": 3.9,
+   "classe": "caldo",
+   "frase": "Il 20 ottobre nell'area di Cagliari la temperatura media è stata di 22 °C, circa 4 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 5% dei giorni più caldi di questo periodo negli ultimi 30 anni."
+  }
+ ]
+}
