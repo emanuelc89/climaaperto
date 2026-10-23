@@ -2,12 +2,16 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>ClimaAperto | Incendi e siccità in Europa visti dai satelliti</title>
 <meta name="description" content="Punti di calore rilevati dai satelliti NASA, rischio incendi e siccità dal servizio europeo Copernicus. Dati ufficiali, aggiornati in automatico.">
-<meta name="theme-color" content="#ECEEEF" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#161B1F" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F2F3F1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#12161A" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='9' fill='%23C8401E'/%3E%3C/svg%3E">
+<script>
+  // Tema salvato applicato prima del primo disegno (niente lampo bianco).
+  try { const t = localStorage.getItem('tema'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,346 +20,402 @@
 
 <style>
   :root{
-    --cenere:#ECEEEF;
+    color-scheme:light;
+    --cenere:#F2F3F1;
     --carta:#FFFFFF;
-    --grafite:#1E2A32;
+    --carta-2:#F7F8F6;
+    --grafite:#1B262D;
     --grafite-soft:#56656E;
-    --linea:#D3D8DB;
+    --linea:rgba(27,38,45,.10);
+    --linea-forte:rgba(27,38,45,.2);
     --brace:#C8401E;
+    --brace-tenue:#FBE8E1;
     --salvia:#2F7A6A;
+    --salvia-tenue:#E2F1EC;
     --gelo:#3B6EA5;
+    --gelo-tenue:#E3ECF6;
     --i1:#F2C14E;
     --i2:#E8872F;
     --i3:#C8401E;
     --i4:#7E1A12;
+    --ombra:0 1px 2px rgba(27,38,45,.05), 0 8px 28px -12px rgba(27,38,45,.18);
+    --ombra-alta:0 18px 50px -12px rgba(27,38,45,.35);
+    --vetro:rgba(242,243,241,.82);
+    --scheletro:linear-gradient(90deg,#ebece9 0%,#f6f7f5 50%,#ebece9 100%);
     --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
     --testo:"Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
   }
   @media (prefers-color-scheme: dark){
-    :root{
-      --cenere:#161B1F;
-      --carta:#1F262B;
-      --grafite:#E6EAEC;
-      --grafite-soft:#9AA7AE;
-      --linea:#2E373D;
-      --brace:#F0643C;
-      --salvia:#5FB8A3;
-      --gelo:#7FB0E8;
+    :root:not([data-theme="light"]){
+      color-scheme:dark;
+      --cenere:#12161A; --carta:#1B2227; --carta-2:#20282E; --grafite:#E6EAEC; --grafite-soft:#9AA7AE;
+      --linea:rgba(230,234,236,.10); --linea-forte:rgba(230,234,236,.2);
+      --brace:#F0643C; --brace-tenue:rgba(240,100,60,.16); --salvia:#5FB8A3; --salvia-tenue:rgba(95,184,163,.15);
+      --gelo:#7FB0E8; --gelo-tenue:rgba(127,176,232,.15);
+      --ombra:0 1px 2px rgba(0,0,0,.3), 0 10px 30px -12px rgba(0,0,0,.6); --ombra-alta:0 18px 50px -10px rgba(0,0,0,.75);
+      --vetro:rgba(18,22,26,.82); --scheletro:linear-gradient(90deg,#1f262b 0%,#29323a 50%,#1f262b 100%);
     }
+  }
+  :root[data-theme="dark"]{
+    color-scheme:dark;
+    --cenere:#12161A; --carta:#1B2227; --carta-2:#20282E; --grafite:#E6EAEC; --grafite-soft:#9AA7AE;
+    --linea:rgba(230,234,236,.10); --linea-forte:rgba(230,234,236,.2);
+    --brace:#F0643C; --brace-tenue:rgba(240,100,60,.16); --salvia:#5FB8A3; --salvia-tenue:rgba(95,184,163,.15);
+    --gelo:#7FB0E8; --gelo-tenue:rgba(127,176,232,.15);
+    --ombra:0 1px 2px rgba(0,0,0,.3), 0 10px 30px -12px rgba(0,0,0,.6); --ombra-alta:0 18px 50px -10px rgba(0,0,0,.75);
+    --vetro:rgba(18,22,26,.82); --scheletro:linear-gradient(90deg,#1f262b 0%,#29323a 50%,#1f262b 100%);
   }
 
   *{box-sizing:border-box;}
-  html{-webkit-text-size-adjust:100%;}
-  body{
-    margin:0;
-    background:var(--cenere);
-    color:var(--grafite);
-    font-family:var(--testo);
-    font-size:17px;
-    line-height:1.55;
-  }
+  html{-webkit-text-size-adjust:100%; scroll-padding-top:76px;}
+  body{margin:0; background:var(--cenere); color:var(--grafite); font-family:var(--testo); font-size:17px; line-height:1.55;}
   a{color:inherit; text-underline-offset:3px;}
   a:hover{color:var(--brace);}
-  :focus-visible{outline:3px solid var(--brace); outline-offset:2px; border-radius:4px;}
+  :focus-visible{outline:3px solid var(--brace); outline-offset:2px; border-radius:6px;}
+  [hidden]{display:none !important;}
+  .vh{position:absolute !important; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;}
   .contenitore{max-width:1180px; margin:0 auto; padding:0 20px;}
   .colonna{max-width:68ch;}
+  .num{font-variant-numeric:tabular-nums;}
+  .salta{position:absolute; left:12px; top:-60px; z-index:2000; background:var(--grafite); color:var(--carta); padding:10px 14px; border-radius:10px; font-weight:700; text-decoration:none;}
+  .salta:focus{top:12px;}
 
-  /* Testata */
-  .testata{
-    display:flex; justify-content:space-between; align-items:center; gap:16px;
-    padding:18px 0; flex-wrap:wrap;
-  }
-  .marchio{
-    font-family:var(--display); font-weight:700; font-size:19px;
-    display:flex; align-items:center; gap:9px; text-decoration:none;
-  }
-  .marchio::before{
-    content:""; width:12px; height:12px; border-radius:50%; background:var(--brace);
-  }
-  .testata nav{display:flex; gap:20px; font-size:15px;}
+  /* ---------- Barra superiore ---------- */
+  .barra{position:sticky; top:0; z-index:1000; background:var(--vetro); -webkit-backdrop-filter:saturate(1.5) blur(14px); backdrop-filter:saturate(1.5) blur(14px); border-bottom:1px solid var(--linea);}
+  .barra .contenitore{display:flex; align-items:center; gap:18px; min-height:62px;}
+  .marchio{font-family:var(--display); font-weight:800; font-size:20px; letter-spacing:-.01em; display:flex; align-items:center; gap:10px; text-decoration:none; white-space:nowrap;}
+  .marchio::before{content:""; width:14px; height:14px; border-radius:50%; background:var(--brace); box-shadow:0 0 0 4px var(--brace-tenue);}
+  .navigazione{display:flex; gap:4px; margin-left:auto; overflow-x:auto; scrollbar-width:none;}
+  .navigazione::-webkit-scrollbar{display:none;}
+  .navigazione a{font-size:15px; font-weight:700; text-decoration:none; padding:8px 12px; border-radius:999px; white-space:nowrap; color:var(--grafite-soft);}
+  .navigazione a:hover, .navigazione a[aria-current="true"]{color:var(--grafite); background:var(--carta);}
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; font:inherit; font-weight:700; font-size:15px; color:var(--grafite);
+       background:var(--carta); border:1px solid var(--linea-forte); border-radius:12px; padding:9px 14px; min-height:42px; cursor:pointer; text-decoration:none;
+       transition:background .15s ease, border-color .15s ease, transform .1s ease;}
+  .btn:hover{border-color:var(--grafite); color:var(--grafite);}
+  .btn:active{transform:translateY(1px);}
+  .btn svg{width:18px; height:18px; flex:none;}
+  .btn-icona{width:42px; padding:0;}
+  .btn-piccolo{min-height:36px; padding:6px 12px; font-size:14px; border-radius:10px;}
 
-  /* Apertura */
-  .apertura{padding:28px 0 22px;}
-  h1{
-    font-family:var(--display);
-    font-weight:800;
-    font-size:clamp(30px, 5.4vw, 54px);
-    line-height:1.05;
-    letter-spacing:-0.02em;
-    margin:0 0 14px;
-    max-width:16ch;
-  }
-  .intro{margin:0; color:var(--grafite-soft); font-size:18px;}
-
-  .stato{
-    margin:26px 0 0;
-    font-family:var(--display);
-    font-weight:600;
-    font-size:clamp(21px, 3vw, 28px);
-    line-height:1.25;
-    display:flex; gap:12px; align-items:baseline;
-  }
-  .stato-pallino{
-    width:13px; height:13px; border-radius:50%; flex:none;
-    background:var(--grafite-soft); transform:translateY(-2px);
-  }
-  .stato[data-tono="calore"] .stato-pallino{background:var(--brace);}
+  /* ---------- Apertura ---------- */
+  .apertura{padding:44px 0 8px;}
+  .occhiello{display:inline-flex; align-items:center; gap:8px; font-size:14px; font-weight:700; color:var(--brace); background:var(--brace-tenue); padding:5px 12px; border-radius:999px; margin-bottom:16px;}
+  h1{font-family:var(--display); font-weight:800; font-size:clamp(32px, 5.6vw, 60px); line-height:1.02; letter-spacing:-0.03em; margin:0 0 16px; max-width:17ch;}
+  .intro{margin:0; color:var(--grafite-soft); font-size:19px; max-width:58ch;}
+  .stato{margin:26px 0 0; display:flex; flex-wrap:wrap; gap:6px 14px; align-items:center;}
+  .stato-pill{display:inline-flex; align-items:center; gap:10px; font-family:var(--display); font-weight:700; font-size:clamp(18px,2.4vw,22px);
+              background:var(--carta); border:1px solid var(--linea); border-radius:999px; padding:8px 18px 8px 14px; box-shadow:var(--ombra);}
+  .stato-pallino{width:12px; height:12px; border-radius:50%; flex:none; background:var(--grafite-soft);}
+  .stato[data-tono="calore"] .stato-pallino{background:var(--brace); animation:pulsa 2.2s ease-in-out infinite;}
   .stato[data-tono="calmo"] .stato-pallino{background:var(--salvia);}
-  .aggiornamento{margin:6px 0 0 25px; color:var(--grafite-soft); font-size:15px;}
+  @keyframes pulsa{0%,100%{box-shadow:0 0 0 0 rgba(200,64,30,.5);}50%{box-shadow:0 0 0 8px rgba(200,64,30,0);}}
+  .aggiornamento{margin:0; color:var(--grafite-soft); font-size:15px;}
 
-  /* Livelli */
-  .livelli{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
-    gap:10px;
-    margin:26px 0 12px;
-  }
-  .livello{
-    display:flex; align-items:center; gap:12px;
-    text-align:left;
-    font:inherit; color:inherit;
-    background:var(--carta);
-    border:2px solid var(--linea);
-    border-radius:12px;
-    padding:12px 14px;
-    cursor:pointer;
-    min-height:60px;
-  }
+  .numeri{display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:12px; margin:28px 0 0; padding:0; list-style:none;}
+  .numero{background:var(--carta); border:1px solid var(--linea); border-radius:18px; padding:16px 18px; box-shadow:var(--ombra); min-height:110px; display:flex; flex-direction:column; justify-content:space-between; gap:6px;}
+  .numero .k{font-size:14px; color:var(--grafite-soft); font-weight:700;}
+  .numero .v{font-family:var(--display); font-weight:800; font-size:clamp(26px,3.4vw,36px); line-height:1; letter-spacing:-.02em;}
+  .numero .s{font-size:13.5px; color:var(--grafite-soft);}
+  .numero.brace .v{color:var(--brace);}
+  .scheletro{background:var(--scheletro); background-size:200% 100%; animation:luccica 1.4s ease-in-out infinite; border-radius:8px; color:transparent !important;}
+  @keyframes luccica{0%{background-position:100% 0;}100%{background-position:-100% 0;}}
+
+  /* ---------- Schede e sezioni ---------- */
+  .sezione{padding:56px 0 8px;}
+  .scheda{background:var(--carta); border:1px solid var(--linea); border-radius:22px; padding:20px; box-shadow:var(--ombra);}
+  h2{font-family:var(--display); font-weight:800; font-size:clamp(25px, 3.2vw, 34px); letter-spacing:-0.02em; line-height:1.12; margin:0 0 8px;}
+  .sottotitolo{margin:0 0 20px; color:var(--grafite-soft); max-width:70ch;}
+  .testa-sezione{display:flex; justify-content:space-between; align-items:flex-end; gap:14px; flex-wrap:wrap; margin-bottom:18px;}
+  .testa-sezione .sottotitolo{margin:0;}
+  .etichetta{font-size:13px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--grafite-soft);}
+
+  /* ---------- Controlli mappa ---------- */
+  .controlli{display:grid; grid-template-columns:minmax(0,1.4fr) minmax(0,1fr); gap:14px; margin-bottom:14px;}
+  .gruppo-controlli{display:grid; gap:8px;}
+  .livelli{display:flex; flex-wrap:wrap; gap:8px;}
+  .livello{display:inline-flex; align-items:center; gap:10px; text-align:left; font:inherit; color:inherit; background:var(--carta-2);
+           border:1px solid var(--linea-forte); border-radius:14px; padding:9px 14px 9px 10px; cursor:pointer; min-height:48px; transition:border-color .15s ease, background .15s ease;}
   .livello:hover{border-color:var(--grafite-soft);}
-  .livello[aria-pressed="true"]{border-color:var(--grafite);}
-  .interruttore{
-    width:38px; height:22px; border-radius:999px; flex:none;
-    background:var(--linea); position:relative;
-  }
-  .interruttore::after{
-    content:""; position:absolute; top:3px; left:3px;
-    width:16px; height:16px; border-radius:50%; background:var(--carta);
-    transition:transform .15s ease;
-  }
-  .livello[aria-pressed="true"] .interruttore{background:var(--grafite);}
-  .livello[aria-pressed="true"] .interruttore::after{transform:translateX(16px);}
-  .livello-testo strong{display:block; font-size:16px; line-height:1.2;}
-  .livello-testo span{display:block; font-size:13.5px; color:var(--grafite-soft); line-height:1.3; margin-top:2px;}
+  .livello[aria-pressed="true"]{border-color:var(--grafite); background:var(--carta);}
+  .interruttore{width:36px; height:22px; border-radius:999px; flex:none; background:var(--linea-forte); position:relative; transition:background .15s ease;}
+  .interruttore::after{content:""; position:absolute; top:3px; left:3px; width:16px; height:16px; border-radius:50%; background:#fff; box-shadow:0 1px 2px rgba(0,0,0,.3); transition:transform .18s ease;}
+  .livello[aria-pressed="true"] .interruttore{background:var(--brace);}
+  .livello[aria-pressed="true"] .interruttore::after{transform:translateX(14px);}
+  .livello-testo strong{display:block; font-size:15px; line-height:1.2;}
+  .livello-testo span{display:block; font-size:13px; color:var(--grafite-soft); line-height:1.3;}
+  .chip-riga{display:flex; flex-wrap:wrap; gap:8px;}
+  .chip{display:inline-flex; align-items:center; gap:8px; font:inherit; font-size:14.5px; font-weight:700; color:var(--grafite); background:var(--carta-2);
+        border:1px solid var(--linea-forte); border-radius:999px; padding:7px 13px 7px 10px; min-height:40px; cursor:pointer; transition:border-color .15s ease, background .15s ease;}
+  .chip:hover{border-color:var(--grafite-soft);}
+  .chip[aria-pressed="true"]{background:var(--grafite); color:var(--carta); border-color:var(--grafite);}
+  .chip .conta{font-size:12.5px; padding:1px 7px; border-radius:999px; background:var(--linea); font-variant-numeric:tabular-nums;}
+  .chip[aria-pressed="true"] .conta{background:rgba(255,255,255,.2);}
+  .chip:disabled{opacity:.45; cursor:default;}
+  .punto{border-radius:50%; display:inline-block; box-shadow:0 0 0 1.5px var(--carta), 0 0 0 2.5px rgba(0,0,0,.2); flex:none;}
 
-  /* Mappa */
-  #mappa{
-    height:min(62vh, 620px);
-    min-height:360px;
-    border-radius:14px;
-    border:1px solid var(--linea);
-    background:var(--carta);
-    z-index:0;
-  }
-  .leaflet-container{font-family:var(--testo);}
-  .leaflet-popup-content{font-size:14.5px; line-height:1.45;}
-  .leaflet-popup-content strong{font-size:15.5px;}
+  /* ---------- Mappa ---------- */
+  .mappa-box{position:relative; border-radius:16px; overflow:hidden; border:1px solid var(--linea);}
+  #mappa{height:min(64vh, 620px); min-height:380px; background:var(--carta-2); z-index:0;}
+  .scuro-tiles .leaflet-tile-pane{filter:invert(1) hue-rotate(180deg) brightness(.9) contrast(.9) saturate(.5);}
+  .leaflet-container{font-family:var(--testo) !important;}
+  .leaflet-bar{border:1px solid var(--linea-forte) !important; border-radius:12px !important; overflow:hidden; box-shadow:var(--ombra) !important;}
+  .leaflet-bar a{background:var(--carta) !important; color:var(--grafite) !important; border-bottom:1px solid var(--linea) !important;}
+  .leaflet-control-attribution{background:var(--vetro) !important; color:var(--grafite-soft) !important;}
+  .leaflet-popup-content-wrapper, .leaflet-popup-tip{background:var(--carta) !important; color:var(--grafite) !important; box-shadow:var(--ombra-alta) !important;}
+  .leaflet-popup-content-wrapper{border-radius:16px !important;}
+  .leaflet-popup-content{font-size:14.5px; line-height:1.5; margin:14px 16px !important; min-width:210px;}
+  .pop-titolo{font-family:var(--display); font-weight:800; font-size:17px; margin-bottom:6px;}
+  .pop-riga{display:flex; justify-content:space-between; gap:14px; padding:3px 0; border-top:1px solid var(--linea);}
+  .pop-riga:first-of-type{border-top:0;}
+  .pop-riga span:first-child{color:var(--grafite-soft);}
+  .sovrapposto{position:absolute; inset:0; z-index:500; display:grid; place-items:center; background:var(--carta-2); color:var(--grafite-soft); font-weight:700;}
+  .rotella{width:20px; height:20px; border-radius:50%; border:3px solid var(--linea-forte); border-top-color:var(--brace); animation:gira .8s linear infinite; display:inline-block; vertical-align:-4px; margin-right:10px;}
+  @keyframes gira{to{transform:rotate(360deg);}}
 
-  /* Legende */
-  .legende{
-    display:flex; flex-wrap:wrap; gap:14px 36px;
-    margin:14px 0 0; padding:16px 18px;
-    background:var(--carta); border-radius:10px;
-  }
+  .legende{display:flex; flex-wrap:wrap; gap:14px 36px; margin:14px 0 0; padding:14px 4px 2px;}
   .legenda h3{font-size:14px; margin:0 0 8px; font-weight:700;}
   .scala{display:flex; flex-wrap:wrap; gap:6px 16px; font-size:14px; align-items:center;}
   .scala span{display:flex; align-items:center; gap:7px;}
-  .punto{border-radius:50%; display:inline-block; box-shadow:0 0 0 1.5px var(--carta), 0 0 0 2.5px rgba(0,0,0,.25); flex:none;}
   .legenda img{display:block; max-width:220px; border-radius:6px; background:#fff; padding:4px;}
-  .legenda p{margin:8px 0 0; font-size:13px; color:var(--grafite-soft); max-width:38ch;}
+  .legenda p{margin:8px 0 0; font-size:13.5px; color:var(--grafite-soft); max-width:40ch;}
 
-  /* Sezioni */
-  .sezione{padding:52px 0 8px;}
-  h2{
-    font-family:var(--display); font-weight:700;
-    font-size:clamp(24px, 3.2vw, 32px);
-    letter-spacing:-0.01em; line-height:1.15;
-    margin:0 0 8px;
-  }
-  .sottotitolo{margin:0 0 22px; color:var(--grafite-soft);}
-
-  /* Elenco rilevamenti */
-  .elenco{list-style:none; margin:0; padding:0; background:var(--carta); border-radius:12px; overflow:hidden;}
+  /* ---------- Elenco rilevamenti ---------- */
+  .elenco{list-style:none; margin:0; padding:6px; background:var(--carta); border:1px solid var(--linea); border-radius:18px; box-shadow:var(--ombra);}
   .elenco li + li{border-top:1px solid var(--linea);}
-  .rilevamento{
-    width:100%; font:inherit; color:inherit; background:none; border:0; text-align:left; cursor:pointer;
-    display:grid;
-    grid-template-columns:18px minmax(150px,1.2fr) minmax(150px,1fr) minmax(130px,.9fr) auto;
-    gap:14px; align-items:center;
-    padding:14px 18px;
-  }
-  .rilevamento:hover{background:var(--cenere);}
+  .rilevamento{width:100%; font:inherit; color:inherit; background:none; border:0; text-align:left; cursor:pointer; border-radius:12px;
+               display:grid; grid-template-columns:20px minmax(150px,1.1fr) minmax(170px,1fr) minmax(150px,.9fr) auto; gap:14px; align-items:center; padding:13px 14px; transition:background .15s ease;}
+  .rilevamento:hover{background:var(--carta-2);}
   .rilevamento .quando{font-weight:700;}
+  .rilevamento .quando small{display:block; font-weight:400; color:var(--grafite-soft); font-size:13.5px;}
   .rilevamento .dove{color:var(--grafite-soft); font-size:15px; font-variant-numeric:tabular-nums;}
   .rilevamento .forza{font-size:15px; font-variant-numeric:tabular-nums;}
-  .rilevamento .vai{font-size:14px; color:var(--grafite-soft); text-decoration:underline; text-underline-offset:3px;}
-  .rilevamento:hover .vai{color:var(--brace);}
-  .altri{
-    margin-top:14px;
-    font:inherit; font-weight:700; color:var(--grafite);
-    background:transparent; border:2px solid var(--grafite); border-radius:8px;
-    padding:10px 18px; cursor:pointer;
-  }
-  .altri:hover{background:var(--grafite); color:var(--carta);}
-  .messaggio{
-    background:var(--carta); border-radius:12px; padding:20px 22px; margin:0;
-    border-left:4px solid var(--salvia);
-  }
+  .rilevamento .vai{font-size:14px; font-weight:700; color:var(--brace); display:inline-flex; align-items:center; gap:4px;}
+  .piede-elenco{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-top:14px; color:var(--grafite-soft); font-size:15px;}
+  .messaggio{background:var(--carta); border:1px solid var(--linea); border-radius:16px; padding:18px 20px; margin:0; border-left:5px solid var(--salvia);}
   .messaggio.errore{border-left-color:var(--brace);}
+  select.campo{font:inherit; font-size:16px; color:var(--grafite); background:var(--carta); border:1px solid var(--linea-forte); border-radius:12px; padding:8px 12px; min-height:42px;}
 
-  /* Temperatura vs normale */
-  .clima-griglia{
-    display:grid; grid-template-columns:repeat(auto-fill, minmax(230px, 1fr)); gap:12px;
-    list-style:none; margin:0; padding:0;
-  }
-  .clima-scheda{
-    background:var(--carta); border-radius:12px; padding:16px 18px;
-    border-left:5px solid var(--linea);
-  }
-  .clima-scheda[data-classe="caldo"], .clima-scheda[data-classe="molto_caldo"]{border-left-color:var(--brace);}
-  .clima-scheda[data-classe="freddo"], .clima-scheda[data-classe="molto_freddo"]{border-left-color:var(--gelo);}
-  .clima-scheda[data-classe="nella_norma"]{border-left-color:var(--salvia);}
-  .clima-scheda[data-classe="eccezionale"]{border-left-color:var(--i4);}
-  .clima-scheda h3{margin:0 0 4px; font-size:17px;}
-  .clima-valore{
-    font-family:var(--display); font-weight:700; font-size:26px; line-height:1.1; margin:0 0 8px;
-  }
-  .clima-scheda[data-classe="caldo"] .clima-valore, .clima-scheda[data-classe="molto_caldo"] .clima-valore{color:var(--brace);}
-  .clima-scheda[data-classe="freddo"] .clima-valore, .clima-scheda[data-classe="molto_freddo"] .clima-valore{color:var(--gelo);}
-  .clima-scheda p{margin:0; font-size:14px; color:var(--grafite-soft);}
-  .clima-nota{margin:14px 0 0; font-size:13.5px; color:var(--grafite-soft); max-width:70ch;}
+  /* ---------- Temperatura vs normale ---------- */
+  .clima-griglia{display:grid; grid-template-columns:repeat(auto-fill, minmax(250px, 1fr)); gap:12px; list-style:none; margin:0; padding:0;}
+  .clima-scheda{background:var(--carta); border:1px solid var(--linea); border-radius:18px; padding:16px 18px; box-shadow:var(--ombra); display:grid; gap:10px;}
+  .clima-testa{display:flex; justify-content:space-between; align-items:baseline; gap:10px;}
+  .clima-scheda h3{margin:0; font-size:18px; font-family:var(--display); font-weight:800;}
+  .clima-badge{font-size:13px; font-weight:700; padding:3px 10px; border-radius:999px; background:var(--salvia-tenue); color:var(--salvia); white-space:nowrap;}
+  .clima-valore{font-family:var(--display); font-weight:800; font-size:30px; line-height:1; letter-spacing:-.02em; margin:0;}
+  .clima-valore small{font-size:15px; font-weight:600; color:var(--grafite-soft); letter-spacing:0; margin-left:6px;}
+  .clima-scheda[data-tono="caldo"] .clima-valore{color:var(--brace);}
+  .clima-scheda[data-tono="caldo"] .clima-badge{background:var(--brace-tenue); color:var(--brace);}
+  .clima-scheda[data-tono="freddo"] .clima-valore{color:var(--gelo);}
+  .clima-scheda[data-tono="freddo"] .clima-badge{background:var(--gelo-tenue); color:var(--gelo);}
+  .scala-anomalia{position:relative; height:10px; border-radius:999px; background:linear-gradient(90deg, var(--gelo) 0%, var(--gelo-tenue) 35%, var(--salvia-tenue) 50%, var(--brace-tenue) 65%, var(--brace) 100%);}
+  .scala-anomalia::before{content:""; position:absolute; left:50%; top:-3px; bottom:-3px; width:2px; background:var(--linea-forte); transform:translateX(-50%);}
+  .scala-anomalia i{position:absolute; top:50%; width:18px; height:18px; border-radius:50%; background:var(--carta); border:4px solid var(--grafite); transform:translate(-50%,-50%); transition:left .6s cubic-bezier(.2,.7,.3,1);}
+  .scala-etichette{display:flex; justify-content:space-between; font-size:12.5px; color:var(--grafite-soft); margin-top:-4px;}
+  .clima-scheda p{margin:0; font-size:14.5px; color:var(--grafite-soft);}
+  .clima-dettagli{display:flex; gap:14px; font-size:14px; color:var(--grafite-soft);}
+  .clima-dettagli b{color:var(--grafite);}
+  .clima-nota{margin:14px 0 0; font-size:14px; color:var(--grafite-soft); max-width:72ch;}
 
-  /* Domande */
-  .domande{border-top:1px solid var(--linea);}
-  .domande details{border-bottom:1px solid var(--linea);}
-  .domande summary{
-    cursor:pointer; list-style:none;
-    padding:18px 36px 18px 0; position:relative;
-    font-weight:700; font-size:18px;
-  }
+  /* ---------- Guida ---------- */
+  .domande{display:grid; gap:10px;}
+  .domande details{background:var(--carta); border:1px solid var(--linea); border-radius:16px; padding:0 20px; transition:box-shadow .15s ease;}
+  .domande details[open]{box-shadow:var(--ombra);}
+  .domande summary{cursor:pointer; list-style:none; padding:17px 36px 17px 0; position:relative; font-weight:700; font-size:18px; min-height:44px;}
   .domande summary::-webkit-details-marker{display:none;}
-  .domande summary::after{
-    content:"+"; position:absolute; right:6px; top:50%; transform:translateY(-50%);
-    font-family:var(--display); font-size:26px; font-weight:500; color:var(--grafite-soft);
-  }
-  .domande details[open] summary::after{content:"–";}
-  .domande .risposta{padding:0 0 20px; color:var(--grafite-soft);}
+  .domande summary::after{content:"+"; position:absolute; right:0; top:50%; transform:translateY(-50%); font-family:var(--display); font-size:26px; font-weight:500; color:var(--grafite-soft); transition:transform .2s ease;}
+  .domande details[open] summary::after{transform:translateY(-50%) rotate(45deg);}
+  .domande .risposta{padding:0 0 18px; color:var(--grafite-soft);}
   .domande .risposta p{margin:0 0 10px;}
-  .domande code{
-    font-family:ui-monospace, Consolas, monospace; font-size:14px;
-    background:var(--carta); padding:2px 6px; border-radius:4px; word-break:break-all;
+  .codice{display:flex; gap:8px; align-items:center; background:var(--carta-2); border:1px solid var(--linea); border-radius:12px; padding:6px 6px 6px 12px; margin:0 0 10px;}
+  .codice code{flex:1; min-width:0; font-family:ui-monospace, Consolas, monospace; font-size:14px; color:var(--grafite); word-break:break-all;}
+
+  footer{padding:56px 0 64px; font-size:14.5px; color:var(--grafite-soft);}
+  footer .scheda{display:grid; gap:8px;}
+  footer p{margin:0; max-width:90ch;}
+
+  .toast-zona{position:fixed; left:50%; bottom:20px; transform:translateX(-50%); z-index:3000; display:grid; gap:8px; width:min(92vw, 420px); pointer-events:none;}
+  .toast{background:var(--grafite); color:var(--carta); border-radius:14px; padding:12px 16px; font-size:15px; font-weight:700; box-shadow:var(--ombra-alta); animation:entra .25s ease-out both;}
+  @keyframes entra{from{opacity:0; transform:translateY(10px);}}
+
+  /* ---------- Mobile ---------- */
+  @media (max-width:900px){
+    .controlli{grid-template-columns:1fr;}
+    .numeri{grid-template-columns:repeat(2, minmax(0,1fr));}
   }
-
-  footer{padding:48px 0 60px; font-size:14px; color:var(--grafite-soft);}
-  footer p{margin:0 0 8px; max-width:80ch;}
-
-  /* Mobile */
   @media (max-width:720px){
     body{font-size:16px;}
     .contenitore{padding:0 14px;}
-    .testata nav{gap:14px; font-size:14px;}
-    .apertura{padding:14px 0 16px;}
-    .intro{font-size:16.5px;}
-    .aggiornamento{margin-left:0;}
-    .stato{gap:10px;}
-    #mappa{height:58vh; min-height:320px; border-radius:10px;}
-    .legende{padding:14px;}
-    .rilevamento{
-      grid-template-columns:14px 1fr auto;
-      grid-template-areas:
-        "pallino quando forza"
-        ".       dove   dove";
-      gap:2px 10px; padding:13px 14px;
-    }
+    .barra{position:static;}
+    html{scroll-padding-top:0;}
+    .barra .contenitore{flex-wrap:wrap; gap:6px 10px; padding-top:10px; padding-bottom:6px;}
+    .navigazione{order:3; width:100%; margin:0 -14px; padding:0 14px 4px;}
+    #bottone-tema{margin-left:auto;}
+    .apertura{padding:24px 0 4px;}
+    .intro{font-size:17px;}
+    .scheda{padding:14px; border-radius:18px;}
+    #mappa{height:min(58vh, 460px); min-height:300px;}
+    .livello{flex:1 1 100%;}
+    .chip-riga{flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none; padding-bottom:2px;}
+    .chip-riga::-webkit-scrollbar{display:none;}
+    .chip{flex:none;}
+    .rilevamento{grid-template-columns:14px 1fr auto; grid-template-areas:"pallino quando forza" ".       dove   dove"; gap:2px 10px; padding:13px 12px;}
     .rilevamento .pallino-cella{grid-area:pallino;}
     .rilevamento .quando{grid-area:quando;}
     .rilevamento .dove{grid-area:dove; font-size:14px;}
     .rilevamento .forza{grid-area:forza; text-align:right; font-size:14px;}
     .rilevamento .vai{display:none;}
     .domande summary{font-size:16.5px;}
+    .domande details{padding:0 16px;}
   }
-
+  @media (pointer:coarse){
+    .leaflet-touch .leaflet-bar a{width:40px !important; height:40px !important; line-height:40px !important;}
+    .marchio{min-height:44px;}
+  }
+  /* Telefoni in orizzontale: la mappa non supera lo schermo e la barra non resta fissa. */
+  @media (max-height:520px){
+    #mappa{height:68vh; min-height:220px;}
+    .barra{position:static;}
+    html{scroll-padding-top:0;}
+  }
   @media (prefers-reduced-motion: reduce){
-    .interruttore::after{transition:none;}
+    *,*::before,*::after{animation:none !important; transition:none !important;}
   }
 </style>
 </head>
 <body>
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<header class="barra">
+  <div class="contenitore">
+    <a class="marchio" href="./">ClimaAperto</a>
+    <nav class="navigazione" aria-label="Sezioni della pagina">
+      <a href="#sezione-mappa">Mappa</a>
+      <a href="#sezione-rilevamenti">Rilevamenti</a>
+      <a href="#sezione-clima">Temperature</a>
+      <a href="#sezione-guida">Guida e dati</a>
+    </nav>
+    <button class="btn btn-icona" id="bottone-tema" type="button" aria-label="Cambia tema"></button>
+  </div>
+</header>
 
 <div class="contenitore">
-
-  <header class="testata">
-    <a class="marchio" href="./">ClimaAperto</a>
-    <nav>
-      <a href="./data/incendi.json">Dati in JSON</a>
-      <a href="https://github.com/emanuelc89/climaaperto" target="_blank" rel="noopener">Codice sorgente</a>
-    </nav>
-  </header>
-
-  <main>
+  <main id="contenuto" tabindex="-1">
     <section class="apertura">
+      <span class="occhiello">Dati ufficiali NASA e Copernicus · aggiornati in automatico</span>
       <h1>Incendi e siccità in Europa, visti dai satelliti</h1>
-      <p class="intro colonna">Punti di calore rilevati dalla NASA, rischio incendi e siccità dal servizio europeo Copernicus. Dati ufficiali, aggiornati in automatico.</p>
+      <p class="intro">Punti di calore rilevati dalla NASA, rischio incendi e siccità dal servizio europeo Copernicus, e la temperatura di ieri confrontata con il normale in 12 città italiane.</p>
 
-      <p class="stato" id="stato" data-tono="attesa" aria-live="polite">
-        <span class="stato-pallino" aria-hidden="true"></span>
-        <span id="stato-testo">Caricamento dei dati in corso</span>
-      </p>
-      <p class="aggiornamento" id="aggiornamento"></p>
+      <div class="stato" id="stato" data-tono="attesa" aria-live="polite">
+        <span class="stato-pill"><span class="stato-pallino" aria-hidden="true"></span><span id="stato-testo">Caricamento dei dati in corso</span></span>
+        <p class="aggiornamento" id="aggiornamento"></p>
+      </div>
+
+      <ul class="numeri" aria-label="Numeri principali">
+        <li class="numero brace"><span class="k">Punti di calore</span><span class="v num scheletro" id="n-punti">000</span><span class="s">nelle ultime 24 ore</span></li>
+        <li class="numero"><span class="k">Intensità alta o molto alta</span><span class="v num scheletro" id="n-forti">00</span><span class="s" id="n-forti-s">oltre 20 MW di potenza radiativa</span></li>
+        <li class="numero"><span class="k">Ultimo rilevamento</span><span class="v num scheletro" id="n-ultimo">00:00</span><span class="s" id="n-ultimo-s">ora italiana</span></li>
+        <li class="numero"><span class="k">Ieri, città più fuori norma</span><span class="v num scheletro" id="n-citta">+0 °C</span><span class="s" id="n-citta-s">rispetto al 1991-2020</span></li>
+      </ul>
     </section>
 
-    <div class="livelli" role="group" aria-label="Livelli della mappa">
-      <button class="livello" type="button" data-livello="calore" aria-pressed="true">
-        <span class="interruttore" aria-hidden="true"></span>
-        <span class="livello-testo"><strong>Punti di calore</strong><span>NASA FIRMS, controllati ogni 10 minuti</span></span>
-      </button>
-      <button class="livello" type="button" data-livello="rischio" aria-pressed="false">
-        <span class="interruttore" aria-hidden="true"></span>
-        <span class="livello-testo"><strong>Rischio incendi oggi</strong><span>Copernicus EFFIS, previsione del giorno</span></span>
-      </button>
-      <button class="livello" type="button" data-livello="siccita" aria-pressed="false">
-        <span class="interruttore" aria-hidden="true"></span>
-        <span class="livello-testo"><strong>Siccità</strong><span>Copernicus EDO, aggiornata ogni 10 giorni</span></span>
-      </button>
-    </div>
-
-    <div id="mappa" role="region" aria-label="Mappa di punti di calore, rischio incendi e siccità"></div>
-
-    <div class="legende">
-      <div class="legenda" id="legenda-calore">
-        <h3>Punti di calore, per intensità</h3>
-        <div class="scala">
-          <span><i class="punto" style="width:10px;height:10px;background:var(--i1)"></i>bassa</span>
-          <span><i class="punto" style="width:12px;height:12px;background:var(--i2)"></i>media</span>
-          <span><i class="punto" style="width:15px;height:15px;background:var(--i3)"></i>alta</span>
-          <span><i class="punto" style="width:18px;height:18px;background:var(--i4)"></i>molto alta</span>
+    <section class="sezione" id="sezione-mappa" aria-labelledby="titolo-mappa">
+      <div class="testa-sezione">
+        <div>
+          <h2 id="titolo-mappa">La mappa</h2>
+          <p class="sottotitolo">Accendi i livelli che ti interessano e filtra i punti di calore per intensità. Tocca un punto per i dettagli.</p>
         </div>
       </div>
-      <div class="legenda" id="legenda-rischio" hidden>
-        <h3>Rischio incendi (indice FWI)</h3>
-        <img src="https://maps.effis.emergency.copernicus.eu/effis?language=eng&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=mf010.fwi&amp;format=image/png&amp;STYLE=default" alt="Legenda ufficiale del rischio incendi: da basso a estremo" loading="lazy" onerror="this.remove()">
-      </div>
-      <div class="legenda" id="legenda-siccita" hidden>
-        <h3>Siccità (indicatore CDI)</h3>
-        <img src="https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&amp;VERSION=1.1.1&amp;REQUEST=GetLegendGraphic&amp;LAYER=cdiad&amp;FORMAT=image/png" alt="Legenda ufficiale della siccità: Watch, Warning, Alert" loading="lazy" onerror="this.remove()">
-        <p>Watch: piove poco. Warning: anche il suolo è secco. Alert: ne risente anche la vegetazione.</p>
-      </div>
-    </div>
+      <div class="scheda">
+        <div class="controlli">
+          <div class="gruppo-controlli">
+            <span class="etichetta">Livelli</span>
+            <div class="livelli" role="group" aria-label="Livelli della mappa">
+              <button class="livello" type="button" data-livello="calore" aria-pressed="true">
+                <span class="interruttore" aria-hidden="true"></span>
+                <span class="livello-testo"><strong>Punti di calore</strong><span>NASA FIRMS, ogni 10 minuti</span></span>
+              </button>
+              <button class="livello" type="button" data-livello="rischio" aria-pressed="false">
+                <span class="interruttore" aria-hidden="true"></span>
+                <span class="livello-testo"><strong>Rischio incendi oggi</strong><span>Copernicus EFFIS</span></span>
+              </button>
+              <button class="livello" type="button" data-livello="siccita" aria-pressed="false">
+                <span class="interruttore" aria-hidden="true"></span>
+                <span class="livello-testo"><strong>Siccità</strong><span>Copernicus EDO, ogni 10 giorni</span></span>
+              </button>
+            </div>
+          </div>
+          <div class="gruppo-controlli">
+            <span class="etichetta" id="etichetta-intensita">Intensità dei punti di calore</span>
+            <div class="chip-riga" id="filtro-intensita" role="group" aria-labelledby="etichetta-intensita"></div>
+          </div>
+        </div>
 
-    <section class="sezione" aria-labelledby="titolo-elenco">
-      <h2 id="titolo-elenco">Ultimi punti di calore</h2>
-      <p class="sottotitolo">Dal più recente. Tocca un rilevamento per vederlo sulla mappa.</p>
-      <div id="contenitore-elenco"></div>
+        <div class="mappa-box">
+          <div id="mappa" role="region" aria-label="Mappa di punti di calore, rischio incendi e siccità. In alternativa usa l'elenco dei rilevamenti qui sotto."></div>
+          <div class="sovrapposto" id="mappa-carica"><span><span class="rotella"></span>Caricamento della mappa…</span></div>
+        </div>
+
+        <div class="legende">
+          <div class="legenda" id="legenda-calore">
+            <h3>Punti di calore, per intensità</h3>
+            <div class="scala">
+              <span><i class="punto" style="width:10px;height:10px;background:var(--i1)"></i>bassa</span>
+              <span><i class="punto" style="width:12px;height:12px;background:var(--i2)"></i>media</span>
+              <span><i class="punto" style="width:15px;height:15px;background:var(--i3)"></i>alta</span>
+              <span><i class="punto" style="width:18px;height:18px;background:var(--i4)"></i>molto alta</span>
+            </div>
+          </div>
+          <div class="legenda" id="legenda-rischio" hidden>
+            <h3>Rischio incendi (indice FWI)</h3>
+            <img src="https://maps.effis.emergency.copernicus.eu/effis?language=eng&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=mf010.fwi&amp;format=image/png&amp;STYLE=default" alt="Legenda ufficiale del rischio incendi: da basso a estremo" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="legenda" id="legenda-siccita" hidden>
+            <h3>Siccità (indicatore CDI)</h3>
+            <img src="https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&amp;VERSION=1.1.1&amp;REQUEST=GetLegendGraphic&amp;LAYER=cdiad&amp;FORMAT=image/png" alt="Legenda ufficiale della siccità: Watch, Warning, Alert" loading="lazy" onerror="this.remove()">
+            <p>Watch: piove poco. Warning: anche il suolo è secco. Alert: ne risente anche la vegetazione.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="sezione" aria-labelledby="titolo-clima">
-      <h2 id="titolo-clima">Ieri, più caldo o più freddo del normale?</h2>
-      <p class="sottotitolo" id="clima-sottotitolo">La temperatura media di ieri in 12 città, confrontata con il normale 1991-2020 dello stesso periodo.</p>
+    <section class="sezione" id="sezione-rilevamenti" aria-labelledby="titolo-elenco">
+      <div class="testa-sezione">
+        <div>
+          <h2 id="titolo-elenco">Ultimi punti di calore</h2>
+          <p class="sottotitolo">Tocca un rilevamento per vederlo sulla mappa. Il filtro di intensità vale anche qui.</p>
+        </div>
+        <label class="vh" for="ordine">Ordina i rilevamenti</label>
+        <select class="campo" id="ordine">
+          <option value="recenti">Dal più recente</option>
+          <option value="intensi">Dal più intenso</option>
+        </select>
+      </div>
+      <div id="contenitore-elenco">
+        <div class="elenco"><div class="scheletro" style="height:48px;margin:6px"></div><div class="scheletro" style="height:48px;margin:6px"></div><div class="scheletro" style="height:48px;margin:6px"></div></div>
+      </div>
+    </section>
+
+    <section class="sezione" id="sezione-clima" aria-labelledby="titolo-clima">
+      <div class="testa-sezione">
+        <div>
+          <h2 id="titolo-clima">Ieri, più caldo o più freddo del normale?</h2>
+          <p class="sottotitolo" id="clima-sottotitolo">La temperatura media di ieri in 12 città, confrontata con il normale 1991-2020 dello stesso periodo.</p>
+        </div>
+        <label class="vh" for="ordine-clima">Ordina le città</label>
+        <select class="campo" id="ordine-clima">
+          <option value="anomalia">Più fuori norma prima</option>
+          <option value="nome">In ordine alfabetico</option>
+          <option value="caldo">Dalla più calda</option>
+        </select>
+      </div>
       <div id="contenitore-clima"></div>
       <p class="clima-nota">Il valore è la media di un'area di circa 28 km attorno alla città, non quella di una stazione in centro. Per questo contano gli scostamenti dal normale più dei gradi assoluti. Sotto i 2 gradi di scostamento, la giornata è "nella norma".</p>
     </section>
 
-    <section class="sezione" aria-labelledby="titolo-domande">
-      <h2 id="titolo-domande">Come leggere questi dati</h2>
+    <section class="sezione" id="sezione-guida" aria-labelledby="titolo-domande">
+      <h2 id="titolo-domande">Come leggere e riusare questi dati</h2>
+      <p class="sottotitolo">Le risposte alle domande più comuni, gli indirizzi dei dati in JSON e la citazione da usare.</p>
       <div class="domande colonna">
         <details>
           <summary>Cos'è un punto di calore?</summary>
@@ -367,7 +427,7 @@
         <details>
           <summary>Cosa indica l'intensità?</summary>
           <div class="risposta">
-            <p>È la potenza radiativa misurata dal satellite, in megawatt. Le quattro fasce (bassa, media, alta, molto alta) sono una semplificazione di questo progetto per rendere la mappa leggibile: non sono una classificazione ufficiale della gravità di un incendio.</p>
+            <p>È la potenza radiativa misurata dal satellite, in megawatt. Le quattro fasce (bassa sotto 5 MW, media fino a 20, alta fino a 50, molto alta oltre) sono una semplificazione di questo progetto per rendere la mappa leggibile: non sono una classificazione ufficiale della gravità di un incendio.</p>
           </div>
         </details>
         <details>
@@ -387,11 +447,11 @@
           <summary>Posso riusare questi dati?</summary>
           <div class="risposta">
             <p>Sì, citando la fonte. I punti di calore sono disponibili in JSON a questo indirizzo, sempre aggiornato:</p>
-            <p><code id="url-json">https://emanuelc89.github.io/climaaperto/data/incendi.json</code></p>
+            <div class="codice"><code id="url-json">https://emanuelc89.github.io/climaaperto/data/incendi.json</code><button class="btn btn-piccolo" type="button" data-copia="url-json">Copia</button></div>
             <p>La temperatura rispetto al normale, con una frase pronta per città, è qui:</p>
-            <p><code>https://emanuelc89.github.io/climaaperto/data/clima/ultimo.json</code></p>
+            <div class="codice"><code id="url-clima">https://emanuelc89.github.io/climaaperto/data/clima/ultimo.json</code><button class="btn btn-piccolo" type="button" data-copia="url-clima">Copia</button></div>
             <p>I dati sono rilasciati con licenza <a href="https://creativecommons.org/licenses/by/4.0/deed.it" target="_blank" rel="noopener">CC BY 4.0</a>: puoi usarli in articoli, siti e ricerche, a condizione di riportare questa citazione:</p>
-            <p><code>Dati: ClimaAperto di Emanuel Ciuro (https://emanuelc89.github.io/climaaperto/), elaborazione di dati NASA FIRMS</code></p>
+            <div class="codice"><code id="citazione">Dati: ClimaAperto di Emanuel Ciuro (https://emanuelc89.github.io/climaaperto/), elaborazione di dati NASA FIRMS</code><button class="btn btn-piccolo" type="button" data-copia="citazione">Copia</button></div>
             <p>Per il rischio incendi e la siccità cita invece la fonte originale: © Copernicus EMS, Commissione europea. Il codice della pagina non è riutilizzabile: <a href="https://github.com/emanuelc89/climaaperto/blob/main/LICENSE-DATA.md" target="_blank" rel="noopener">tutti i dettagli</a>.</p>
           </div>
         </details>
@@ -413,23 +473,60 @@
   </main>
 
   <footer>
-    <p>Fonti: <a href="https://firms.modaps.eosdis.nasa.gov/" target="_blank" rel="noopener">NASA FIRMS</a>, <a href="https://forest-fire.emergency.copernicus.eu/" target="_blank" rel="noopener">Copernicus EFFIS</a>, <a href="https://drought.emergency.copernicus.eu/" target="_blank" rel="noopener">Copernicus EDO</a>, <a href="https://www.ecmwf.int/en/forecasts/datasets/open-data" target="_blank" rel="noopener">ECMWF Open Data</a> e <a href="https://cds.climate.copernicus.eu/" target="_blank" rel="noopener">ERA5 Copernicus C3S</a> (CC BY 4.0). Mappa di base: © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">contributori OpenStreetMap</a>.</p>
-    <p>Un progetto di Emanuel Ciuro. Dati riutilizzabili con licenza <a href="https://github.com/emanuelc89/climaaperto/blob/main/LICENSE-DATA.md" target="_blank" rel="noopener">CC BY 4.0</a>, citando ClimaAperto e NASA FIRMS. Codice protetto dalla <a href="https://github.com/emanuelc89/climaaperto/blob/main/LICENSE" target="_blank" rel="noopener">PolyForm Strict License 1.0.0</a>: non copiabile né modificabile.</p>
+    <div class="scheda">
+      <p>Fonti: <a href="https://firms.modaps.eosdis.nasa.gov/" target="_blank" rel="noopener">NASA FIRMS</a>, <a href="https://forest-fire.emergency.copernicus.eu/" target="_blank" rel="noopener">Copernicus EFFIS</a>, <a href="https://drought.emergency.copernicus.eu/" target="_blank" rel="noopener">Copernicus EDO</a>, <a href="https://www.ecmwf.int/en/forecasts/datasets/open-data" target="_blank" rel="noopener">ECMWF Open Data</a> e <a href="https://cds.climate.copernicus.eu/" target="_blank" rel="noopener">ERA5 Copernicus C3S</a> (CC BY 4.0). Mappa di base: © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">contributori OpenStreetMap</a>.</p>
+      <p>Un progetto di Emanuel Ciuro. Dati riutilizzabili con licenza <a href="https://github.com/emanuelc89/climaaperto/blob/main/LICENSE-DATA.md" target="_blank" rel="noopener">CC BY 4.0</a>, citando ClimaAperto e NASA FIRMS. Codice protetto dalla <a href="https://github.com/emanuelc89/climaaperto/blob/main/LICENSE" target="_blank" rel="noopener">PolyForm Strict License 1.0.0</a>: non copiabile né modificabile. <a href="https://github.com/emanuelc89/climaaperto" target="_blank" rel="noopener">Codice sorgente</a> · <a href="./data/incendi.json">Dati in JSON</a>.</p>
+    </div>
   </footer>
-
 </div>
+
+<div class="toast-zona" id="toast-zona" aria-live="polite"></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
   const riduciMovimento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const css = nome => getComputedStyle(document.documentElement).getPropertyValue(nome).trim();
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+  function toast(testo) {
+    const el = document.createElement('div');
+    el.className = 'toast'; el.setAttribute('role', 'status'); el.textContent = testo;
+    document.getElementById('toast-zona').appendChild(el);
+    setTimeout(() => el.remove(), 2600);
+  }
+
+  // --- Tema chiaro / scuro ---------------------------------------------
+  const TEMI = ['auto', 'light', 'dark'];
+  const NOMI_TEMA = { auto: 'Tema automatico', light: 'Tema chiaro', dark: 'Tema scuro' };
+  const ICONE_TEMA = {
+    auto: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg>',
+    light: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>',
+    dark: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>',
+  };
+  const temaSalvato = () => { try { return localStorage.getItem('tema') || 'auto'; } catch (e) { return 'auto'; } };
+  const temaScuro = () => {
+    const t = document.documentElement.dataset.theme;
+    return t ? t === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  };
+  function applicaTema(t) {
+    if (t === 'auto') delete document.documentElement.dataset.theme; else document.documentElement.dataset.theme = t;
+    try { localStorage.setItem('tema', t); } catch (e) {}
+    const b = document.getElementById('bottone-tema');
+    b.innerHTML = ICONE_TEMA[t]; b.title = NOMI_TEMA[t]; b.setAttribute('aria-label', NOMI_TEMA[t] + ' (clic per cambiare)');
+    document.getElementById('mappa').classList.toggle('scuro-tiles', temaScuro());
+  }
+  document.getElementById('bottone-tema').addEventListener('click', () => {
+    const prossimo = TEMI[(TEMI.indexOf(temaSalvato()) + 1) % TEMI.length];
+    applicaTema(prossimo); toast(NOMI_TEMA[prossimo]);
+  });
+  matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change', () => applicaTema(temaSalvato()));
 
   // Fasce di intensità (FRP, megawatt): semplificazione di questo progetto.
   const FASCE = [
-    { nome: 'bassa',      colore: '--i1', raggio: 5 },
-    { nome: 'media',      colore: '--i2', raggio: 6.5 },
-    { nome: 'alta',       colore: '--i3', raggio: 8 },
-    { nome: 'molto alta', colore: '--i4', raggio: 10 },
+    { id: 'bassa',      nome: 'bassa',      colore: '--i1', raggio: 5 },
+    { id: 'media',      nome: 'media',      colore: '--i2', raggio: 6.5 },
+    { id: 'alta',       nome: 'alta',       colore: '--i3', raggio: 8 },
+    { id: 'molto-alta', nome: 'molto alta', colore: '--i4', raggio: 10 },
   ];
   function fascia(frp) {
     if (frp == null || frp < 5) return FASCE[0];
@@ -437,17 +534,18 @@
     if (frp < 50) return FASCE[2];
     return FASCE[3];
   }
+  const CONFIDENZA = { l: 'bassa', n: 'nominale', h: 'alta' };
+  const SATELLITI = { N: 'Suomi NPP (VIIRS)', '1': 'NOAA-20 (VIIRS)', '2': 'NOAA-21 (VIIRS)' };
 
-  // Data e ora del rilevamento: FIRMS le fornisce in UTC, le mostriamo in ora italiana.
+  // Data e ora del rilevamento: FIRMS le fornisce in UTC come HHMM senza zeri iniziali.
   function momentoRilevamento(item) {
     if (!item.data_rilevamento) return null;
     const [a, m, g] = item.data_rilevamento.split('-').map(Number);
     const hhmm = String(item.ora_rilevamento_utc ?? '0').padStart(4, '0');
     return new Date(Date.UTC(a, m - 1, g, Number(hhmm.slice(0, 2)), Number(hhmm.slice(2, 4))));
   }
-  const formatoData = new Intl.DateTimeFormat('it-IT', {
-    day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Rome',
-  });
+  const formatoData = new Intl.DateTimeFormat('it-IT', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Rome' });
+  const formatoOra = new Intl.DateTimeFormat('it-IT', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Rome' });
   function relativo(data) {
     const rtf = new Intl.RelativeTimeFormat('it', { numeric: 'auto' });
     const secondi = Math.round((data - new Date()) / 1000);
@@ -461,14 +559,16 @@
   function coordinate(lat, lon) {
     return `${numero(Math.abs(lat), 3)}° ${lat >= 0 ? 'N' : 'S'}, ${numero(Math.abs(lon), 3)}° ${lon >= 0 ? 'E' : 'O'}`;
   }
+  function riempi(id, testo) { const el = document.getElementById(id); el.textContent = testo; el.classList.remove('scheletro'); }
 
   // --- Mappa -----------------------------------------------------------
   // preferCanvas: con l'area europea i punti possono essere migliaia, il canvas li disegna in modo più leggero dell'SVG.
   const zoomIniziale = window.innerWidth < 720 ? 3 : 4;
   const mappa = L.map('mappa', { scrollWheelZoom: false, preferCanvas: true }).setView([51, 12], zoomIniziale);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap', maxZoom: 12,
-  }).addTo(mappa);
+  const base = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap', maxZoom: 12 }).addTo(mappa);
+  base.once('load', () => document.getElementById('mappa-carica').hidden = true);
+  setTimeout(() => document.getElementById('mappa-carica').hidden = true, 6000);
+  applicaTema(temaSalvato());
   // La rotella zooma solo dopo aver cliccato sulla mappa: così scorrere la pagina non resta "incastrato".
   mappa.on('click', () => mappa.scrollWheelZoom.enable());
   mappa.getContainer().addEventListener('mouseleave', () => mappa.scrollWheelZoom.disable());
@@ -529,17 +629,20 @@
       nuova.once('error', () => {
         map.removeLayer(nuova);
         if (numero === this._richiesta && tentativo < 1) setTimeout(() => this._aggiorna(null, tentativo + 1), 1500);
+        else if (numero === this._richiesta) toast('Il server Copernicus non ha risposto: riprova tra poco.');
       });
       nuova.addTo(map);
     },
   });
 
-  const oggiUTC = new Date().toISOString().split('T')[0];
+  // EFFIS pubblica la previsione per giorno: si usa la data italiana, non quella UTC
+  // (tra mezzanotte e le 2 di notte la data UTC e' ancora quella di ieri).
+  const oggiItalia = new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Rome' });
   const livelli = {
     calore: L.layerGroup(),
     // EFFIS: previsione ufficiale del Fire Weather Index, richiesta live al server Copernicus.
     rischio: new LivelloWMSImmagine('https://maps.effis.emergency.copernicus.eu/effis',
-      { LAYERS: 'mf010.fwi', TIME: oggiUTC },
+      { LAYERS: 'mf010.fwi', TIME: oggiItalia },
       { opacity: 0.7, attribution: '© Copernicus EFFIS (JRC)' }),
     // EDO: Combined Drought Indicator v4.1, livello "cdiad" (Watch/Warning/Alert).
     siccita: new LivelloWMSImmagine('https://drought.emergency.copernicus.eu/api/wms',
@@ -563,41 +666,93 @@
   // --- Dati ------------------------------------------------------------
   const PASSO = 20;
   let rilevamenti = [];
+  let visibili = [];
   let mostrati = 0;
+  let filtroFascia = null;
 
-  function vaiAlRilevamento(indice) {
-    const r = rilevamenti[indice];
-    if (document.querySelector('[data-livello="calore"]').getAttribute('aria-pressed') !== 'true') {
-      impostaLivello('calore', true);
-    }
+  function popup(r) {
+    const f = fascia(r.item.intensita_radiativa_mw);
+    return `<div class="pop-titolo">Punto di calore</div>
+      <div class="pop-riga"><span>Rilevato</span><b>${r.momento ? esc(formatoData.format(r.momento)) : 'n/d'}</b></div>
+      <div class="pop-riga"><span>Intensità</span><span>${f.nome}${r.item.intensita_radiativa_mw != null ? ` · ${numero(r.item.intensita_radiativa_mw)} MW` : ''}</span></div>
+      <div class="pop-riga"><span>Affidabilità</span><span>${esc(CONFIDENZA[r.item.confidenza] || r.item.confidenza || 'n/d')}</span></div>
+      <div class="pop-riga"><span>Satellite</span><span>${esc(SATELLITI[r.item.satellite] || r.item.satellite || 'n/d')}</span></div>
+      <div class="pop-riga"><span>Posizione</span><span>${coordinate(r.item.latitudine, r.item.longitudine)}</span></div>`;
+  }
+
+  function vaiAlRilevamento(r) {
+    if (document.querySelector('[data-livello="calore"]').getAttribute('aria-pressed') !== 'true') impostaLivello('calore', true);
     const destinazione = [r.item.latitudine, r.item.longitudine];
-    if (riduciMovimento) mappa.setView(destinazione, 9); else mappa.flyTo(destinazione, 9, { duration: 0.8 });
-    r.marcatore.openPopup();
     document.getElementById('mappa').scrollIntoView({ behavior: riduciMovimento ? 'auto' : 'smooth', block: 'center' });
+    if (riduciMovimento) { mappa.setView(destinazione, 9); r.marcatore.openPopup(); }
+    else { mappa.flyTo(destinazione, 9, { duration: 0.8 }); mappa.once('moveend', () => r.marcatore.openPopup()); }
+  }
+
+  function rigaRilevamento(r) {
+    const f = fascia(r.item.intensita_radiativa_mw);
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <button class="rilevamento" type="button">
+        <span class="pallino-cella"><i class="punto" style="width:12px;height:12px;background:var(${f.colore})"></i></span>
+        <span class="quando">${r.momento ? esc(formatoData.format(r.momento)) : 'Data non disponibile'}${r.momento ? `<small>${esc(relativo(r.momento))}</small>` : ''}</span>
+        <span class="dove">${coordinate(r.item.latitudine, r.item.longitudine)}</span>
+        <span class="forza">Intensità ${f.nome}${r.item.intensita_radiativa_mw != null ? ` (${numero(r.item.intensita_radiativa_mw)} MW)` : ''}</span>
+        <span class="vai">Vedi sulla mappa →</span>
+      </button>`;
+    li.querySelector('button').addEventListener('click', () => vaiAlRilevamento(r));
+    return li;
   }
 
   function mostraAltri() {
     const lista = document.getElementById('lista-rilevamenti');
-    rilevamenti.slice(mostrati, mostrati + PASSO).forEach((r, i) => {
-      const indice = mostrati + i;
-      const f = fascia(r.item.intensita_radiativa_mw);
-      const li = document.createElement('li');
-      li.innerHTML = `
-        <button class="rilevamento" type="button">
-          <span class="pallino-cella"><i class="punto" style="width:12px;height:12px;background:var(${f.colore})"></i></span>
-          <span class="quando">${r.momento ? formatoData.format(r.momento) : 'Data non disponibile'}</span>
-          <span class="dove">${coordinate(r.item.latitudine, r.item.longitudine)}</span>
-          <span class="forza">Intensità ${f.nome}${r.item.intensita_radiativa_mw != null ? ` (${numero(r.item.intensita_radiativa_mw)} MW)` : ''}</span>
-          <span class="vai">Vedi sulla mappa</span>
-        </button>`;
-      li.querySelector('button').addEventListener('click', () => vaiAlRilevamento(indice));
-      lista.appendChild(li);
-    });
-    mostrati = Math.min(mostrati + PASSO, rilevamenti.length);
+    visibili.slice(mostrati, mostrati + PASSO).forEach(r => lista.appendChild(rigaRilevamento(r)));
+    mostrati = Math.min(mostrati + PASSO, visibili.length);
     const pulsante = document.getElementById('mostra-altri');
-    const restanti = rilevamenti.length - mostrati;
+    const restanti = visibili.length - mostrati;
     pulsante.hidden = restanti <= 0;
-    pulsante.textContent = `Mostra altri ${Math.min(PASSO, restanti)} di ${restanti}`;
+    pulsante.textContent = `Mostra altri ${Math.min(PASSO, restanti)}`;
+    document.getElementById('conta-elenco').textContent = `${mostrati.toLocaleString('it-IT')} di ${visibili.length.toLocaleString('it-IT')} rilevamenti`;
+  }
+
+  function renderElenco() {
+    const contenitore = document.getElementById('contenitore-elenco');
+    const ordine = document.getElementById('ordine').value;
+    visibili = rilevamenti.filter(r => !filtroFascia || fascia(r.item.intensita_radiativa_mw).id === filtroFascia);
+    if (ordine === 'intensi') visibili.sort((a, b) => (b.item.intensita_radiativa_mw ?? -1) - (a.item.intensita_radiativa_mw ?? -1));
+    if (!visibili.length) {
+      contenitore.innerHTML = '<p class="messaggio">Nessun rilevamento con questa intensità.</p>';
+      return;
+    }
+    contenitore.innerHTML = '<ul class="elenco" id="lista-rilevamenti"></ul><div class="piede-elenco"><span id="conta-elenco" class="num"></span><button class="btn" id="mostra-altri" type="button" hidden></button></div>';
+    document.getElementById('mostra-altri').addEventListener('click', mostraAltri);
+    mostrati = 0;
+    mostraAltri();
+  }
+  document.getElementById('ordine').addEventListener('change', renderElenco);
+
+  function renderFiltroIntensita() {
+    const conta = {};
+    rilevamenti.forEach(r => { const id = fascia(r.item.intensita_radiativa_mw).id; conta[id] = (conta[id] || 0) + 1; });
+    document.getElementById('filtro-intensita').innerHTML =
+      `<button type="button" class="chip" data-fascia="" aria-pressed="${!filtroFascia}">Tutte <span class="conta">${rilevamenti.length.toLocaleString('it-IT')}</span></button>` +
+      FASCE.map(f => `<button type="button" class="chip" data-fascia="${f.id}" aria-pressed="${filtroFascia === f.id}" ${conta[f.id] ? '' : 'disabled'}>
+        <i class="punto" style="width:11px;height:11px;background:var(${f.colore})"></i>${f.nome} <span class="conta">${(conta[f.id] || 0).toLocaleString('it-IT')}</span></button>`).join('');
+  }
+  document.getElementById('filtro-intensita').addEventListener('click', e => {
+    const b = e.target.closest('.chip');
+    if (!b || b.disabled) return;
+    const id = b.dataset.fascia || null;
+    filtroFascia = filtroFascia === id ? null : id;
+    disegnaPunti();
+    renderFiltroIntensita();
+    renderElenco();
+  });
+
+  function disegnaPunti() {
+    livelli.calore.clearLayers();
+    rilevamenti.forEach(r => {
+      if (!filtroFascia || fascia(r.item.intensita_radiativa_mw).id === filtroFascia) livelli.calore.addLayer(r.marcatore);
+    });
   }
 
   async function carica() {
@@ -614,6 +769,7 @@
     } catch (err) {
       stato.dataset.tono = 'attesa';
       statoTesto.textContent = 'I punti di calore non sono disponibili in questo momento';
+      ['n-punti', 'n-forti', 'n-ultimo'].forEach(id => riempi(id, '—'));
       contenitore.innerHTML = '<p class="messaggio errore">Il file dei dati non risponde. Ricarica la pagina tra qualche minuto: gli altri livelli della mappa restano utilizzabili.</p>';
       return;
     }
@@ -629,16 +785,20 @@
 
     rilevamenti.forEach(r => {
       const f = fascia(r.item.intensita_radiativa_mw);
-      const colore = css(f.colore);
       r.marcatore = L.circleMarker([r.item.latitudine, r.item.longitudine], {
-        radius: f.raggio, color: '#ffffff', weight: 1, fillColor: colore, fillOpacity: 0.9,
-      }).bindPopup(`
-        <strong>${r.momento ? formatoData.format(r.momento) : 'Data non disponibile'}</strong><br>
-        Intensità ${f.nome}${r.item.intensita_radiativa_mw != null ? ` (${numero(r.item.intensita_radiativa_mw)} MW)` : ''}<br>
-        ${coordinate(r.item.latitudine, r.item.longitudine)}<br>
-        Satellite: ${r.item.satellite || 'n/d'}`)
-        .addTo(livelli.calore);
+        radius: f.raggio, color: '#ffffff', weight: 1, fillColor: css(f.colore), fillOpacity: 0.9,
+      }).bindPopup(() => popup(r));
     });
+    disegnaPunti();
+    renderFiltroIntensita();
+
+    const forti = rilevamenti.filter(r => (r.item.intensita_radiativa_mw ?? 0) >= 20).length;
+    riempi('n-punti', rilevamenti.length.toLocaleString('it-IT'));
+    riempi('n-forti', forti.toLocaleString('it-IT'));
+    if (rilevamenti[0] && rilevamenti[0].momento) {
+      riempi('n-ultimo', formatoOra.format(rilevamenti[0].momento));
+      document.getElementById('n-ultimo-s').textContent = `ora italiana, ${relativo(rilevamenti[0].momento)}`;
+    } else riempi('n-ultimo', '—');
 
     if (rilevamenti.length === 0) {
       stato.dataset.tono = 'calmo';
@@ -646,34 +806,60 @@
       contenitore.innerHTML = '<p class="messaggio">Nessun rilevamento nell\'area monitorata. Quando un satellite ne individuerà uno, comparirà qui e sulla mappa.</p>';
       return;
     }
-
     stato.dataset.tono = 'calore';
     statoTesto.textContent = rilevamenti.length === 1
       ? '1 punto di calore rilevato nelle ultime 24 ore'
       : `${rilevamenti.length.toLocaleString('it-IT')} punti di calore rilevati nelle ultime 24 ore`;
-
-    contenitore.innerHTML = '<ul class="elenco" id="lista-rilevamenti"></ul><button class="altri" id="mostra-altri" type="button" hidden></button>';
-    document.getElementById('mostra-altri').addEventListener('click', mostraAltri);
-    mostraAltri();
-
+    renderElenco();
   }
 
   // --- Temperatura rispetto al normale -------------------------------------
+  let datiClima = null;
+  const TONO = { caldo: 'caldo', molto_caldo: 'caldo', eccezionale: 'caldo', freddo: 'freddo', molto_freddo: 'freddo', nella_norma: 'norma' };
+  const BADGE = { caldo: 'Più caldo', molto_caldo: 'Molto più caldo', freddo: 'Più freddo', molto_freddo: 'Molto più freddo', nella_norma: 'Nella norma', eccezionale: 'Eccezionale' };
+  const gradi = v => v == null ? '—' : `${numero(v, 1)} °C`;
+  const segno = v => v == null ? '—' : `${v > 0 ? '+' : v < 0 ? '−' : ''}${numero(Math.abs(v), 1)} °C`;
+
+  function renderClima() {
+    const contenitore = document.getElementById('contenitore-clima');
+    if (!datiClima) return;
+    // Tono per anomalia reale: "eccezionale" puo' essere anche freddo.
+    const tono = v => v.classe === 'eccezionale' ? (v.anomalia < 0 ? 'freddo' : 'caldo') : (TONO[v.classe] || 'norma');
+    const ordine = document.getElementById('ordine-clima').value;
+    const ordinate = datiClima.citta.slice().sort((a, b) =>
+      ordine === 'nome' ? a.nome.localeCompare(b.nome, 'it')
+        : ordine === 'caldo' ? (b.anomalia ?? -99) - (a.anomalia ?? -99)
+        : Math.abs(b.anomalia ?? 0) - Math.abs(a.anomalia ?? 0));
+    const SCALA = 6; // ±6 °C agli estremi della barra
+    contenitore.innerHTML = `<ul class="clima-griglia">${ordinate.map(v => {
+      const pos = v.anomalia == null ? 50 : Math.max(2, Math.min(98, 50 + (v.anomalia / SCALA) * 50));
+      return `<li class="clima-scheda" data-tono="${tono(v)}">
+        <div class="clima-testa"><h3>${esc(v.nome)}</h3><span class="clima-badge">${esc(BADGE[v.classe] || 'n/d')}</span></div>
+        <p class="clima-valore num">${segno(v.anomalia)}<small>rispetto al normale</small></p>
+        <div><div class="scala-anomalia" role="img" aria-label="Scostamento ${esc(segno(v.anomalia))} su una scala da meno 6 a più 6 gradi"><i style="left:${pos}%"></i></div></div>
+        <div class="scala-etichette" aria-hidden="true"><span>−6°</span><span>normale</span><span>+6°</span></div>
+        <div class="clima-dettagli num"><span>Media <b>${gradi(v.media_giornaliera)}</b></span><span>Normale <b>${gradi(v.normale)}</b></span></div>
+        <p>${esc(v.frase)}</p>
+      </li>`;
+    }).join('')}</ul>`;
+  }
+  document.getElementById('ordine-clima').addEventListener('change', renderClima);
+
   async function caricaClima() {
     const contenitore = document.getElementById('contenitore-clima');
     const sottotitolo = document.getElementById('clima-sottotitolo');
-    let dati;
     try {
       const risposta = await fetch('./data/clima/ultimo.json', { cache: 'no-store' });
       if (!risposta.ok) throw new Error(`HTTP ${risposta.status}`);
-      dati = await risposta.json();
+      datiClima = await risposta.json();
     } catch (err) {
+      riempi('n-citta', '—');
       contenitore.innerHTML = '<p class="messaggio">Il confronto con il normale non è ancora disponibile. Viene aggiornato ogni mattina.</p>';
       return;
     }
-    const giorno = new Date(dati.giorno + 'T12:00:00Z');
-    const dataLunga = giorno.toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long' });
-    sottotitolo.textContent = `${dataLunga}: la temperatura media in ${dati.citta.length} città, confrontata con il normale 1991-2020 dello stesso periodo.`;
+    const giorno = new Date(datiClima.giorno + 'T12:00:00Z');
+    const dataLunga = giorno.toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' });
+    sottotitolo.textContent = `${dataLunga[0].toUpperCase() + dataLunga.slice(1)}: la temperatura media in ${datiClima.citta.length} città, confrontata con il normale 1991-2020 dello stesso periodo.`;
 
     // Il titolo dice "Ieri" solo se il dato e' davvero quello di ieri (data italiana).
     // Se e' piu' vecchio, il titolo diventa neutro; da 2 giorni di ritardo in su compare un avviso.
@@ -681,25 +867,42 @@
     const giorniDiRitardo = Math.round((new Date(ieriItalia + 'T12:00:00Z') - giorno) / 86400000);
     if (giorniDiRitardo > 0) {
       document.getElementById('titolo-clima').textContent = 'Più caldo o più freddo del normale?';
+      document.querySelector('#n-citta').parentElement.querySelector('.k').textContent = 'Città più fuori norma';
     }
     if (giorniDiRitardo >= 2) {
       sottotitolo.insertAdjacentHTML('afterend',
-        `<p class="clima-nota"><strong>Aggiornamento in ritardo.</strong> Il dato più recente disponibile è quello di ${dataLunga}.</p>`);
+        `<p class="clima-nota"><strong>Aggiornamento in ritardo.</strong> Il dato più recente disponibile è quello di ${esc(dataLunga)}.</p>`);
     }
 
-    const etichetta = v => {
-      if (v.classe === 'nella_norma') return 'nella norma';
-      if (v.anomalia == null) return 'dato incompleto';
-      const g = Math.round(Math.abs(v.anomalia));
-      return `${v.anomalia > 0 ? '+' : '−'}${g} °C`;
-    };
-    const ordinate = dati.citta.slice().sort((a, b) => Math.abs(b.anomalia ?? 0) - Math.abs(a.anomalia ?? 0));
-    contenitore.innerHTML = `<ul class="clima-griglia">${ordinate.map(v => `
-      <li class="clima-scheda" data-classe="${v.classe}">
-        <h3>${v.nome}</h3>
-        <p class="clima-valore">${etichetta(v)}</p>
-        <p>${v.frase}</p>
-      </li>`).join('')}</ul>`;
+    const conAnomalia = datiClima.citta.filter(v => v.anomalia != null);
+    const estrema = conAnomalia.sort((a, b) => Math.abs(b.anomalia) - Math.abs(a.anomalia))[0];
+    if (estrema) {
+      riempi('n-citta', segno(estrema.anomalia));
+      document.getElementById('n-citta-s').textContent = `${estrema.nome}, rispetto al 1991-2020`;
+    } else riempi('n-citta', '—');
+    renderClima();
+  }
+
+  // --- Copia negli appunti -------------------------------------------------
+  document.addEventListener('click', e => {
+    const b = e.target.closest('[data-copia]');
+    if (!b) return;
+    const testo = document.getElementById(b.dataset.copia).textContent;
+    if (navigator.clipboard?.writeText) navigator.clipboard.writeText(testo).then(() => toast('Copiato negli appunti'), () => toast('Copia non riuscita'));
+    else toast('Copia non disponibile su questo browser');
+  });
+
+  // --- Sezione attiva nella barra di navigazione ---------------------------
+  const vociNav = [...document.querySelectorAll('.navigazione a')];
+  if ('IntersectionObserver' in window) {
+    const osservatore = new IntersectionObserver(voci => {
+      voci.forEach(v => {
+        if (!v.isIntersecting) return;
+        const id = v.target.id;
+        vociNav.forEach(a => a.setAttribute('aria-current', String(a.getAttribute('href') === '#' + id)));
+      });
+    }, { rootMargin: '-35% 0px -60% 0px' });
+    vociNav.forEach(a => { const t = document.querySelector(a.getAttribute('href')); if (t) osservatore.observe(t); });
   }
 
   carica();
