@@ -1,0 +1,312 @@
+{
+ "giorno": "2026-10-22",
+ "generato_utc": "2026-10-23T07:21:25+00:00",
+ "completo": true,
+ "metodo": "media delle analisi ECMWF (IFS, passo 0) delle ore 00/06/12/18 UTC, confrontata con il normale 1991-2020 da ERA5 calcolato allo stesso modo",
+ "fonte_presente": "ECMWF Open Data, analisi IFS, licenza CC BY 4.0",
+ "fonte_normale": "ERA5, Copernicus Climate Change Service (C3S), licenza CC BY 4.0",
+ "licenza": "CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)",
+ "attribuzione_obbligatoria": "Dati: ClimaAperto di Emanuel Ciuro (https://emanuelc89.github.io/climaaperto/), elaborazione di analisi ECMWF Open Data e di dati ERA5 Copernicus C3S (CC BY 4.0)",
+ "citta": [
+  {
+   "slug": "roma",
+   "nome": "Roma",
+   "punto_griglia": {
+    "lat": 42.0,
+    "lon": 12.5
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 14.34,
+    "06": 13.34,
+    "12": 21.44,
+    "18": 15.81
+   },
+   "normale": 15.87,
+   "media_giornaliera": 16.23,
+   "anomalia": 0.36,
+   "classe": "nella_norma",
+   "frase": "Il 22 ottobre nell'area di Roma la temperatura media è stata di 16 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "milano",
+   "nome": "Milano",
+   "punto_griglia": {
+    "lat": 45.25,
+    "lon": 9.25
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 12.09,
+    "06": 13.84,
+    "12": 19.44,
+    "18": 12.81
+   },
+   "normale": 13.42,
+   "media_giornaliera": 14.55,
+   "anomalia": 1.13,
+   "classe": "nella_norma",
+   "frase": "Il 22 ottobre nell'area di Milano la temperatura media è stata di 15 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "napoli",
+   "nome": "Napoli",
+   "punto_griglia": {
+    "lat": 41.0,
+    "lon": 14.5
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 14.84,
+    "06": 13.84,
+    "12": 19.44,
+    "18": 14.06
+   },
+   "normale": 15.39,
+   "media_giornaliera": 15.55,
+   "anomalia": 0.16,
+   "classe": "nella_norma",
+   "frase": "Il 22 ottobre nell'area di Napoli la temperatura media è stata di 16 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "torino",
+   "nome": "Torino",
+   "punto_griglia": {
+    "lat": 45.0,
+    "lon": 7.75
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 13.59,
+    "06": 8.34,
+    "12": 17.44,
+    "18": 11.81
+   },
+   "normale": 12.09,
+   "media_giornaliera": 12.8,
+   "anomalia": 0.71,
+   "classe": "nella_norma",
+   "frase": "Il 22 ottobre nell'area di Torino la temperatura media è stata di 13 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "bologna",
+   "nome": "Bologna",
+   "punto_griglia": {
+    "lat": 44.5,
+    "lon": 11.5
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 16.34,
+    "06": 13.59,
+    "12": 20.69,
+    "18": 14.81
+   },
+   "normale": 14.17,
+   "media_giornaliera": 16.36,
+   "anomalia": 2.19,
+   "classe": "caldo",
+   "frase": "Il 22 ottobre nell'area di Bologna la temperatura media è stata di 16 °C, circa 2 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020)."
+  },
+  {
+   "slug": "firenze",
+   "nome": "Firenze",
+   "punto_griglia": {
+    "lat": 43.75,
+    "lon": 11.25
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 13.84,
+    "06": 13.59,
+    "12": 18.44,
+    "18": 14.56
+   },
+   "normale": 13.57,
+   "media_giornaliera": 15.11,
+   "anomalia": 1.54,
+   "classe": "nella_norma",
+   "frase": "Il 22 ottobre nell'area di Firenze la temperatura media è stata di 15 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "bari",
+   "nome": "Bari",
+   "punto_griglia": {
+    "lat": 41.0,
+    "lon": 16.75
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 16.09,
+    "06": 16.59,
+    "12": 23.69,
+    "18": 16.56
+   },
+   "normale": 16.31,
+   "media_giornaliera": 18.23,
+   "anomalia": 1.92,
+   "classe": "nella_norma",
+   "frase": "Il 22 ottobre nell'area di Bari la temperatura media è stata di 18 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "catania",
+   "nome": "Catania",
+   "punto_griglia": {
+    "lat": 37.5,
+    "lon": 15.0
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 18.59,
+    "06": 17.09,
+    "12": 25.44,
+    "18": 19.81
+   },
+   "normale": 18.33,
+   "media_giornaliera": 20.23,
+   "anomalia": 1.9,
+   "classe": "nella_norma",
+   "frase": "Il 22 ottobre nell'area di Catania la temperatura media è stata di 20 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "verona",
+   "nome": "Verona",
+   "punto_griglia": {
+    "lat": 45.25,
+    "lon": 11.0
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 14.59,
+    "06": 11.09,
+    "12": 20.44,
+    "18": 14.56
+   },
+   "normale": 13.77,
+   "media_giornaliera": 15.17,
+   "anomalia": 1.4,
+   "classe": "nella_norma",
+   "frase": "Il 22 ottobre nell'area di Verona la temperatura media è stata di 15 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "venezia",
+   "nome": "Venezia",
+   "punto_griglia": {
+    "lat": 45.5,
+    "lon": 12.25
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 16.09,
+    "06": 13.09,
+    "12": 19.94,
+    "18": 15.56
+   },
+   "normale": 14.69,
+   "media_giornaliera": 16.17,
+   "anomalia": 1.48,
+   "classe": "nella_norma",
+   "frase": "Il 22 ottobre nell'area di Venezia la temperatura media è stata di 16 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "padova",
+   "nome": "Padova",
+   "punto_griglia": {
+    "lat": 45.5,
+    "lon": 11.75
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 14.84,
+    "06": 12.09,
+    "12": 19.94,
+    "18": 13.81
+   },
+   "normale": 13.45,
+   "media_giornaliera": 15.17,
+   "anomalia": 1.72,
+   "classe": "nella_norma",
+   "frase": "Il 22 ottobre nell'area di Padova la temperatura media è stata di 15 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "cagliari",
+   "nome": "Cagliari",
+   "punto_griglia": {
+    "lat": 39.25,
+    "lon": 9.0
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 17.34,
+    "06": 16.34,
+    "12": 22.19,
+    "18": 18.31
+   },
+   "normale": 17.88,
+   "media_giornaliera": 18.55,
+   "anomalia": 0.67,
+   "classe": "nella_norma",
+   "frase": "Il 22 ottobre nell'area di Cagliari la temperatura media è stata di 19 °C, nella norma per questo periodo dell'anno."
+  }
+ ]
+}
