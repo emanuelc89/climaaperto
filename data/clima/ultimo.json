@@ -1,6 +1,6 @@
 {
- "giorno": "2026-10-24",
- "generato_utc": "2026-10-25T13:20:59+00:00",
+ "giorno": "2026-10-25",
+ "generato_utc": "2026-10-26T07:21:03+00:00",
  "completo": true,
  "metodo": "media delle analisi ECMWF (IFS, passo 0) delle ore 00/06/12/18 UTC, confrontata con il normale 1991-2020 da ERA5 calcolato allo stesso modo",
  "fonte_presente": "ECMWF Open Data, analisi IFS, licenza CC BY 4.0",
@@ -22,16 +22,16 @@
     18
    ],
    "valori_orari": {
-    "00": 14.83,
-    "06": 14.12,
-    "12": 16.7,
-    "18": 14.22
+    "00": 11.04,
+    "06": 8.17,
+    "12": 17.89,
+    "18": 13.14
    },
-   "normale": 15.59,
-   "media_giornaliera": 14.97,
-   "anomalia": -0.62,
-   "classe": "nella_norma",
-   "frase": "Il 24 ottobre nell'area di Roma la temperatura media è stata di 15 °C, nella norma per questo periodo dell'anno."
+   "normale": 15.44,
+   "media_giornaliera": 12.56,
+   "anomalia": -2.88,
+   "classe": "freddo",
+   "frase": "Il 25 ottobre nell'area di Roma la temperatura media è stata di 13 °C, circa 3 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
   },
   {
    "slug": "milano",
@@ -47,16 +47,16 @@
     18
    ],
    "valori_orari": {
-    "00": 8.58,
-    "06": 8.12,
-    "12": 18.7,
-    "18": 11.22
+    "00": 9.04,
+    "06": 7.17,
+    "12": 12.39,
+    "18": 10.64
    },
-   "normale": 13.07,
-   "media_giornaliera": 11.65,
-   "anomalia": -1.42,
-   "classe": "nella_norma",
-   "frase": "Il 24 ottobre nell'area di Milano la temperatura media è stata di 12 °C, nella norma per questo periodo dell'anno."
+   "normale": 12.88,
+   "media_giornaliera": 9.81,
+   "anomalia": -3.07,
+   "classe": "freddo",
+   "frase": "Il 25 ottobre nell'area di Milano la temperatura media è stata di 10 °C, circa 3 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
   },
   {
    "slug": "napoli",
@@ -72,16 +72,16 @@
     18
    ],
    "valori_orari": {
-    "00": 13.58,
-    "06": 14.37,
-    "12": 19.2,
-    "18": 14.47
+    "00": 10.04,
+    "06": 8.92,
+    "12": 17.64,
+    "18": 12.89
    },
-   "normale": 15.12,
-   "media_giornaliera": 15.4,
-   "anomalia": 0.28,
-   "classe": "nella_norma",
-   "frase": "Il 24 ottobre nell'area di Napoli la temperatura media è stata di 15 °C, nella norma per questo periodo dell'anno."
+   "normale": 14.99,
+   "media_giornaliera": 12.37,
+   "anomalia": -2.62,
+   "classe": "freddo",
+   "frase": "Il 25 ottobre nell'area di Napoli la temperatura media è stata di 12 °C, circa 3 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
   },
   {
    "slug": "torino",
@@ -97,16 +97,16 @@
     18
    ],
    "valori_orari": {
-    "00": 5.83,
-    "06": 5.62,
-    "12": 18.2,
-    "18": 12.72
+    "00": 8.79,
+    "06": 6.67,
+    "12": 11.89,
+    "18": 10.14
    },
-   "normale": 11.73,
-   "media_giornaliera": 10.59,
-   "anomalia": -1.14,
-   "classe": "nella_norma",
-   "frase": "Il 24 ottobre nell'area di Torino la temperatura media è stata di 11 °C, nella norma per questo periodo dell'anno."
+   "normale": 11.54,
+   "media_giornaliera": 9.37,
+   "anomalia": -2.17,
+   "classe": "freddo",
+   "frase": "Il 25 ottobre nell'area di Torino la temperatura media è stata di 9 °C, circa 2 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
   },
   {
    "slug": "bologna",
@@ -122,16 +122,16 @@
     18
    ],
    "valori_orari": {
-    "00": 11.58,
-    "06": 10.37,
-    "12": 16.2,
-    "18": 10.22
+    "00": 7.04,
+    "06": 6.92,
+    "12": 13.89,
+    "18": 10.14
    },
-   "normale": 13.85,
-   "media_giornaliera": 12.09,
-   "anomalia": -1.76,
-   "classe": "nella_norma",
-   "frase": "Il 24 ottobre nell'area di Bologna la temperatura media è stata di 12 °C, nella norma per questo periodo dell'anno."
+   "normale": 13.68,
+   "media_giornaliera": 9.5,
+   "anomalia": -4.18,
+   "classe": "freddo",
+   "frase": "Il 25 ottobre nell'area di Bologna la temperatura media è stata di 9 °C, circa 4 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 10% dei giorni più freddi di questo periodo negli ultimi 30 anni."
   },
   {
    "slug": "firenze",
@@ -147,16 +147,16 @@
     18
    ],
    "valori_orari": {
-    "00": 12.33,
-    "06": 11.62,
-    "12": 16.2,
-    "18": 12.22
+    "00": 7.54,
+    "06": 5.92,
+    "12": 15.89,
+    "18": 13.39
    },
-   "normale": 13.28,
-   "media_giornaliera": 13.09,
-   "anomalia": -0.19,
-   "classe": "nella_norma",
-   "frase": "Il 24 ottobre nell'area di Firenze la temperatura media è stata di 13 °C, nella norma per questo periodo dell'anno."
+   "normale": 13.13,
+   "media_giornaliera": 10.69,
+   "anomalia": -2.44,
+   "classe": "freddo",
+   "frase": "Il 25 ottobre nell'area di Firenze la temperatura media è stata di 11 °C, circa 2 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
   },
   {
    "slug": "bari",
@@ -172,16 +172,16 @@
     18
    ],
    "valori_orari": {
-    "00": 14.08,
-    "06": 14.12,
-    "12": 22.45,
-    "18": 16.47
+    "00": 11.79,
+    "06": 11.17,
+    "12": 16.89,
+    "18": 12.39
    },
-   "normale": 16.06,
-   "media_giornaliera": 16.78,
-   "anomalia": 0.72,
-   "classe": "nella_norma",
-   "frase": "Il 24 ottobre nell'area di Bari la temperatura media è stata di 17 °C, nella norma per questo periodo dell'anno."
+   "normale": 15.94,
+   "media_giornaliera": 13.06,
+   "anomalia": -2.88,
+   "classe": "freddo",
+   "frase": "Il 25 ottobre nell'area di Bari la temperatura media è stata di 13 °C, circa 3 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
   },
   {
    "slug": "catania",
@@ -197,16 +197,16 @@
     18
    ],
    "valori_orari": {
-    "00": 15.08,
-    "06": 14.87,
-    "12": 24.7,
-    "18": 18.22
+    "00": 16.54,
+    "06": 16.92,
+    "12": 21.89,
+    "18": 16.14
    },
-   "normale": 18.05,
-   "media_giornaliera": 18.22,
-   "anomalia": 0.17,
+   "normale": 17.91,
+   "media_giornaliera": 17.87,
+   "anomalia": -0.04,
    "classe": "nella_norma",
-   "frase": "Il 24 ottobre nell'area di Catania la temperatura media è stata di 18 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 25 ottobre nell'area di Catania la temperatura media è stata di 18 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "verona",
@@ -222,16 +222,16 @@
     18
    ],
    "valori_orari": {
-    "00": 11.83,
-    "06": 9.37,
-    "12": 15.95,
-    "18": 10.22
+    "00": 7.04,
+    "06": 6.42,
+    "12": 14.14,
+    "18": 9.64
    },
-   "normale": 13.43,
-   "media_giornaliera": 11.84,
-   "anomalia": -1.59,
-   "classe": "nella_norma",
-   "frase": "Il 24 ottobre nell'area di Verona la temperatura media è stata di 12 °C, nella norma per questo periodo dell'anno."
+   "normale": 13.24,
+   "media_giornaliera": 9.31,
+   "anomalia": -3.93,
+   "classe": "freddo",
+   "frase": "Il 25 ottobre nell'area di Verona la temperatura media è stata di 9 °C, circa 4 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 10% dei giorni più freddi di questo periodo negli ultimi 30 anni."
   },
   {
    "slug": "venezia",
@@ -247,16 +247,16 @@
     18
    ],
    "valori_orari": {
-    "00": 11.33,
-    "06": 9.87,
-    "12": 14.2,
-    "18": 9.22
+    "00": 6.79,
+    "06": 6.92,
+    "12": 13.89,
+    "18": 10.14
    },
-   "normale": 14.4,
-   "media_giornaliera": 11.15,
-   "anomalia": -3.25,
-   "classe": "freddo",
-   "frase": "Il 24 ottobre nell'area di Venezia la temperatura media è stata di 11 °C, circa 3 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
+   "normale": 14.23,
+   "media_giornaliera": 9.44,
+   "anomalia": -4.79,
+   "classe": "molto_freddo",
+   "frase": "Il 25 ottobre nell'area di Venezia la temperatura media è stata di 9 °C, circa 5 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 5% dei giorni più freddi di questo periodo negli ultimi 30 anni."
   },
   {
    "slug": "padova",
@@ -272,16 +272,16 @@
     18
    ],
    "valori_orari": {
-    "00": 11.58,
-    "06": 9.37,
-    "12": 14.7,
-    "18": 8.47
+    "00": 7.04,
+    "06": 5.67,
+    "12": 13.39,
+    "18": 9.64
    },
-   "normale": 13.11,
-   "media_giornaliera": 11.03,
-   "anomalia": -2.08,
+   "normale": 12.92,
+   "media_giornaliera": 8.94,
+   "anomalia": -3.98,
    "classe": "freddo",
-   "frase": "Il 24 ottobre nell'area di Padova la temperatura media è stata di 11 °C, circa 2 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
+   "frase": "Il 25 ottobre nell'area di Padova la temperatura media è stata di 9 °C, circa 4 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
   },
   {
    "slug": "cagliari",
@@ -297,16 +297,16 @@
     18
    ],
    "valori_orari": {
-    "00": 18.08,
-    "06": 15.87,
-    "12": 20.95,
-    "18": 16.72
+    "00": 16.04,
+    "06": 15.42,
+    "12": 23.14,
+    "18": 18.89
    },
-   "normale": 17.6,
-   "media_giornaliera": 17.9,
-   "anomalia": 0.3,
+   "normale": 17.44,
+   "media_giornaliera": 18.37,
+   "anomalia": 0.93,
    "classe": "nella_norma",
-   "frase": "Il 24 ottobre nell'area di Cagliari la temperatura media è stata di 18 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 25 ottobre nell'area di Cagliari la temperatura media è stata di 18 °C, nella norma per questo periodo dell'anno."
   }
  ]
 }
