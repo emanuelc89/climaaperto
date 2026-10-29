@@ -1,6 +1,6 @@
 {
- "giorno": "2026-10-27",
- "generato_utc": "2026-10-28T13:21:04+00:00",
+ "giorno": "2026-10-28",
+ "generato_utc": "2026-10-29T07:20:52+00:00",
  "completo": true,
  "metodo": "media delle analisi ECMWF (IFS, passo 0) delle ore 00/06/12/18 UTC, confrontata con il normale 1991-2020 da ERA5 calcolato allo stesso modo",
  "fonte_presente": "ECMWF Open Data, analisi IFS, licenza CC BY 4.0",
@@ -22,16 +22,16 @@
     18
    ],
    "valori_orari": {
-    "00": 11.55,
-    "06": 9.06,
-    "12": 19.64,
-    "18": 15.37
+    "00": 11.17,
+    "06": 8.4,
+    "12": 18.32,
+    "18": 13.83
    },
-   "normale": 15.14,
-   "media_giornaliera": 13.91,
-   "anomalia": -1.23,
-   "classe": "nella_norma",
-   "frase": "Il 27 ottobre nell'area di Roma la temperatura media è stata di 14 °C, nella norma per questo periodo dell'anno."
+   "normale": 14.99,
+   "media_giornaliera": 12.93,
+   "anomalia": -2.06,
+   "classe": "freddo",
+   "frase": "Il 28 ottobre nell'area di Roma la temperatura media è stata di 13 °C, circa 2 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
   },
   {
    "slug": "milano",
@@ -47,16 +47,16 @@
     18
    ],
    "valori_orari": {
-    "00": 7.8,
-    "06": 6.06,
-    "12": 15.89,
-    "18": 11.37
+    "00": 9.17,
+    "06": 7.9,
+    "12": 16.32,
+    "18": 12.08
    },
-   "normale": 12.5,
-   "media_giornaliera": 10.28,
-   "anomalia": -2.22,
-   "classe": "freddo",
-   "frase": "Il 27 ottobre nell'area di Milano la temperatura media è stata di 10 °C, circa 2 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
+   "normale": 12.32,
+   "media_giornaliera": 11.37,
+   "anomalia": -0.95,
+   "classe": "nella_norma",
+   "frase": "Il 28 ottobre nell'area di Milano la temperatura media è stata di 11 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "napoli",
@@ -72,16 +72,16 @@
     18
    ],
    "valori_orari": {
-    "00": 10.05,
-    "06": 10.06,
-    "12": 19.64,
-    "18": 13.87
+    "00": 12.42,
+    "06": 11.15,
+    "12": 18.07,
+    "18": 12.83
    },
-   "normale": 14.69,
-   "media_giornaliera": 13.41,
-   "anomalia": -1.28,
+   "normale": 14.56,
+   "media_giornaliera": 13.62,
+   "anomalia": -0.94,
    "classe": "nella_norma",
-   "frase": "Il 27 ottobre nell'area di Napoli la temperatura media è stata di 13 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 28 ottobre nell'area di Napoli la temperatura media è stata di 14 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "torino",
@@ -97,16 +97,16 @@
     18
    ],
    "valori_orari": {
-    "00": 8.05,
-    "06": 5.31,
-    "12": 15.39,
-    "18": 11.12
+    "00": 7.67,
+    "06": 6.65,
+    "12": 16.32,
+    "18": 12.83
    },
-   "normale": 11.15,
-   "media_giornaliera": 9.97,
-   "anomalia": -1.18,
+   "normale": 10.96,
+   "media_giornaliera": 10.87,
+   "anomalia": -0.09,
    "classe": "nella_norma",
-   "frase": "Il 27 ottobre nell'area di Torino la temperatura media è stata di 10 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 28 ottobre nell'area di Torino la temperatura media è stata di 11 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "bologna",
@@ -122,16 +122,16 @@
     18
    ],
    "valori_orari": {
-    "00": 7.8,
-    "06": 6.81,
-    "12": 16.14,
-    "18": 12.37
+    "00": 7.92,
+    "06": 7.4,
+    "12": 16.07,
+    "18": 12.58
    },
-   "normale": 13.31,
-   "media_giornaliera": 10.78,
-   "anomalia": -2.53,
+   "normale": 13.13,
+   "media_giornaliera": 10.99,
+   "anomalia": -2.14,
    "classe": "freddo",
-   "frase": "Il 27 ottobre nell'area di Bologna la temperatura media è stata di 11 °C, circa 3 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
+   "frase": "Il 28 ottobre nell'area di Bologna la temperatura media è stata di 11 °C, circa 2 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
   },
   {
    "slug": "firenze",
@@ -147,16 +147,16 @@
     18
    ],
    "valori_orari": {
-    "00": 8.55,
-    "06": 6.81,
-    "12": 18.89,
-    "18": 13.37
+    "00": 8.17,
+    "06": 7.15,
+    "12": 18.07,
+    "18": 13.33
    },
-   "normale": 12.79,
-   "media_giornaliera": 11.91,
-   "anomalia": -0.88,
+   "normale": 12.64,
+   "media_giornaliera": 11.68,
+   "anomalia": -0.96,
    "classe": "nella_norma",
-   "frase": "Il 27 ottobre nell'area di Firenze la temperatura media è stata di 12 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 28 ottobre nell'area di Firenze la temperatura media è stata di 12 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "bari",
@@ -172,16 +172,16 @@
     18
    ],
    "valori_orari": {
-    "00": 11.8,
-    "06": 11.06,
-    "12": 17.39,
-    "18": 13.87
+    "00": 12.67,
+    "06": 11.9,
+    "12": 17.32,
+    "18": 14.58
    },
-   "normale": 15.65,
-   "media_giornaliera": 13.53,
-   "anomalia": -2.12,
-   "classe": "freddo",
-   "frase": "Il 27 ottobre nell'area di Bari la temperatura media è stata di 14 °C, circa 2 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
+   "normale": 15.52,
+   "media_giornaliera": 14.12,
+   "anomalia": -1.4,
+   "classe": "nella_norma",
+   "frase": "Il 28 ottobre nell'area di Bari la temperatura media è stata di 14 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "catania",
@@ -197,16 +197,16 @@
     18
    ],
    "valori_orari": {
-    "00": 13.8,
-    "06": 13.31,
-    "12": 22.64,
-    "18": 17.62
+    "00": 13.92,
+    "06": 12.4,
+    "12": 19.82,
+    "18": 15.58
    },
-   "normale": 17.61,
-   "media_giornaliera": 16.84,
-   "anomalia": -0.77,
-   "classe": "nella_norma",
-   "frase": "Il 27 ottobre nell'area di Catania la temperatura media è stata di 17 °C, nella norma per questo periodo dell'anno."
+   "normale": 17.47,
+   "media_giornaliera": 15.43,
+   "anomalia": -2.04,
+   "classe": "freddo",
+   "frase": "Il 28 ottobre nell'area di Catania la temperatura media è stata di 15 °C, circa 2 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
   },
   {
    "slug": "verona",
@@ -222,16 +222,16 @@
     18
    ],
    "valori_orari": {
-    "00": 8.3,
-    "06": 6.06,
-    "12": 16.14,
-    "18": 11.87
+    "00": 9.92,
+    "06": 7.65,
+    "12": 16.32,
+    "18": 11.33
    },
-   "normale": 12.86,
-   "media_giornaliera": 10.59,
-   "anomalia": -2.27,
-   "classe": "freddo",
-   "frase": "Il 27 ottobre nell'area di Verona la temperatura media è stata di 11 °C, circa 2 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
+   "normale": 12.68,
+   "media_giornaliera": 11.3,
+   "anomalia": -1.38,
+   "classe": "nella_norma",
+   "frase": "Il 28 ottobre nell'area di Verona la temperatura media è stata di 11 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "venezia",
@@ -247,16 +247,16 @@
     18
    ],
    "valori_orari": {
-    "00": 10.3,
-    "06": 8.06,
-    "12": 17.14,
-    "18": 13.12
+    "00": 10.17,
+    "06": 8.65,
+    "12": 16.82,
+    "18": 12.58
    },
-   "normale": 13.89,
-   "media_giornaliera": 12.16,
-   "anomalia": -1.73,
+   "normale": 13.73,
+   "media_giornaliera": 12.05,
+   "anomalia": -1.68,
    "classe": "nella_norma",
-   "frase": "Il 27 ottobre nell'area di Venezia la temperatura media è stata di 12 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 28 ottobre nell'area di Venezia la temperatura media è stata di 12 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "padova",
@@ -272,16 +272,16 @@
     18
    ],
    "valori_orari": {
-    "00": 9.05,
-    "06": 6.81,
-    "12": 16.89,
-    "18": 12.62
+    "00": 8.67,
+    "06": 7.15,
+    "12": 16.82,
+    "18": 11.58
    },
-   "normale": 12.54,
-   "media_giornaliera": 11.34,
-   "anomalia": -1.2,
+   "normale": 12.35,
+   "media_giornaliera": 11.05,
+   "anomalia": -1.3,
    "classe": "nella_norma",
-   "frase": "Il 27 ottobre nell'area di Padova la temperatura media è stata di 11 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 28 ottobre nell'area di Padova la temperatura media è stata di 11 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "cagliari",
@@ -297,16 +297,16 @@
     18
    ],
    "valori_orari": {
-    "00": 13.8,
-    "06": 13.31,
-    "12": 23.89,
-    "18": 18.87
+    "00": 15.42,
+    "06": 13.65,
+    "12": 22.32,
+    "18": 18.83
    },
-   "normale": 17.16,
-   "media_giornaliera": 17.47,
-   "anomalia": 0.31,
+   "normale": 17.04,
+   "media_giornaliera": 17.55,
+   "anomalia": 0.51,
    "classe": "nella_norma",
-   "frase": "Il 27 ottobre nell'area di Cagliari la temperatura media è stata di 17 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 28 ottobre nell'area di Cagliari la temperatura media è stata di 18 °C, nella norma per questo periodo dell'anno."
   }
  ]
 }
