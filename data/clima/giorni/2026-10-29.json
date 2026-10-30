@@ -1,0 +1,312 @@
+{
+ "giorno": "2026-10-29",
+ "generato_utc": "2026-10-30T07:20:53+00:00",
+ "completo": true,
+ "metodo": "media delle analisi ECMWF (IFS, passo 0) delle ore 00/06/12/18 UTC, confrontata con il normale 1991-2020 da ERA5 calcolato allo stesso modo",
+ "fonte_presente": "ECMWF Open Data, analisi IFS, licenza CC BY 4.0",
+ "fonte_normale": "ERA5, Copernicus Climate Change Service (C3S), licenza CC BY 4.0",
+ "licenza": "CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)",
+ "attribuzione_obbligatoria": "Dati: ClimaAperto di Emanuel Ciuro (https://emanuelc89.github.io/climaaperto/), elaborazione di analisi ECMWF Open Data e di dati ERA5 Copernicus C3S (CC BY 4.0)",
+ "citta": [
+  {
+   "slug": "roma",
+   "nome": "Roma",
+   "punto_griglia": {
+    "lat": 42.0,
+    "lon": 12.5
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 9.99,
+    "06": 7.66,
+    "12": 19.02,
+    "18": 14.38
+   },
+   "normale": 14.84,
+   "media_giornaliera": 12.76,
+   "anomalia": -2.08,
+   "classe": "freddo",
+   "frase": "Il 29 ottobre nell'area di Roma la temperatura media è stata di 13 °C, circa 2 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
+  },
+  {
+   "slug": "milano",
+   "nome": "Milano",
+   "punto_griglia": {
+    "lat": 45.25,
+    "lon": 9.25
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 8.24,
+    "06": 5.91,
+    "12": 16.27,
+    "18": 12.88
+   },
+   "normale": 12.14,
+   "media_giornaliera": 10.82,
+   "anomalia": -1.32,
+   "classe": "nella_norma",
+   "frase": "Il 29 ottobre nell'area di Milano la temperatura media è stata di 11 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "napoli",
+   "nome": "Napoli",
+   "punto_griglia": {
+    "lat": 41.0,
+    "lon": 14.5
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 10.24,
+    "06": 9.41,
+    "12": 19.77,
+    "18": 13.38
+   },
+   "normale": 14.42,
+   "media_giornaliera": 13.2,
+   "anomalia": -1.22,
+   "classe": "nella_norma",
+   "frase": "Il 29 ottobre nell'area di Napoli la temperatura media è stata di 13 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "torino",
+   "nome": "Torino",
+   "punto_griglia": {
+    "lat": 45.0,
+    "lon": 7.75
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 8.74,
+    "06": 6.41,
+    "12": 17.77,
+    "18": 12.38
+   },
+   "normale": 10.8,
+   "media_giornaliera": 11.32,
+   "anomalia": 0.52,
+   "classe": "nella_norma",
+   "frase": "Il 29 ottobre nell'area di Torino la temperatura media è stata di 11 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "bologna",
+   "nome": "Bologna",
+   "punto_griglia": {
+    "lat": 44.5,
+    "lon": 11.5
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 8.99,
+    "06": 8.16,
+    "12": 18.02,
+    "18": 14.38
+   },
+   "normale": 12.96,
+   "media_giornaliera": 12.38,
+   "anomalia": -0.58,
+   "classe": "nella_norma",
+   "frase": "Il 29 ottobre nell'area di Bologna la temperatura media è stata di 12 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "firenze",
+   "nome": "Firenze",
+   "punto_griglia": {
+    "lat": 43.75,
+    "lon": 11.25
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 7.99,
+    "06": 7.16,
+    "12": 19.52,
+    "18": 13.63
+   },
+   "normale": 12.49,
+   "media_giornaliera": 12.07,
+   "anomalia": -0.42,
+   "classe": "nella_norma",
+   "frase": "Il 29 ottobre nell'area di Firenze la temperatura media è stata di 12 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "bari",
+   "nome": "Bari",
+   "punto_griglia": {
+    "lat": 41.0,
+    "lon": 16.75
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 11.99,
+    "06": 13.16,
+    "12": 19.02,
+    "18": 14.88
+   },
+   "normale": 15.39,
+   "media_giornaliera": 14.76,
+   "anomalia": -0.63,
+   "classe": "nella_norma",
+   "frase": "Il 29 ottobre nell'area di Bari la temperatura media è stata di 15 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "catania",
+   "nome": "Catania",
+   "punto_griglia": {
+    "lat": 37.5,
+    "lon": 15.0
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 12.99,
+    "06": 11.91,
+    "12": 21.52,
+    "18": 16.13
+   },
+   "normale": 17.33,
+   "media_giornaliera": 15.63,
+   "anomalia": -1.7,
+   "classe": "nella_norma",
+   "frase": "Il 29 ottobre nell'area di Catania la temperatura media è stata di 16 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "verona",
+   "nome": "Verona",
+   "punto_griglia": {
+    "lat": 45.25,
+    "lon": 11.0
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 9.24,
+    "06": 8.16,
+    "12": 18.02,
+    "18": 13.63
+   },
+   "normale": 12.51,
+   "media_giornaliera": 12.26,
+   "anomalia": -0.25,
+   "classe": "nella_norma",
+   "frase": "Il 29 ottobre nell'area di Verona la temperatura media è stata di 12 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "venezia",
+   "nome": "Venezia",
+   "punto_griglia": {
+    "lat": 45.5,
+    "lon": 12.25
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 11.24,
+    "06": 11.16,
+    "12": 19.02,
+    "18": 14.13
+   },
+   "normale": 13.58,
+   "media_giornaliera": 13.88,
+   "anomalia": 0.3,
+   "classe": "nella_norma",
+   "frase": "Il 29 ottobre nell'area di Venezia la temperatura media è stata di 14 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "padova",
+   "nome": "Padova",
+   "punto_griglia": {
+    "lat": 45.5,
+    "lon": 11.75
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 9.99,
+    "06": 8.41,
+    "12": 18.27,
+    "18": 13.88
+   },
+   "normale": 12.18,
+   "media_giornaliera": 12.63,
+   "anomalia": 0.45,
+   "classe": "nella_norma",
+   "frase": "Il 29 ottobre nell'area di Padova la temperatura media è stata di 13 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "cagliari",
+   "nome": "Cagliari",
+   "punto_griglia": {
+    "lat": 39.25,
+    "lon": 9.0
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 14.74,
+    "06": 13.16,
+    "12": 22.27,
+    "18": 19.13
+   },
+   "normale": 16.89,
+   "media_giornaliera": 17.32,
+   "anomalia": 0.43,
+   "classe": "nella_norma",
+   "frase": "Il 29 ottobre nell'area di Cagliari la temperatura media è stata di 17 °C, nella norma per questo periodo dell'anno."
+  }
+ ]
+}
