@@ -1,6 +1,6 @@
 {
- "giorno": "2026-10-29",
- "generato_utc": "2026-10-30T13:20:51+00:00",
+ "giorno": "2026-10-30",
+ "generato_utc": "2026-10-31T07:20:52+00:00",
  "completo": true,
  "metodo": "media delle analisi ECMWF (IFS, passo 0) delle ore 00/06/12/18 UTC, confrontata con il normale 1991-2020 da ERA5 calcolato allo stesso modo",
  "fonte_presente": "ECMWF Open Data, analisi IFS, licenza CC BY 4.0",
@@ -22,16 +22,16 @@
     18
    ],
    "valori_orari": {
-    "00": 9.99,
-    "06": 7.66,
-    "12": 19.02,
-    "18": 14.38
+    "00": 10.9,
+    "06": 8.88,
+    "12": 17.97,
+    "18": 13.3
    },
-   "normale": 14.84,
+   "normale": 14.69,
    "media_giornaliera": 12.76,
-   "anomalia": -2.08,
-   "classe": "freddo",
-   "frase": "Il 29 ottobre nell'area di Roma la temperatura media è stata di 13 °C, circa 2 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
+   "anomalia": -1.93,
+   "classe": "nella_norma",
+   "frase": "Il 30 ottobre nell'area di Roma la temperatura media è stata di 13 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "milano",
@@ -47,16 +47,16 @@
     18
    ],
    "valori_orari": {
-    "00": 8.24,
-    "06": 5.91,
-    "12": 16.27,
-    "18": 12.88
+    "00": 11.15,
+    "06": 7.63,
+    "12": 17.22,
+    "18": 12.8
    },
-   "normale": 12.14,
-   "media_giornaliera": 10.82,
-   "anomalia": -1.32,
+   "normale": 11.97,
+   "media_giornaliera": 12.2,
+   "anomalia": 0.23,
    "classe": "nella_norma",
-   "frase": "Il 29 ottobre nell'area di Milano la temperatura media è stata di 11 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 30 ottobre nell'area di Milano la temperatura media è stata di 12 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "napoli",
@@ -72,16 +72,16 @@
     18
    ],
    "valori_orari": {
-    "00": 10.24,
-    "06": 9.41,
-    "12": 19.77,
-    "18": 13.38
+    "00": 11.15,
+    "06": 10.38,
+    "12": 16.22,
+    "18": 12.05
    },
-   "normale": 14.42,
-   "media_giornaliera": 13.2,
-   "anomalia": -1.22,
+   "normale": 14.27,
+   "media_giornaliera": 12.45,
+   "anomalia": -1.82,
    "classe": "nella_norma",
-   "frase": "Il 29 ottobre nell'area di Napoli la temperatura media è stata di 13 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 30 ottobre nell'area di Napoli la temperatura media è stata di 12 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "torino",
@@ -97,16 +97,16 @@
     18
    ],
    "valori_orari": {
-    "00": 8.74,
-    "06": 6.41,
-    "12": 17.77,
-    "18": 12.38
+    "00": 8.9,
+    "06": 7.13,
+    "12": 17.22,
+    "18": 11.8
    },
-   "normale": 10.8,
-   "media_giornaliera": 11.32,
-   "anomalia": 0.52,
+   "normale": 10.62,
+   "media_giornaliera": 11.26,
+   "anomalia": 0.64,
    "classe": "nella_norma",
-   "frase": "Il 29 ottobre nell'area di Torino la temperatura media è stata di 11 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 30 ottobre nell'area di Torino la temperatura media è stata di 11 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "bologna",
@@ -122,16 +122,16 @@
     18
    ],
    "valori_orari": {
-    "00": 8.99,
-    "06": 8.16,
-    "12": 18.02,
-    "18": 14.38
+    "00": 10.4,
+    "06": 8.13,
+    "12": 17.72,
+    "18": 12.3
    },
-   "normale": 12.96,
-   "media_giornaliera": 12.38,
-   "anomalia": -0.58,
+   "normale": 12.81,
+   "media_giornaliera": 12.14,
+   "anomalia": -0.67,
    "classe": "nella_norma",
-   "frase": "Il 29 ottobre nell'area di Bologna la temperatura media è stata di 12 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 30 ottobre nell'area di Bologna la temperatura media è stata di 12 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "firenze",
@@ -147,16 +147,16 @@
     18
    ],
    "valori_orari": {
-    "00": 7.99,
-    "06": 7.16,
-    "12": 19.52,
-    "18": 13.63
+    "00": 11.4,
+    "06": 10.13,
+    "12": 17.22,
+    "18": 13.05
    },
-   "normale": 12.49,
-   "media_giornaliera": 12.07,
-   "anomalia": -0.42,
+   "normale": 12.34,
+   "media_giornaliera": 12.95,
+   "anomalia": 0.61,
    "classe": "nella_norma",
-   "frase": "Il 29 ottobre nell'area di Firenze la temperatura media è stata di 12 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 30 ottobre nell'area di Firenze la temperatura media è stata di 13 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "bari",
@@ -172,16 +172,16 @@
     18
    ],
    "valori_orari": {
-    "00": 11.99,
-    "06": 13.16,
-    "12": 19.02,
-    "18": 14.88
+    "00": 12.4,
+    "06": 11.88,
+    "12": 14.22,
+    "18": 12.3
    },
-   "normale": 15.39,
-   "media_giornaliera": 14.76,
-   "anomalia": -0.63,
-   "classe": "nella_norma",
-   "frase": "Il 29 ottobre nell'area di Bari la temperatura media è stata di 15 °C, nella norma per questo periodo dell'anno."
+   "normale": 15.26,
+   "media_giornaliera": 12.7,
+   "anomalia": -2.56,
+   "classe": "freddo",
+   "frase": "Il 30 ottobre nell'area di Bari la temperatura media è stata di 13 °C, circa 3 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
   },
   {
    "slug": "catania",
@@ -197,16 +197,16 @@
     18
    ],
    "valori_orari": {
-    "00": 12.99,
-    "06": 11.91,
-    "12": 21.52,
-    "18": 16.13
+    "00": 12.9,
+    "06": 12.63,
+    "12": 21.72,
+    "18": 16.55
    },
-   "normale": 17.33,
-   "media_giornaliera": 15.63,
-   "anomalia": -1.7,
+   "normale": 17.18,
+   "media_giornaliera": 15.95,
+   "anomalia": -1.23,
    "classe": "nella_norma",
-   "frase": "Il 29 ottobre nell'area di Catania la temperatura media è stata di 16 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 30 ottobre nell'area di Catania la temperatura media è stata di 16 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "verona",
@@ -222,16 +222,16 @@
     18
    ],
    "valori_orari": {
-    "00": 9.24,
-    "06": 8.16,
-    "12": 18.02,
-    "18": 13.63
+    "00": 9.9,
+    "06": 9.13,
+    "12": 17.22,
+    "18": 12.55
    },
-   "normale": 12.51,
-   "media_giornaliera": 12.26,
-   "anomalia": -0.25,
+   "normale": 12.35,
+   "media_giornaliera": 12.2,
+   "anomalia": -0.15,
    "classe": "nella_norma",
-   "frase": "Il 29 ottobre nell'area di Verona la temperatura media è stata di 12 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 30 ottobre nell'area di Verona la temperatura media è stata di 12 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "venezia",
@@ -247,16 +247,16 @@
     18
    ],
    "valori_orari": {
-    "00": 11.24,
-    "06": 11.16,
-    "12": 19.02,
-    "18": 14.13
+    "00": 11.9,
+    "06": 9.88,
+    "12": 17.22,
+    "18": 12.8
    },
-   "normale": 13.58,
-   "media_giornaliera": 13.88,
-   "anomalia": 0.3,
+   "normale": 13.43,
+   "media_giornaliera": 12.95,
+   "anomalia": -0.48,
    "classe": "nella_norma",
-   "frase": "Il 29 ottobre nell'area di Venezia la temperatura media è stata di 14 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 30 ottobre nell'area di Venezia la temperatura media è stata di 13 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "padova",
@@ -272,16 +272,16 @@
     18
    ],
    "valori_orari": {
-    "00": 9.99,
-    "06": 8.41,
-    "12": 18.27,
-    "18": 13.88
+    "00": 9.9,
+    "06": 8.38,
+    "12": 16.47,
+    "18": 12.55
    },
-   "normale": 12.18,
-   "media_giornaliera": 12.63,
-   "anomalia": 0.45,
+   "normale": 12.02,
+   "media_giornaliera": 11.82,
+   "anomalia": -0.2,
    "classe": "nella_norma",
-   "frase": "Il 29 ottobre nell'area di Padova la temperatura media è stata di 13 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 30 ottobre nell'area di Padova la temperatura media è stata di 12 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "cagliari",
@@ -297,16 +297,16 @@
     18
    ],
    "valori_orari": {
-    "00": 14.74,
-    "06": 13.16,
-    "12": 22.27,
-    "18": 19.13
+    "00": 15.15,
+    "06": 13.38,
+    "12": 22.47,
+    "18": 17.55
    },
-   "normale": 16.89,
-   "media_giornaliera": 17.32,
-   "anomalia": 0.43,
+   "normale": 16.76,
+   "media_giornaliera": 17.14,
+   "anomalia": 0.38,
    "classe": "nella_norma",
-   "frase": "Il 29 ottobre nell'area di Cagliari la temperatura media è stata di 17 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 30 ottobre nell'area di Cagliari la temperatura media è stata di 17 °C, nella norma per questo periodo dell'anno."
   }
  ]
 }
