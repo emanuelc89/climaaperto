@@ -1,6 +1,6 @@
 {
- "giorno": "2026-10-31",
- "generato_utc": "2026-11-01T13:21:04+00:00",
+ "giorno": "2026-11-01",
+ "generato_utc": "2026-11-02T07:21:11+00:00",
  "completo": true,
  "metodo": "media delle analisi ECMWF (IFS, passo 0) delle ore 00/06/12/18 UTC, confrontata con il normale 1991-2020 da ERA5 calcolato allo stesso modo",
  "fonte_presente": "ECMWF Open Data, analisi IFS, licenza CC BY 4.0",
@@ -22,16 +22,16 @@
     18
    ],
    "valori_orari": {
-    "00": 10.48,
-    "06": 8.99,
-    "12": 19.45,
-    "18": 14.01
+    "00": 10.88,
+    "06": 8.98,
+    "12": 15.7,
+    "18": 10.33
    },
-   "normale": 14.56,
-   "media_giornaliera": 13.23,
-   "anomalia": -1.33,
-   "classe": "nella_norma",
-   "frase": "Il 31 ottobre nell'area di Roma la temperatura media è stata di 13 °C, nella norma per questo periodo dell'anno."
+   "normale": 14.44,
+   "media_giornaliera": 11.47,
+   "anomalia": -2.97,
+   "classe": "freddo",
+   "frase": "Il 1 novembre nell'area di Roma la temperatura media è stata di 11 °C, circa 3 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
   },
   {
    "slug": "milano",
@@ -47,16 +47,16 @@
     18
    ],
    "valori_orari": {
-    "00": 8.73,
-    "06": 7.74,
-    "12": 16.95,
-    "18": 11.26
+    "00": 9.88,
+    "06": 11.48,
+    "12": 13.45,
+    "18": 8.83
    },
-   "normale": 11.81,
-   "media_giornaliera": 11.17,
-   "anomalia": -0.64,
+   "normale": 11.64,
+   "media_giornaliera": 10.91,
+   "anomalia": -0.73,
    "classe": "nella_norma",
-   "frase": "Il 31 ottobre nell'area di Milano la temperatura media è stata di 11 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 1 novembre nell'area di Milano la temperatura media è stata di 11 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "napoli",
@@ -72,16 +72,16 @@
     18
    ],
    "valori_orari": {
-    "00": 10.48,
-    "06": 11.24,
-    "12": 17.45,
-    "18": 12.76
+    "00": 11.38,
+    "06": 10.48,
+    "12": 15.2,
+    "18": 10.33
    },
-   "normale": 14.13,
-   "media_giornaliera": 12.98,
-   "anomalia": -1.15,
-   "classe": "nella_norma",
-   "frase": "Il 31 ottobre nell'area di Napoli la temperatura media è stata di 13 °C, nella norma per questo periodo dell'anno."
+   "normale": 14.03,
+   "media_giornaliera": 11.85,
+   "anomalia": -2.18,
+   "classe": "freddo",
+   "frase": "Il 1 novembre nell'area di Napoli la temperatura media è stata di 12 °C, circa 2 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
   },
   {
    "slug": "torino",
@@ -97,16 +97,16 @@
     18
    ],
    "valori_orari": {
-    "00": 7.98,
-    "06": 5.24,
-    "12": 16.7,
-    "18": 11.01
+    "00": 7.63,
+    "06": 8.48,
+    "12": 11.7,
+    "18": 7.58
    },
-   "normale": 10.44,
-   "media_giornaliera": 10.23,
-   "anomalia": -0.21,
+   "normale": 10.28,
+   "media_giornaliera": 8.85,
+   "anomalia": -1.43,
    "classe": "nella_norma",
-   "frase": "Il 31 ottobre nell'area di Torino la temperatura media è stata di 10 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 1 novembre nell'area di Torino la temperatura media è stata di 9 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "bologna",
@@ -122,16 +122,16 @@
     18
    ],
    "valori_orari": {
-    "00": 9.48,
-    "06": 7.74,
-    "12": 16.7,
-    "18": 11.26
+    "00": 8.88,
+    "06": 9.23,
+    "12": 12.2,
+    "18": 9.08
    },
-   "normale": 12.65,
-   "media_giornaliera": 11.3,
-   "anomalia": -1.35,
-   "classe": "nella_norma",
-   "frase": "Il 31 ottobre nell'area di Bologna la temperatura media è stata di 11 °C, nella norma per questo periodo dell'anno."
+   "normale": 12.49,
+   "media_giornaliera": 9.85,
+   "anomalia": -2.64,
+   "classe": "freddo",
+   "frase": "Il 1 novembre nell'area di Bologna la temperatura media è stata di 10 °C, circa 3 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
   },
   {
    "slug": "firenze",
@@ -147,16 +147,16 @@
     18
    ],
    "valori_orari": {
-    "00": 10.73,
-    "06": 10.99,
-    "12": 16.45,
-    "18": 11.51
+    "00": 6.88,
+    "06": 10.23,
+    "12": 10.2,
+    "18": 7.83
    },
-   "normale": 12.21,
-   "media_giornaliera": 12.42,
-   "anomalia": 0.21,
-   "classe": "nella_norma",
-   "frase": "Il 31 ottobre nell'area di Firenze la temperatura media è stata di 12 °C, nella norma per questo periodo dell'anno."
+   "normale": 12.09,
+   "media_giornaliera": 8.79,
+   "anomalia": -3.3,
+   "classe": "freddo",
+   "frase": "Il 1 novembre nell'area di Firenze la temperatura media è stata di 9 °C, circa 3 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
   },
   {
    "slug": "bari",
@@ -172,16 +172,16 @@
     18
    ],
    "valori_orari": {
-    "00": 10.73,
-    "06": 10.49,
-    "12": 13.7,
-    "18": 11.26
+    "00": 10.38,
+    "06": 10.23,
+    "12": 13.45,
+    "18": 10.83
    },
-   "normale": 15.12,
-   "media_giornaliera": 11.55,
-   "anomalia": -3.57,
+   "normale": 15.0,
+   "media_giornaliera": 11.22,
+   "anomalia": -3.78,
    "classe": "freddo",
-   "frase": "Il 31 ottobre nell'area di Bari la temperatura media è stata di 12 °C, circa 4 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 10% dei giorni più freddi di questo periodo negli ultimi 30 anni."
+   "frase": "Il 1 novembre nell'area di Bari la temperatura media è stata di 11 °C, circa 4 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 10% dei giorni più freddi di questo periodo negli ultimi 30 anni."
   },
   {
    "slug": "catania",
@@ -197,16 +197,16 @@
     18
    ],
    "valori_orari": {
-    "00": 13.23,
-    "06": 12.99,
-    "12": 19.45,
-    "18": 14.51
+    "00": 12.38,
+    "06": 11.98,
+    "12": 21.2,
+    "18": 14.83
    },
-   "normale": 17.04,
-   "media_giornaliera": 15.05,
-   "anomalia": -1.99,
+   "normale": 16.91,
+   "media_giornaliera": 15.1,
+   "anomalia": -1.81,
    "classe": "nella_norma",
-   "frase": "Il 31 ottobre nell'area di Catania la temperatura media è stata di 15 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 1 novembre nell'area di Catania la temperatura media è stata di 15 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "verona",
@@ -222,16 +222,16 @@
     18
    ],
    "valori_orari": {
-    "00": 8.23,
-    "06": 6.99,
-    "12": 15.95,
-    "18": 11.01
+    "00": 10.63,
+    "06": 9.73,
+    "12": 13.45,
+    "18": 10.08
    },
-   "normale": 12.18,
-   "media_giornaliera": 10.55,
-   "anomalia": -1.63,
+   "normale": 12.02,
+   "media_giornaliera": 10.97,
+   "anomalia": -1.05,
    "classe": "nella_norma",
-   "frase": "Il 31 ottobre nell'area di Verona la temperatura media è stata di 11 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 1 novembre nell'area di Verona la temperatura media è stata di 11 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "venezia",
@@ -247,16 +247,16 @@
     18
    ],
    "valori_orari": {
-    "00": 10.23,
-    "06": 8.74,
-    "12": 15.7,
-    "18": 12.51
+    "00": 11.88,
+    "06": 7.98,
+    "12": 14.2,
+    "18": 11.83
    },
-   "normale": 13.28,
-   "media_giornaliera": 11.8,
-   "anomalia": -1.48,
+   "normale": 13.14,
+   "media_giornaliera": 11.47,
+   "anomalia": -1.67,
    "classe": "nella_norma",
-   "frase": "Il 31 ottobre nell'area di Venezia la temperatura media è stata di 12 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 1 novembre nell'area di Venezia la temperatura media è stata di 11 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "padova",
@@ -272,16 +272,16 @@
     18
    ],
    "valori_orari": {
-    "00": 9.23,
-    "06": 7.24,
-    "12": 15.2,
-    "18": 10.76
+    "00": 10.63,
+    "06": 7.23,
+    "12": 12.95,
+    "18": 9.08
    },
-   "normale": 11.84,
-   "media_giornaliera": 10.61,
-   "anomalia": -1.23,
+   "normale": 11.69,
+   "media_giornaliera": 9.97,
+   "anomalia": -1.72,
    "classe": "nella_norma",
-   "frase": "Il 31 ottobre nell'area di Padova la temperatura media è stata di 11 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 1 novembre nell'area di Padova la temperatura media è stata di 10 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "cagliari",
@@ -297,16 +297,16 @@
     18
    ],
    "valori_orari": {
-    "00": 13.48,
-    "06": 11.99,
-    "12": 20.45,
-    "18": 16.76
+    "00": 13.13,
+    "06": 11.23,
+    "12": 19.95,
+    "18": 14.58
    },
-   "normale": 16.65,
-   "media_giornaliera": 15.67,
-   "anomalia": -0.98,
+   "normale": 16.54,
+   "media_giornaliera": 14.72,
+   "anomalia": -1.82,
    "classe": "nella_norma",
-   "frase": "Il 31 ottobre nell'area di Cagliari la temperatura media è stata di 16 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 1 novembre nell'area di Cagliari la temperatura media è stata di 15 °C, nella norma per questo periodo dell'anno."
   }
  ]
 }
