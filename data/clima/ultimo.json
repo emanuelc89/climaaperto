@@ -1,6 +1,6 @@
 {
- "giorno": "2026-11-02",
- "generato_utc": "2026-11-03T13:21:07+00:00",
+ "giorno": "2026-11-03",
+ "generato_utc": "2026-11-04T07:21:24+00:00",
  "completo": true,
  "metodo": "media delle analisi ECMWF (IFS, passo 0) delle ore 00/06/12/18 UTC, confrontata con il normale 1991-2020 da ERA5 calcolato allo stesso modo",
  "fonte_presente": "ECMWF Open Data, analisi IFS, licenza CC BY 4.0",
@@ -22,16 +22,16 @@
     18
    ],
    "valori_orari": {
-    "00": 8.47,
-    "06": 10.22,
-    "12": 15.12,
-    "18": 14.19
+    "00": 12.99,
+    "06": 11.3,
+    "12": 19.6,
+    "18": 15.38
    },
-   "normale": 14.31,
-   "media_giornaliera": 12.0,
-   "anomalia": -2.31,
-   "classe": "freddo",
-   "frase": "Il 2 novembre nell'area di Roma la temperatura media è stata di 12 °C, circa 2 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
+   "normale": 14.15,
+   "media_giornaliera": 14.82,
+   "anomalia": 0.67,
+   "classe": "nella_norma",
+   "frase": "Il 3 novembre nell'area di Roma la temperatura media è stata di 15 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "milano",
@@ -47,16 +47,16 @@
     18
    ],
    "valori_orari": {
-    "00": 5.97,
-    "06": 6.22,
-    "12": 16.12,
-    "18": 10.69
+    "00": 6.74,
+    "06": 6.55,
+    "12": 14.6,
+    "18": 12.13
    },
-   "normale": 11.47,
-   "media_giornaliera": 9.75,
-   "anomalia": -1.72,
+   "normale": 11.28,
+   "media_giornaliera": 10.0,
+   "anomalia": -1.28,
    "classe": "nella_norma",
-   "frase": "Il 2 novembre nell'area di Milano la temperatura media è stata di 10 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 3 novembre nell'area di Milano la temperatura media è stata di 10 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "napoli",
@@ -72,16 +72,16 @@
     18
    ],
    "valori_orari": {
-    "00": 9.22,
-    "06": 9.72,
-    "12": 12.37,
-    "18": 12.19
+    "00": 11.49,
+    "06": 11.8,
+    "12": 17.35,
+    "18": 12.63
    },
-   "normale": 13.91,
-   "media_giornaliera": 10.87,
-   "anomalia": -3.04,
-   "classe": "freddo",
-   "frase": "Il 2 novembre nell'area di Napoli la temperatura media è stata di 11 °C, circa 3 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
+   "normale": 13.78,
+   "media_giornaliera": 13.32,
+   "anomalia": -0.46,
+   "classe": "nella_norma",
+   "frase": "Il 3 novembre nell'area di Napoli la temperatura media è stata di 13 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "torino",
@@ -97,16 +97,16 @@
     18
    ],
    "valori_orari": {
-    "00": 4.97,
-    "06": 2.72,
-    "12": 15.87,
-    "18": 9.94
+    "00": 6.24,
+    "06": 3.8,
+    "12": 13.6,
+    "18": 9.88
    },
-   "normale": 10.1,
-   "media_giornaliera": 8.37,
-   "anomalia": -1.73,
+   "normale": 9.91,
+   "media_giornaliera": 8.38,
+   "anomalia": -1.53,
    "classe": "nella_norma",
-   "frase": "Il 2 novembre nell'area di Torino la temperatura media è stata di 8 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 3 novembre nell'area di Torino la temperatura media è stata di 8 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "bologna",
@@ -122,16 +122,16 @@
     18
    ],
    "valori_orari": {
-    "00": 7.97,
-    "06": 8.47,
-    "12": 15.12,
-    "18": 11.69
+    "00": 9.24,
+    "06": 7.55,
+    "12": 14.6,
+    "18": 10.13
    },
-   "normale": 12.34,
-   "media_giornaliera": 10.81,
-   "anomalia": -1.53,
+   "normale": 12.16,
+   "media_giornaliera": 10.38,
+   "anomalia": -1.78,
    "classe": "nella_norma",
-   "frase": "Il 2 novembre nell'area di Bologna la temperatura media è stata di 11 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 3 novembre nell'area di Bologna la temperatura media è stata di 10 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "firenze",
@@ -147,16 +147,16 @@
     18
    ],
    "valori_orari": {
-    "00": 7.97,
-    "06": 9.22,
-    "12": 12.37,
-    "18": 11.69
+    "00": 10.74,
+    "06": 10.05,
+    "12": 14.35,
+    "18": 11.13
    },
-   "normale": 11.95,
-   "media_giornaliera": 10.31,
-   "anomalia": -1.64,
+   "normale": 11.79,
+   "media_giornaliera": 11.57,
+   "anomalia": -0.22,
    "classe": "nella_norma",
-   "frase": "Il 2 novembre nell'area di Firenze la temperatura media è stata di 10 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 3 novembre nell'area di Firenze la temperatura media è stata di 12 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "bari",
@@ -172,16 +172,16 @@
     18
    ],
    "valori_orari": {
-    "00": 9.47,
-    "06": 10.72,
-    "12": 14.37,
-    "18": 12.69
+    "00": 10.74,
+    "06": 11.3,
+    "12": 14.85,
+    "18": 12.38
    },
-   "normale": 14.9,
-   "media_giornaliera": 11.81,
-   "anomalia": -3.09,
+   "normale": 14.77,
+   "media_giornaliera": 12.32,
+   "anomalia": -2.45,
    "classe": "freddo",
-   "frase": "Il 2 novembre nell'area di Bari la temperatura media è stata di 12 °C, circa 3 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
+   "frase": "Il 3 novembre nell'area di Bari la temperatura media è stata di 12 °C, circa 2 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
   },
   {
    "slug": "catania",
@@ -197,16 +197,16 @@
     18
    ],
    "valori_orari": {
-    "00": 12.97,
-    "06": 12.97,
-    "12": 18.12,
-    "18": 14.19
+    "00": 14.49,
+    "06": 14.3,
+    "12": 21.85,
+    "18": 15.38
    },
-   "normale": 16.79,
-   "media_giornaliera": 14.56,
-   "anomalia": -2.23,
-   "classe": "freddo",
-   "frase": "Il 2 novembre nell'area di Catania la temperatura media è stata di 15 °C, circa 2 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
+   "normale": 16.66,
+   "media_giornaliera": 16.5,
+   "anomalia": -0.16,
+   "classe": "nella_norma",
+   "frase": "Il 3 novembre nell'area di Catania la temperatura media è stata di 17 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "verona",
@@ -222,16 +222,16 @@
     18
    ],
    "valori_orari": {
-    "00": 7.22,
-    "06": 7.22,
-    "12": 16.62,
-    "18": 11.19
+    "00": 9.24,
+    "06": 8.05,
+    "12": 14.1,
+    "18": 11.13
    },
-   "normale": 11.86,
-   "media_giornaliera": 10.56,
-   "anomalia": -1.3,
+   "normale": 11.67,
+   "media_giornaliera": 10.63,
+   "anomalia": -1.04,
    "classe": "nella_norma",
-   "frase": "Il 2 novembre nell'area di Verona la temperatura media è stata di 11 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 3 novembre nell'area di Verona la temperatura media è stata di 11 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "venezia",
@@ -247,16 +247,16 @@
     18
    ],
    "valori_orari": {
-    "00": 11.47,
-    "06": 8.47,
-    "12": 15.62,
-    "18": 13.94
+    "00": 11.24,
+    "06": 9.8,
+    "12": 15.1,
+    "18": 11.88
    },
-   "normale": 13.0,
-   "media_giornaliera": 12.37,
-   "anomalia": -0.63,
+   "normale": 12.85,
+   "media_giornaliera": 12.0,
+   "anomalia": -0.85,
    "classe": "nella_norma",
-   "frase": "Il 2 novembre nell'area di Venezia la temperatura media è stata di 12 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 3 novembre nell'area di Venezia la temperatura media è stata di 12 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "padova",
@@ -272,16 +272,16 @@
     18
    ],
    "valori_orari": {
-    "00": 9.47,
-    "06": 7.22,
-    "12": 15.87,
-    "18": 12.44
+    "00": 9.99,
+    "06": 9.8,
+    "12": 14.1,
+    "18": 11.13
    },
-   "normale": 11.53,
+   "normale": 11.35,
    "media_giornaliera": 11.25,
-   "anomalia": -0.28,
+   "anomalia": -0.1,
    "classe": "nella_norma",
-   "frase": "Il 2 novembre nell'area di Padova la temperatura media è stata di 11 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 3 novembre nell'area di Padova la temperatura media è stata di 11 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "cagliari",
@@ -297,16 +297,16 @@
     18
    ],
    "valori_orari": {
-    "00": 10.97,
-    "06": 11.22,
-    "12": 18.87,
-    "18": 14.94
+    "00": 12.74,
+    "06": 10.3,
+    "12": 20.35,
+    "18": 16.13
    },
-   "normale": 16.42,
-   "media_giornaliera": 14.0,
-   "anomalia": -2.42,
-   "classe": "freddo",
-   "frase": "Il 2 novembre nell'area di Cagliari la temperatura media è stata di 14 °C, circa 2 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
+   "normale": 16.28,
+   "media_giornaliera": 14.88,
+   "anomalia": -1.4,
+   "classe": "nella_norma",
+   "frase": "Il 3 novembre nell'area di Cagliari la temperatura media è stata di 15 °C, nella norma per questo periodo dell'anno."
   }
  ]
 }
