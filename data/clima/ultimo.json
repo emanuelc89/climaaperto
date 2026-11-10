@@ -1,6 +1,6 @@
 {
- "giorno": "2026-11-08",
- "generato_utc": "2026-11-09T13:21:09+00:00",
+ "giorno": "2026-11-09",
+ "generato_utc": "2026-11-10T07:21:08+00:00",
  "completo": true,
  "metodo": "media delle analisi ECMWF (IFS, passo 0) delle ore 00/06/12/18 UTC, confrontata con il normale 1991-2020 da ERA5 calcolato allo stesso modo",
  "fonte_presente": "ECMWF Open Data, analisi IFS, licenza CC BY 4.0",
@@ -22,16 +22,16 @@
     18
    ],
    "valori_orari": {
-    "00": 10.18,
-    "06": 7.78,
-    "12": 16.26,
-    "18": 12.69
+    "00": 9.56,
+    "06": 8.87,
+    "12": 17.82,
+    "18": 14.06
    },
-   "normale": 13.27,
-   "media_giornaliera": 11.73,
-   "anomalia": -1.54,
+   "normale": 13.1,
+   "media_giornaliera": 12.58,
+   "anomalia": -0.52,
    "classe": "nella_norma",
-   "frase": "Il 8 novembre nell'area di Roma la temperatura media è stata di 12 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 9 novembre nell'area di Roma la temperatura media è stata di 13 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "milano",
@@ -47,16 +47,16 @@
     18
    ],
    "valori_orari": {
-    "00": 6.68,
-    "06": 5.28,
-    "12": 11.76,
-    "18": 7.94
+    "00": 5.81,
+    "06": 7.62,
+    "12": 9.82,
+    "18": 9.31
    },
-   "normale": 10.33,
-   "media_giornaliera": 7.91,
-   "anomalia": -2.42,
-   "classe": "freddo",
-   "frase": "Il 8 novembre nell'area di Milano la temperatura media è stata di 8 °C, circa 2 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
+   "normale": 10.14,
+   "media_giornaliera": 8.14,
+   "anomalia": -2.0,
+   "classe": "nella_norma",
+   "frase": "Il 9 novembre nell'area di Milano la temperatura media è stata di 8 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "napoli",
@@ -72,16 +72,16 @@
     18
    ],
    "valori_orari": {
-    "00": 10.18,
-    "06": 9.03,
-    "12": 16.76,
-    "18": 11.94
+    "00": 9.81,
+    "06": 9.37,
+    "12": 16.32,
+    "18": 13.31
    },
-   "normale": 12.93,
-   "media_giornaliera": 11.98,
-   "anomalia": -0.95,
+   "normale": 12.78,
+   "media_giornaliera": 12.2,
+   "anomalia": -0.58,
    "classe": "nella_norma",
-   "frase": "Il 8 novembre nell'area di Napoli la temperatura media è stata di 12 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 9 novembre nell'area di Napoli la temperatura media è stata di 12 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "torino",
@@ -97,16 +97,16 @@
     18
    ],
    "valori_orari": {
-    "00": 6.93,
-    "06": 6.78,
-    "12": 10.51,
-    "18": 8.44
+    "00": 7.31,
+    "06": 7.12,
+    "12": 10.57,
+    "18": 9.81
    },
-   "normale": 8.97,
-   "media_giornaliera": 8.16,
-   "anomalia": -0.81,
+   "normale": 8.78,
+   "media_giornaliera": 8.7,
+   "anomalia": -0.08,
    "classe": "nella_norma",
-   "frase": "Il 8 novembre nell'area di Torino la temperatura media è stata di 8 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 9 novembre nell'area di Torino la temperatura media è stata di 9 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "bologna",
@@ -122,16 +122,16 @@
     18
    ],
    "valori_orari": {
-    "00": 8.18,
-    "06": 6.53,
-    "12": 12.51,
-    "18": 8.69
+    "00": 7.06,
+    "06": 8.12,
+    "12": 10.57,
+    "18": 9.56
    },
-   "normale": 11.22,
-   "media_giornaliera": 8.98,
-   "anomalia": -2.24,
+   "normale": 11.03,
+   "media_giornaliera": 8.83,
+   "anomalia": -2.2,
    "classe": "freddo",
-   "frase": "Il 8 novembre nell'area di Bologna la temperatura media è stata di 9 °C, circa 2 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
+   "frase": "Il 9 novembre nell'area di Bologna la temperatura media è stata di 9 °C, circa 2 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
   },
   {
    "slug": "firenze",
@@ -147,16 +147,16 @@
     18
    ],
    "valori_orari": {
-    "00": 7.68,
-    "06": 6.28,
-    "12": 14.26,
-    "18": 11.19
+    "00": 9.56,
+    "06": 10.37,
+    "12": 15.57,
+    "18": 13.81
    },
-   "normale": 10.86,
-   "media_giornaliera": 9.85,
-   "anomalia": -1.01,
+   "normale": 10.7,
+   "media_giornaliera": 12.33,
+   "anomalia": 1.63,
    "classe": "nella_norma",
-   "frase": "Il 8 novembre nell'area di Firenze la temperatura media è stata di 10 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 9 novembre nell'area di Firenze la temperatura media è stata di 12 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "bari",
@@ -172,16 +172,16 @@
     18
    ],
    "valori_orari": {
-    "00": 12.68,
-    "06": 12.53,
-    "12": 16.01,
-    "18": 12.19
+    "00": 10.06,
+    "06": 11.37,
+    "12": 16.07,
+    "18": 11.81
    },
-   "normale": 14.0,
-   "media_giornaliera": 13.35,
-   "anomalia": -0.65,
+   "normale": 13.86,
+   "media_giornaliera": 12.33,
+   "anomalia": -1.53,
    "classe": "nella_norma",
-   "frase": "Il 8 novembre nell'area di Bari la temperatura media è stata di 13 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 9 novembre nell'area di Bari la temperatura media è stata di 12 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "catania",
@@ -197,16 +197,16 @@
     18
    ],
    "valori_orari": {
-    "00": 14.18,
-    "06": 13.28,
-    "12": 20.76,
-    "18": 16.44
+    "00": 13.31,
+    "06": 12.62,
+    "12": 20.57,
+    "18": 17.06
    },
-   "normale": 15.84,
-   "media_giornaliera": 16.16,
-   "anomalia": 0.32,
+   "normale": 15.69,
+   "media_giornaliera": 15.89,
+   "anomalia": 0.2,
    "classe": "nella_norma",
-   "frase": "Il 8 novembre nell'area di Catania la temperatura media è stata di 16 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 9 novembre nell'area di Catania la temperatura media è stata di 16 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "verona",
@@ -222,16 +222,16 @@
     18
    ],
    "valori_orari": {
-    "00": 5.18,
-    "06": 3.78,
-    "12": 12.26,
-    "18": 7.69
+    "00": 5.56,
+    "06": 6.12,
+    "12": 8.82,
+    "18": 8.31
    },
-   "normale": 10.72,
-   "media_giornaliera": 7.23,
-   "anomalia": -3.49,
+   "normale": 10.55,
+   "media_giornaliera": 7.2,
+   "anomalia": -3.35,
    "classe": "freddo",
-   "frase": "Il 8 novembre nell'area di Verona la temperatura media è stata di 7 °C, circa 3 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 10% dei giorni più freddi di questo periodo negli ultimi 30 anni."
+   "frase": "Il 9 novembre nell'area di Verona la temperatura media è stata di 7 °C, circa 3 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
   },
   {
    "slug": "venezia",
@@ -247,16 +247,16 @@
     18
    ],
    "valori_orari": {
-    "00": 6.68,
-    "06": 6.03,
-    "12": 12.76,
-    "18": 9.44
+    "00": 5.56,
+    "06": 4.12,
+    "12": 10.57,
+    "18": 9.31
    },
-   "normale": 11.99,
-   "media_giornaliera": 8.73,
-   "anomalia": -3.26,
+   "normale": 11.84,
+   "media_giornaliera": 7.39,
+   "anomalia": -4.45,
    "classe": "freddo",
-   "frase": "Il 8 novembre nell'area di Venezia la temperatura media è stata di 9 °C, circa 3 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 10% dei giorni più freddi di questo periodo negli ultimi 30 anni."
+   "frase": "Il 9 novembre nell'area di Venezia la temperatura media è stata di 7 °C, circa 4 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 5% dei giorni più freddi di questo periodo negli ultimi 30 anni."
   },
   {
    "slug": "padova",
@@ -272,16 +272,16 @@
     18
    ],
    "valori_orari": {
-    "00": 6.18,
-    "06": 4.53,
-    "12": 12.76,
-    "18": 7.94
+    "00": 5.06,
+    "06": 3.87,
+    "12": 9.07,
+    "18": 8.81
    },
-   "normale": 10.38,
-   "media_giornaliera": 7.85,
-   "anomalia": -2.53,
+   "normale": 10.21,
+   "media_giornaliera": 6.7,
+   "anomalia": -3.51,
    "classe": "freddo",
-   "frase": "Il 8 novembre nell'area di Padova la temperatura media è stata di 8 °C, circa 3 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
+   "frase": "Il 9 novembre nell'area di Padova la temperatura media è stata di 7 °C, circa 4 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
   },
   {
    "slug": "cagliari",
@@ -297,16 +297,16 @@
     18
    ],
    "valori_orari": {
-    "00": 13.68,
-    "06": 12.78,
-    "12": 20.51,
-    "18": 17.44
+    "00": 16.81,
+    "06": 17.62,
+    "12": 21.82,
+    "18": 20.06
    },
-   "normale": 15.48,
-   "media_giornaliera": 16.1,
-   "anomalia": 0.62,
-   "classe": "nella_norma",
-   "frase": "Il 8 novembre nell'area di Cagliari la temperatura media è stata di 16 °C, nella norma per questo periodo dell'anno."
+   "normale": 15.32,
+   "media_giornaliera": 19.08,
+   "anomalia": 3.76,
+   "classe": "caldo",
+   "frase": "Il 9 novembre nell'area di Cagliari la temperatura media è stata di 19 °C, circa 4 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 5% dei giorni più caldi di questo periodo negli ultimi 30 anni."
   }
  ]
 }
