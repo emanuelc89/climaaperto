@@ -1,6 +1,6 @@
 {
- "giorno": "2026-11-10",
- "generato_utc": "2026-11-11T13:21:07+00:00",
+ "giorno": "2026-11-11",
+ "generato_utc": "2026-11-12T07:21:02+00:00",
  "completo": true,
  "metodo": "media delle analisi ECMWF (IFS, passo 0) delle ore 00/06/12/18 UTC, confrontata con il normale 1991-2020 da ERA5 calcolato allo stesso modo",
  "fonte_presente": "ECMWF Open Data, analisi IFS, licenza CC BY 4.0",
@@ -22,16 +22,16 @@
     18
    ],
    "valori_orari": {
-    "00": 14.44,
-    "06": 13.97,
-    "12": 18.9,
-    "18": 16.47
+    "00": 15.48,
+    "06": 14.63,
+    "12": 21.32,
+    "18": 17.22
    },
-   "normale": 12.94,
-   "media_giornaliera": 15.94,
-   "anomalia": 3.0,
+   "normale": 12.78,
+   "media_giornaliera": 17.16,
+   "anomalia": 4.38,
    "classe": "caldo",
-   "frase": "Il 10 novembre nell'area di Roma la temperatura media è stata di 16 °C, circa 3 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020)."
+   "frase": "Il 11 novembre nell'area di Roma la temperatura media è stata di 17 °C, circa 4 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 10% dei giorni più caldi di questo periodo negli ultimi 30 anni."
   },
   {
    "slug": "milano",
@@ -47,16 +47,16 @@
     18
    ],
    "valori_orari": {
-    "00": 8.69,
-    "06": 8.97,
-    "12": 11.65,
-    "18": 8.97
+    "00": 10.23,
+    "06": 10.38,
+    "12": 11.57,
+    "18": 11.22
    },
-   "normale": 9.96,
-   "media_giornaliera": 9.57,
-   "anomalia": -0.39,
+   "normale": 9.78,
+   "media_giornaliera": 10.85,
+   "anomalia": 1.07,
    "classe": "nella_norma",
-   "frase": "Il 10 novembre nell'area di Milano la temperatura media è stata di 10 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 11 novembre nell'area di Milano la temperatura media è stata di 11 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "napoli",
@@ -72,16 +72,16 @@
     18
    ],
    "valori_orari": {
-    "00": 12.19,
-    "06": 12.72,
-    "12": 18.15,
-    "18": 14.97
+    "00": 15.48,
+    "06": 15.88,
+    "12": 19.07,
+    "18": 16.47
    },
-   "normale": 12.64,
-   "media_giornaliera": 14.51,
-   "anomalia": 1.87,
-   "classe": "nella_norma",
-   "frase": "Il 10 novembre nell'area di Napoli la temperatura media è stata di 15 °C, nella norma per questo periodo dell'anno."
+   "normale": 12.49,
+   "media_giornaliera": 16.72,
+   "anomalia": 4.23,
+   "classe": "caldo",
+   "frase": "Il 11 novembre nell'area di Napoli la temperatura media è stata di 17 °C, circa 4 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 5% dei giorni più caldi di questo periodo negli ultimi 30 anni."
   },
   {
    "slug": "torino",
@@ -97,16 +97,16 @@
     18
    ],
    "valori_orari": {
-    "00": 6.44,
-    "06": 6.47,
-    "12": 11.15,
-    "18": 8.47
+    "00": 6.73,
+    "06": 5.88,
+    "12": 11.57,
+    "18": 9.22
    },
-   "normale": 8.6,
-   "media_giornaliera": 8.13,
-   "anomalia": -0.47,
+   "normale": 8.41,
+   "media_giornaliera": 8.35,
+   "anomalia": -0.06,
    "classe": "nella_norma",
-   "frase": "Il 10 novembre nell'area di Torino la temperatura media è stata di 8 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 11 novembre nell'area di Torino la temperatura media è stata di 8 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "bologna",
@@ -122,16 +122,16 @@
     18
    ],
    "valori_orari": {
-    "00": 8.94,
-    "06": 8.47,
-    "12": 9.9,
-    "18": 8.22
+    "00": 8.98,
+    "06": 9.13,
+    "12": 11.57,
+    "18": 10.47
    },
-   "normale": 10.85,
-   "media_giornaliera": 8.88,
-   "anomalia": -1.97,
+   "normale": 10.67,
+   "media_giornaliera": 10.04,
+   "anomalia": -0.63,
    "classe": "nella_norma",
-   "frase": "Il 10 novembre nell'area di Bologna la temperatura media è stata di 9 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 11 novembre nell'area di Bologna la temperatura media è stata di 10 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "firenze",
@@ -147,16 +147,16 @@
     18
    ],
    "valori_orari": {
-    "00": 13.44,
-    "06": 13.47,
-    "12": 17.4,
-    "18": 15.97
+    "00": 14.23,
+    "06": 14.63,
+    "12": 18.07,
+    "18": 15.72
    },
-   "normale": 10.53,
-   "media_giornaliera": 15.07,
-   "anomalia": 4.54,
+   "normale": 10.36,
+   "media_giornaliera": 15.66,
+   "anomalia": 5.3,
    "classe": "molto_caldo",
-   "frase": "Il 10 novembre nell'area di Firenze la temperatura media è stata di 15 °C, circa 5 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 10% dei giorni più caldi di questo periodo negli ultimi 30 anni."
+   "frase": "Il 11 novembre nell'area di Firenze la temperatura media è stata di 16 °C, circa 5 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 5% dei giorni più caldi di questo periodo negli ultimi 30 anni."
   },
   {
    "slug": "bari",
@@ -172,16 +172,16 @@
     18
    ],
    "valori_orari": {
-    "00": 11.94,
-    "06": 13.72,
-    "12": 18.4,
-    "18": 16.72
+    "00": 16.23,
+    "06": 16.13,
+    "12": 23.07,
+    "18": 17.22
    },
-   "normale": 13.72,
-   "media_giornaliera": 15.19,
-   "anomalia": 1.47,
-   "classe": "nella_norma",
-   "frase": "Il 10 novembre nell'area di Bari la temperatura media è stata di 15 °C, nella norma per questo periodo dell'anno."
+   "normale": 13.59,
+   "media_giornaliera": 18.16,
+   "anomalia": 4.57,
+   "classe": "molto_caldo",
+   "frase": "Il 11 novembre nell'area di Bari la temperatura media è stata di 18 °C, circa 5 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 10% dei giorni più caldi di questo periodo negli ultimi 30 anni."
   },
   {
    "slug": "catania",
@@ -197,16 +197,16 @@
     18
    ],
    "valori_orari": {
-    "00": 14.69,
-    "06": 15.47,
-    "12": 23.9,
-    "18": 19.72
+    "00": 16.98,
+    "06": 16.38,
+    "12": 25.82,
+    "18": 20.22
    },
-   "normale": 15.55,
-   "media_giornaliera": 18.44,
-   "anomalia": 2.89,
+   "normale": 15.41,
+   "media_giornaliera": 19.85,
+   "anomalia": 4.44,
    "classe": "caldo",
-   "frase": "Il 10 novembre nell'area di Catania la temperatura media è stata di 18 °C, circa 3 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 10% dei giorni più caldi di questo periodo negli ultimi 30 anni."
+   "frase": "Il 11 novembre nell'area di Catania la temperatura media è stata di 20 °C, circa 4 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 5% dei giorni più caldi di questo periodo negli ultimi 30 anni."
   },
   {
    "slug": "verona",
@@ -222,16 +222,16 @@
     18
    ],
    "valori_orari": {
-    "00": 8.19,
-    "06": 8.22,
-    "12": 10.4,
-    "18": 10.47
+    "00": 9.98,
+    "06": 10.13,
+    "12": 11.82,
+    "18": 10.72
    },
-   "normale": 10.38,
-   "media_giornaliera": 9.32,
-   "anomalia": -1.06,
+   "normale": 10.19,
+   "media_giornaliera": 10.66,
+   "anomalia": 0.47,
    "classe": "nella_norma",
-   "frase": "Il 10 novembre nell'area di Verona la temperatura media è stata di 9 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 11 novembre nell'area di Verona la temperatura media è stata di 11 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "venezia",
@@ -247,16 +247,16 @@
     18
    ],
    "valori_orari": {
-    "00": 9.19,
-    "06": 8.72,
-    "12": 10.15,
-    "18": 9.97
+    "00": 9.73,
+    "06": 10.13,
+    "12": 11.82,
+    "18": 11.72
    },
-   "normale": 11.68,
-   "media_giornaliera": 9.51,
-   "anomalia": -2.17,
-   "classe": "freddo",
-   "frase": "Il 10 novembre nell'area di Venezia la temperatura media è stata di 10 °C, circa 2 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
+   "normale": 11.51,
+   "media_giornaliera": 10.85,
+   "anomalia": -0.66,
+   "classe": "nella_norma",
+   "frase": "Il 11 novembre nell'area di Venezia la temperatura media è stata di 11 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "padova",
@@ -272,16 +272,16 @@
     18
    ],
    "valori_orari": {
-    "00": 8.69,
-    "06": 8.47,
-    "12": 10.4,
-    "18": 10.22
+    "00": 9.23,
+    "06": 9.88,
+    "12": 12.82,
+    "18": 11.22
    },
-   "normale": 10.04,
-   "media_giornaliera": 9.44,
-   "anomalia": -0.6,
+   "normale": 9.85,
+   "media_giornaliera": 10.79,
+   "anomalia": 0.94,
    "classe": "nella_norma",
-   "frase": "Il 10 novembre nell'area di Padova la temperatura media è stata di 9 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 11 novembre nell'area di Padova la temperatura media è stata di 11 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "cagliari",
@@ -297,16 +297,16 @@
     18
    ],
    "valori_orari": {
-    "00": 17.94,
-    "06": 18.22,
-    "12": 24.65,
-    "18": 20.72
+    "00": 17.48,
+    "06": 16.38,
+    "12": 23.82,
+    "18": 20.47
    },
-   "normale": 15.16,
-   "media_giornaliera": 20.38,
-   "anomalia": 5.22,
-   "classe": "eccezionale",
-   "frase": "Il 10 novembre nell'area di Cagliari la temperatura media è stata di 20 °C, circa 5 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È un valore oltre ogni giornata di questo periodo nei 30 anni di riferimento."
+   "normale": 15.0,
+   "media_giornaliera": 19.54,
+   "anomalia": 4.54,
+   "classe": "molto_caldo",
+   "frase": "Il 11 novembre nell'area di Cagliari la temperatura media è stata di 20 °C, circa 5 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 5% dei giorni più caldi di questo periodo negli ultimi 30 anni."
   }
  ]
 }
