@@ -1,0 +1,312 @@
+{
+ "giorno": "2026-11-12",
+ "generato_utc": "2026-11-13T07:21:04+00:00",
+ "completo": true,
+ "metodo": "media delle analisi ECMWF (IFS, passo 0) delle ore 00/06/12/18 UTC, confrontata con il normale 1991-2020 da ERA5 calcolato allo stesso modo",
+ "fonte_presente": "ECMWF Open Data, analisi IFS, licenza CC BY 4.0",
+ "fonte_normale": "ERA5, Copernicus Climate Change Service (C3S), licenza CC BY 4.0",
+ "licenza": "CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)",
+ "attribuzione_obbligatoria": "Dati: ClimaAperto di Emanuel Ciuro (https://emanuelc89.github.io/climaaperto/), elaborazione di analisi ECMWF Open Data e di dati ERA5 Copernicus C3S (CC BY 4.0)",
+ "citta": [
+  {
+   "slug": "roma",
+   "nome": "Roma",
+   "punto_griglia": {
+    "lat": 42.0,
+    "lon": 12.5
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 16.52,
+    "06": 16.38,
+    "12": 19.25,
+    "18": 17.4
+   },
+   "normale": 12.61,
+   "media_giornaliera": 17.39,
+   "anomalia": 4.78,
+   "classe": "molto_caldo",
+   "frase": "Il 12 novembre nell'area di Roma la temperatura media è stata di 17 °C, circa 5 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 5% dei giorni più caldi di questo periodo negli ultimi 30 anni."
+  },
+  {
+   "slug": "milano",
+   "nome": "Milano",
+   "punto_griglia": {
+    "lat": 45.25,
+    "lon": 9.25
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 11.27,
+    "06": 10.63,
+    "12": 11.0,
+    "18": 11.65
+   },
+   "normale": 9.57,
+   "media_giornaliera": 11.14,
+   "anomalia": 1.57,
+   "classe": "nella_norma",
+   "frase": "Il 12 novembre nell'area di Milano la temperatura media è stata di 11 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "napoli",
+   "nome": "Napoli",
+   "punto_griglia": {
+    "lat": 41.0,
+    "lon": 14.5
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 15.02,
+    "06": 16.63,
+    "12": 21.5,
+    "18": 16.4
+   },
+   "normale": 12.34,
+   "media_giornaliera": 17.39,
+   "anomalia": 5.05,
+   "classe": "molto_caldo",
+   "frase": "Il 12 novembre nell'area di Napoli la temperatura media è stata di 17 °C, circa 5 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 5% dei giorni più caldi di questo periodo negli ultimi 30 anni."
+  },
+  {
+   "slug": "torino",
+   "nome": "Torino",
+   "punto_griglia": {
+    "lat": 45.0,
+    "lon": 7.75
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 8.27,
+    "06": 8.38,
+    "12": 10.0,
+    "18": 9.9
+   },
+   "normale": 8.22,
+   "media_giornaliera": 9.14,
+   "anomalia": 0.92,
+   "classe": "nella_norma",
+   "frase": "Il 12 novembre nell'area di Torino la temperatura media è stata di 9 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "bologna",
+   "nome": "Bologna",
+   "punto_griglia": {
+    "lat": 44.5,
+    "lon": 11.5
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 10.02,
+    "06": 9.63,
+    "12": 12.25,
+    "18": 11.9
+   },
+   "normale": 10.48,
+   "media_giornaliera": 10.95,
+   "anomalia": 0.47,
+   "classe": "nella_norma",
+   "frase": "Il 12 novembre nell'area di Bologna la temperatura media è stata di 11 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "firenze",
+   "nome": "Firenze",
+   "punto_griglia": {
+    "lat": 43.75,
+    "lon": 11.25
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 14.27,
+    "06": 15.13,
+    "12": 16.25,
+    "18": 17.15
+   },
+   "normale": 10.2,
+   "media_giornaliera": 15.7,
+   "anomalia": 5.5,
+   "classe": "molto_caldo",
+   "frase": "Il 12 novembre nell'area di Firenze la temperatura media è stata di 16 °C, circa 5 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 5% dei giorni più caldi di questo periodo negli ultimi 30 anni."
+  },
+  {
+   "slug": "bari",
+   "nome": "Bari",
+   "punto_griglia": {
+    "lat": 41.0,
+    "lon": 16.75
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 17.02,
+    "06": 18.13,
+    "12": 21.5,
+    "18": 20.15
+   },
+   "normale": 13.44,
+   "media_giornaliera": 19.2,
+   "anomalia": 5.76,
+   "classe": "molto_caldo",
+   "frase": "Il 12 novembre nell'area di Bari la temperatura media è stata di 19 °C, circa 6 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 5% dei giorni più caldi di questo periodo negli ultimi 30 anni."
+  },
+  {
+   "slug": "catania",
+   "nome": "Catania",
+   "punto_griglia": {
+    "lat": 37.5,
+    "lon": 15.0
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 17.77,
+    "06": 16.88,
+    "12": 24.75,
+    "18": 20.9
+   },
+   "normale": 15.25,
+   "media_giornaliera": 20.07,
+   "anomalia": 4.82,
+   "classe": "molto_caldo",
+   "frase": "Il 12 novembre nell'area di Catania la temperatura media è stata di 20 °C, circa 5 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 5% dei giorni più caldi di questo periodo negli ultimi 30 anni."
+  },
+  {
+   "slug": "verona",
+   "nome": "Verona",
+   "punto_griglia": {
+    "lat": 45.25,
+    "lon": 11.0
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 10.77,
+    "06": 10.63,
+    "12": 11.5,
+    "18": 12.9
+   },
+   "normale": 10.01,
+   "media_giornaliera": 11.45,
+   "anomalia": 1.44,
+   "classe": "nella_norma",
+   "frase": "Il 12 novembre nell'area di Verona la temperatura media è stata di 11 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "venezia",
+   "nome": "Venezia",
+   "punto_griglia": {
+    "lat": 45.5,
+    "lon": 12.25
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 10.52,
+    "06": 10.63,
+    "12": 12.75,
+    "18": 12.9
+   },
+   "normale": 11.34,
+   "media_giornaliera": 11.7,
+   "anomalia": 0.36,
+   "classe": "nella_norma",
+   "frase": "Il 12 novembre nell'area di Venezia la temperatura media è stata di 12 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "padova",
+   "nome": "Padova",
+   "punto_griglia": {
+    "lat": 45.5,
+    "lon": 11.75
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 10.27,
+    "06": 10.63,
+    "12": 12.0,
+    "18": 12.65
+   },
+   "normale": 9.67,
+   "media_giornaliera": 11.39,
+   "anomalia": 1.72,
+   "classe": "nella_norma",
+   "frase": "Il 12 novembre nell'area di Padova la temperatura media è stata di 11 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "cagliari",
+   "nome": "Cagliari",
+   "punto_griglia": {
+    "lat": 39.25,
+    "lon": 9.0
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 20.02,
+    "06": 20.63,
+    "12": 23.25,
+    "18": 21.15
+   },
+   "normale": 14.85,
+   "media_giornaliera": 21.26,
+   "anomalia": 6.41,
+   "classe": "eccezionale",
+   "frase": "Il 12 novembre nell'area di Cagliari la temperatura media è stata di 21 °C, circa 6 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È un valore oltre ogni giornata di questo periodo nei 30 anni di riferimento."
+  }
+ ]
+}
