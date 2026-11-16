@@ -1,6 +1,6 @@
 {
- "giorno": "2026-11-14",
- "generato_utc": "2026-11-15T13:20:29+00:00",
+ "giorno": "2026-11-15",
+ "generato_utc": "2026-11-16T07:20:29+00:00",
  "completo": true,
  "metodo": "media delle analisi ECMWF (IFS, passo 0) delle ore 00/06/12/18 UTC, confrontata con il normale 1991-2020 da ERA5 calcolato allo stesso modo",
  "fonte_presente": "ECMWF Open Data, analisi IFS, licenza CC BY 4.0",
@@ -22,16 +22,16 @@
     18
    ],
    "valori_orari": {
-    "00": 13.02,
-    "06": 11.32,
-    "12": 16.31,
-    "18": 13.2
+    "00": 13.66,
+    "06": 12.75,
+    "12": 16.23,
+    "18": 14.38
    },
-   "normale": 12.27,
-   "media_giornaliera": 13.46,
-   "anomalia": 1.19,
-   "classe": "nella_norma",
-   "frase": "Il 14 novembre nell'area di Roma la temperatura media è stata di 13 °C, nella norma per questo periodo dell'anno."
+   "normale": 12.09,
+   "media_giornaliera": 14.25,
+   "anomalia": 2.16,
+   "classe": "caldo",
+   "frase": "Il 15 novembre nell'area di Roma la temperatura media è stata di 14 °C, circa 2 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020)."
   },
   {
    "slug": "milano",
@@ -47,16 +47,16 @@
     18
    ],
    "valori_orari": {
-    "00": 10.52,
-    "06": 7.32,
-    "12": 11.06,
-    "18": 8.2
+    "00": 7.41,
+    "06": 5.0,
+    "12": 7.73,
+    "18": 5.63
    },
-   "normale": 9.18,
-   "media_giornaliera": 9.28,
-   "anomalia": 0.1,
-   "classe": "nella_norma",
-   "frase": "Il 14 novembre nell'area di Milano la temperatura media è stata di 9 °C, nella norma per questo periodo dell'anno."
+   "normale": 8.98,
+   "media_giornaliera": 6.44,
+   "anomalia": -2.54,
+   "classe": "freddo",
+   "frase": "Il 15 novembre nell'area di Milano la temperatura media è stata di 6 °C, circa 3 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
   },
   {
    "slug": "napoli",
@@ -72,16 +72,16 @@
     18
    ],
    "valori_orari": {
-    "00": 13.27,
-    "06": 12.57,
-    "12": 17.31,
-    "18": 12.95
+    "00": 12.16,
+    "06": 12.75,
+    "12": 15.73,
+    "18": 13.88
    },
-   "normale": 12.03,
-   "media_giornaliera": 14.03,
-   "anomalia": 2.0,
+   "normale": 11.88,
+   "media_giornaliera": 13.63,
+   "anomalia": 1.75,
    "classe": "nella_norma",
-   "frase": "Il 14 novembre nell'area di Napoli la temperatura media è stata di 14 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 15 novembre nell'area di Napoli la temperatura media è stata di 14 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "torino",
@@ -97,16 +97,16 @@
     18
    ],
    "valori_orari": {
-    "00": 9.52,
-    "06": 8.57,
-    "12": 10.06,
-    "18": 8.7
+    "00": 6.66,
+    "06": 5.5,
+    "12": 8.23,
+    "18": 7.38
    },
-   "normale": 7.84,
-   "media_giornaliera": 9.21,
-   "anomalia": 1.37,
+   "normale": 7.64,
+   "media_giornaliera": 6.94,
+   "anomalia": -0.7,
    "classe": "nella_norma",
-   "frase": "Il 14 novembre nell'area di Torino la temperatura media è stata di 9 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 15 novembre nell'area di Torino la temperatura media è stata di 7 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "bologna",
@@ -122,16 +122,16 @@
     18
    ],
    "valori_orari": {
-    "00": 7.27,
-    "06": 4.07,
-    "12": 11.81,
-    "18": 6.2
+    "00": 5.66,
+    "06": 5.25,
+    "12": 8.48,
+    "18": 7.88
    },
-   "normale": 10.1,
-   "media_giornaliera": 7.34,
-   "anomalia": -2.76,
+   "normale": 9.92,
+   "media_giornaliera": 6.82,
+   "anomalia": -3.1,
    "classe": "freddo",
-   "frase": "Il 14 novembre nell'area di Bologna la temperatura media è stata di 7 °C, circa 3 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
+   "frase": "Il 15 novembre nell'area di Bologna la temperatura media è stata di 7 °C, circa 3 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
   },
   {
    "slug": "firenze",
@@ -147,16 +147,16 @@
     18
    ],
    "valori_orari": {
-    "00": 10.02,
-    "06": 7.07,
-    "12": 13.56,
-    "18": 7.2
+    "00": 6.41,
+    "06": 8.0,
+    "12": 11.23,
+    "18": 10.13
    },
-   "normale": 9.85,
-   "media_giornaliera": 9.46,
-   "anomalia": -0.39,
+   "normale": 9.68,
+   "media_giornaliera": 8.94,
+   "anomalia": -0.74,
    "classe": "nella_norma",
-   "frase": "Il 14 novembre nell'area di Firenze la temperatura media è stata di 9 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 15 novembre nell'area di Firenze la temperatura media è stata di 9 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "bari",
@@ -172,16 +172,16 @@
     18
    ],
    "valori_orari": {
-    "00": 16.02,
-    "06": 13.57,
-    "12": 16.31,
-    "18": 12.95
+    "00": 11.91,
+    "06": 13.0,
+    "12": 16.48,
+    "18": 15.13
    },
-   "normale": 13.17,
-   "media_giornaliera": 14.71,
-   "anomalia": 1.54,
+   "normale": 13.03,
+   "media_giornaliera": 14.13,
+   "anomalia": 1.1,
    "classe": "nella_norma",
-   "frase": "Il 14 novembre nell'area di Bari la temperatura media è stata di 15 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 15 novembre nell'area di Bari la temperatura media è stata di 14 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "catania",
@@ -197,16 +197,16 @@
     18
    ],
    "valori_orari": {
-    "00": 16.77,
-    "06": 16.07,
-    "12": 24.56,
-    "18": 17.95
+    "00": 15.16,
+    "06": 14.25,
+    "12": 23.23,
+    "18": 18.38
    },
-   "normale": 14.94,
-   "media_giornaliera": 18.84,
-   "anomalia": 3.9,
+   "normale": 14.79,
+   "media_giornaliera": 17.75,
+   "anomalia": 2.96,
    "classe": "caldo",
-   "frase": "Il 14 novembre nell'area di Catania la temperatura media è stata di 19 °C, circa 4 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 5% dei giorni più caldi di questo periodo negli ultimi 30 anni."
+   "frase": "Il 15 novembre nell'area di Catania la temperatura media è stata di 18 °C, circa 3 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 5% dei giorni più caldi di questo periodo negli ultimi 30 anni."
   },
   {
    "slug": "verona",
@@ -222,16 +222,16 @@
     18
    ],
    "valori_orari": {
-    "00": 7.27,
-    "06": 5.32,
-    "12": 11.31,
-    "18": 6.2
+    "00": 5.41,
+    "06": 4.5,
+    "12": 8.73,
+    "18": 7.63
    },
-   "normale": 9.64,
-   "media_giornaliera": 7.53,
-   "anomalia": -2.11,
+   "normale": 9.46,
+   "media_giornaliera": 6.57,
+   "anomalia": -2.89,
    "classe": "freddo",
-   "frase": "Il 14 novembre nell'area di Verona la temperatura media è stata di 8 °C, circa 2 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
+   "frase": "Il 15 novembre nell'area di Verona la temperatura media è stata di 7 °C, circa 3 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
   },
   {
    "slug": "venezia",
@@ -247,16 +247,16 @@
     18
    ],
    "valori_orari": {
-    "00": 7.02,
-    "06": 4.82,
-    "12": 11.06,
-    "18": 6.7
+    "00": 3.91,
+    "06": 5.0,
+    "12": 10.23,
+    "18": 8.63
    },
-   "normale": 11.02,
-   "media_giornaliera": 7.4,
-   "anomalia": -3.62,
+   "normale": 10.85,
+   "media_giornaliera": 6.94,
+   "anomalia": -3.91,
    "classe": "freddo",
-   "frase": "Il 14 novembre nell'area di Venezia la temperatura media è stata di 7 °C, circa 4 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 10% dei giorni più freddi di questo periodo negli ultimi 30 anni."
+   "frase": "Il 15 novembre nell'area di Venezia la temperatura media è stata di 7 °C, circa 4 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 10% dei giorni più freddi di questo periodo negli ultimi 30 anni."
   },
   {
    "slug": "padova",
@@ -272,16 +272,16 @@
     18
    ],
    "valori_orari": {
-    "00": 7.52,
-    "06": 4.32,
-    "12": 10.56,
-    "18": 5.95
+    "00": 4.16,
+    "06": 3.5,
+    "12": 9.73,
+    "18": 7.88
    },
-   "normale": 9.31,
-   "media_giornaliera": 7.09,
-   "anomalia": -2.22,
+   "normale": 9.12,
+   "media_giornaliera": 6.32,
+   "anomalia": -2.8,
    "classe": "freddo",
-   "frase": "Il 14 novembre nell'area di Padova la temperatura media è stata di 7 °C, circa 2 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
+   "frase": "Il 15 novembre nell'area di Padova la temperatura media è stata di 6 °C, circa 3 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
   },
   {
    "slug": "cagliari",
@@ -297,16 +297,16 @@
     18
    ],
    "valori_orari": {
-    "00": 17.27,
-    "06": 15.07,
-    "12": 21.81,
-    "18": 18.95
+    "00": 16.16,
+    "06": 15.75,
+    "12": 21.48,
+    "18": 18.38
    },
-   "normale": 14.55,
-   "media_giornaliera": 18.28,
-   "anomalia": 3.73,
+   "normale": 14.42,
+   "media_giornaliera": 17.94,
+   "anomalia": 3.52,
    "classe": "caldo",
-   "frase": "Il 14 novembre nell'area di Cagliari la temperatura media è stata di 18 °C, circa 4 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 5% dei giorni più caldi di questo periodo negli ultimi 30 anni."
+   "frase": "Il 15 novembre nell'area di Cagliari la temperatura media è stata di 18 °C, circa 4 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 5% dei giorni più caldi di questo periodo negli ultimi 30 anni."
   }
  ]
 }
