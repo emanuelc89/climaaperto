@@ -1,0 +1,312 @@
+{
+ "giorno": "2026-11-16",
+ "generato_utc": "2026-11-17T07:20:52+00:00",
+ "completo": true,
+ "metodo": "media delle analisi ECMWF (IFS, passo 0) delle ore 00/06/12/18 UTC, confrontata con il normale 1991-2020 da ERA5 calcolato allo stesso modo",
+ "fonte_presente": "ECMWF Open Data, analisi IFS, licenza CC BY 4.0",
+ "fonte_normale": "ERA5, Copernicus Climate Change Service (C3S), licenza CC BY 4.0",
+ "licenza": "CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)",
+ "attribuzione_obbligatoria": "Dati: ClimaAperto di Emanuel Ciuro (https://emanuelc89.github.io/climaaperto/), elaborazione di analisi ECMWF Open Data e di dati ERA5 Copernicus C3S (CC BY 4.0)",
+ "citta": [
+  {
+   "slug": "roma",
+   "nome": "Roma",
+   "punto_griglia": {
+    "lat": 42.0,
+    "lon": 12.5
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 14.0,
+    "06": 13.25,
+    "12": 18.13,
+    "18": 13.77
+   },
+   "normale": 11.91,
+   "media_giornaliera": 14.79,
+   "anomalia": 2.88,
+   "classe": "caldo",
+   "frase": "Il 16 novembre nell'area di Roma la temperatura media è stata di 15 °C, circa 3 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020)."
+  },
+  {
+   "slug": "milano",
+   "nome": "Milano",
+   "punto_griglia": {
+    "lat": 45.25,
+    "lon": 9.25
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 6.25,
+    "06": 5.75,
+    "12": 11.13,
+    "18": 7.52
+   },
+   "normale": 8.78,
+   "media_giornaliera": 7.66,
+   "anomalia": -1.12,
+   "classe": "nella_norma",
+   "frase": "Il 16 novembre nell'area di Milano la temperatura media è stata di 8 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "napoli",
+   "nome": "Napoli",
+   "punto_griglia": {
+    "lat": 41.0,
+    "lon": 14.5
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 12.75,
+    "06": 13.5,
+    "12": 15.38,
+    "18": 13.02
+   },
+   "normale": 11.72,
+   "media_giornaliera": 13.66,
+   "anomalia": 1.94,
+   "classe": "nella_norma",
+   "frase": "Il 16 novembre nell'area di Napoli la temperatura media è stata di 14 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "torino",
+   "nome": "Torino",
+   "punto_griglia": {
+    "lat": 45.0,
+    "lon": 7.75
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 5.5,
+    "06": 3.25,
+    "12": 9.63,
+    "18": 7.02
+   },
+   "normale": 7.46,
+   "media_giornaliera": 6.35,
+   "anomalia": -1.11,
+   "classe": "nella_norma",
+   "frase": "Il 16 novembre nell'area di Torino la temperatura media è stata di 6 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "bologna",
+   "nome": "Bologna",
+   "punto_griglia": {
+    "lat": 44.5,
+    "lon": 11.5
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 7.25,
+    "06": 6.75,
+    "12": 10.63,
+    "18": 6.27
+   },
+   "normale": 9.72,
+   "media_giornaliera": 7.72,
+   "anomalia": -2.0,
+   "classe": "nella_norma",
+   "frase": "Il 16 novembre nell'area di Bologna la temperatura media è stata di 8 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "firenze",
+   "nome": "Firenze",
+   "punto_griglia": {
+    "lat": 43.75,
+    "lon": 11.25
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 10.75,
+    "06": 10.75,
+    "12": 14.88,
+    "18": 12.27
+   },
+   "normale": 9.49,
+   "media_giornaliera": 12.16,
+   "anomalia": 2.67,
+   "classe": "caldo",
+   "frase": "Il 16 novembre nell'area di Firenze la temperatura media è stata di 12 °C, circa 3 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020)."
+  },
+  {
+   "slug": "bari",
+   "nome": "Bari",
+   "punto_griglia": {
+    "lat": 41.0,
+    "lon": 16.75
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 14.5,
+    "06": 15.75,
+    "12": 18.63,
+    "18": 15.27
+   },
+   "normale": 12.89,
+   "media_giornaliera": 16.04,
+   "anomalia": 3.15,
+   "classe": "caldo",
+   "frase": "Il 16 novembre nell'area di Bari la temperatura media è stata di 16 °C, circa 3 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020)."
+  },
+  {
+   "slug": "catania",
+   "nome": "Catania",
+   "punto_griglia": {
+    "lat": 37.5,
+    "lon": 15.0
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 15.0,
+    "06": 14.5,
+    "12": 23.63,
+    "18": 18.02
+   },
+   "normale": 14.65,
+   "media_giornaliera": 17.79,
+   "anomalia": 3.14,
+   "classe": "caldo",
+   "frase": "Il 16 novembre nell'area di Catania la temperatura media è stata di 18 °C, circa 3 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 5% dei giorni più caldi di questo periodo negli ultimi 30 anni."
+  },
+  {
+   "slug": "verona",
+   "nome": "Verona",
+   "punto_griglia": {
+    "lat": 45.25,
+    "lon": 11.0
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 7.5,
+    "06": 6.75,
+    "12": 11.63,
+    "18": 7.27
+   },
+   "normale": 9.27,
+   "media_giornaliera": 8.29,
+   "anomalia": -0.98,
+   "classe": "nella_norma",
+   "frase": "Il 16 novembre nell'area di Verona la temperatura media è stata di 8 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "venezia",
+   "nome": "Venezia",
+   "punto_griglia": {
+    "lat": 45.5,
+    "lon": 12.25
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 8.25,
+    "06": 7.25,
+    "12": 10.13,
+    "18": 9.52
+   },
+   "normale": 10.68,
+   "media_giornaliera": 8.79,
+   "anomalia": -1.89,
+   "classe": "nella_norma",
+   "frase": "Il 16 novembre nell'area di Venezia la temperatura media è stata di 9 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "padova",
+   "nome": "Padova",
+   "punto_griglia": {
+    "lat": 45.5,
+    "lon": 11.75
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 7.75,
+    "06": 6.75,
+    "12": 11.13,
+    "18": 7.52
+   },
+   "normale": 8.93,
+   "media_giornaliera": 8.29,
+   "anomalia": -0.64,
+   "classe": "nella_norma",
+   "frase": "Il 16 novembre nell'area di Padova la temperatura media è stata di 8 °C, nella norma per questo periodo dell'anno."
+  },
+  {
+   "slug": "cagliari",
+   "nome": "Cagliari",
+   "punto_griglia": {
+    "lat": 39.25,
+    "lon": 9.0
+   },
+   "orari_disponibili": [
+    0,
+    6,
+    12,
+    18
+   ],
+   "valori_orari": {
+    "00": 16.5,
+    "06": 16.25,
+    "12": 22.13,
+    "18": 17.27
+   },
+   "normale": 14.27,
+   "media_giornaliera": 18.04,
+   "anomalia": 3.77,
+   "classe": "caldo",
+   "frase": "Il 16 novembre nell'area di Cagliari la temperatura media è stata di 18 °C, circa 4 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 5% dei giorni più caldi di questo periodo negli ultimi 30 anni."
+  }
+ ]
+}
