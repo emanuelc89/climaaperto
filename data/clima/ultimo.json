@@ -1,6 +1,6 @@
 {
- "giorno": "2026-11-17",
- "generato_utc": "2026-11-18T13:21:12+00:00",
+ "giorno": "2026-11-18",
+ "generato_utc": "2026-11-19T07:20:49+00:00",
  "completo": true,
  "metodo": "media delle analisi ECMWF (IFS, passo 0) delle ore 00/06/12/18 UTC, confrontata con il normale 1991-2020 da ERA5 calcolato allo stesso modo",
  "fonte_presente": "ECMWF Open Data, analisi IFS, licenza CC BY 4.0",
@@ -22,16 +22,16 @@
     18
    ],
    "valori_orari": {
-    "00": 12.12,
-    "06": 11.36,
-    "12": 19.18,
-    "18": 17.17
+    "00": 15.66,
+    "06": 15.96,
+    "12": 20.77,
+    "18": 17.25
    },
-   "normale": 11.72,
-   "media_giornaliera": 14.96,
-   "anomalia": 3.24,
-   "classe": "caldo",
-   "frase": "Il 17 novembre nell'area di Roma la temperatura media è stata di 15 °C, circa 3 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020)."
+   "normale": 11.56,
+   "media_giornaliera": 17.41,
+   "anomalia": 5.85,
+   "classe": "molto_caldo",
+   "frase": "Il 18 novembre nell'area di Roma la temperatura media è stata di 17 °C, circa 6 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 5% dei giorni più caldi di questo periodo negli ultimi 30 anni."
   },
   {
    "slug": "milano",
@@ -47,16 +47,16 @@
     18
    ],
    "valori_orari": {
-    "00": 5.87,
-    "06": 5.36,
-    "12": 6.93,
-    "18": 7.67
+    "00": 5.66,
+    "06": 6.71,
+    "12": 11.27,
+    "18": 7.75
    },
-   "normale": 8.59,
-   "media_giornaliera": 6.46,
-   "anomalia": -2.13,
-   "classe": "freddo",
-   "frase": "Il 17 novembre nell'area di Milano la temperatura media è stata di 6 °C, circa 2 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
+   "normale": 8.38,
+   "media_giornaliera": 7.85,
+   "anomalia": -0.53,
+   "classe": "nella_norma",
+   "frase": "Il 18 novembre nell'area di Milano la temperatura media è stata di 8 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "napoli",
@@ -72,16 +72,16 @@
     18
    ],
    "valori_orari": {
-    "00": 11.87,
-    "06": 12.36,
-    "12": 17.18,
-    "18": 14.67
+    "00": 15.41,
+    "06": 15.71,
+    "12": 19.02,
+    "18": 16.5
    },
-   "normale": 11.56,
-   "media_giornaliera": 14.02,
-   "anomalia": 2.46,
-   "classe": "caldo",
-   "frase": "Il 17 novembre nell'area di Napoli la temperatura media è stata di 14 °C, circa 2 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020)."
+   "normale": 11.41,
+   "media_giornaliera": 16.66,
+   "anomalia": 5.25,
+   "classe": "molto_caldo",
+   "frase": "Il 18 novembre nell'area di Napoli la temperatura media è stata di 17 °C, circa 5 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 5% dei giorni più caldi di questo periodo negli ultimi 30 anni."
   },
   {
    "slug": "torino",
@@ -97,16 +97,16 @@
     18
    ],
    "valori_orari": {
-    "00": 4.87,
-    "06": 5.36,
-    "12": 7.93,
-    "18": 6.67
+    "00": 5.41,
+    "06": 4.46,
+    "12": 12.52,
+    "18": 8.25
    },
-   "normale": 7.26,
-   "media_giornaliera": 6.21,
-   "anomalia": -1.05,
+   "normale": 7.05,
+   "media_giornaliera": 7.66,
+   "anomalia": 0.61,
    "classe": "nella_norma",
-   "frase": "Il 17 novembre nell'area di Torino la temperatura media è stata di 6 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 18 novembre nell'area di Torino la temperatura media è stata di 8 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "bologna",
@@ -122,16 +122,16 @@
     18
    ],
    "valori_orari": {
-    "00": 6.12,
-    "06": 5.11,
-    "12": 7.93,
-    "18": 7.17
+    "00": 6.41,
+    "06": 5.71,
+    "12": 10.77,
+    "18": 6.75
    },
-   "normale": 9.53,
-   "media_giornaliera": 6.59,
-   "anomalia": -2.94,
-   "classe": "freddo",
-   "frase": "Il 17 novembre nell'area di Bologna la temperatura media è stata di 7 °C, circa 3 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
+   "normale": 9.35,
+   "media_giornaliera": 7.41,
+   "anomalia": -1.94,
+   "classe": "nella_norma",
+   "frase": "Il 18 novembre nell'area di Bologna la temperatura media è stata di 7 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "firenze",
@@ -147,16 +147,16 @@
     18
    ],
    "valori_orari": {
-    "00": 11.62,
-    "06": 12.11,
-    "12": 17.68,
-    "18": 14.92
+    "00": 13.91,
+    "06": 14.21,
+    "12": 18.27,
+    "18": 15.0
    },
-   "normale": 9.32,
-   "media_giornaliera": 14.09,
-   "anomalia": 4.77,
+   "normale": 9.15,
+   "media_giornaliera": 15.35,
+   "anomalia": 6.2,
    "classe": "molto_caldo",
-   "frase": "Il 17 novembre nell'area di Firenze la temperatura media è stata di 14 °C, circa 5 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 5% dei giorni più caldi di questo periodo negli ultimi 30 anni."
+   "frase": "Il 18 novembre nell'area di Firenze la temperatura media è stata di 15 °C, circa 6 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 5% dei giorni più caldi di questo periodo negli ultimi 30 anni."
   },
   {
    "slug": "bari",
@@ -172,16 +172,16 @@
     18
    ],
    "valori_orari": {
-    "00": 13.87,
-    "06": 12.61,
-    "12": 19.68,
-    "18": 15.67
+    "00": 16.91,
+    "06": 17.71,
+    "12": 22.77,
+    "18": 18.5
    },
-   "normale": 12.74,
-   "media_giornaliera": 15.46,
-   "anomalia": 2.72,
-   "classe": "caldo",
-   "frase": "Il 17 novembre nell'area di Bari la temperatura media è stata di 15 °C, circa 3 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020)."
+   "normale": 12.6,
+   "media_giornaliera": 18.98,
+   "anomalia": 6.38,
+   "classe": "molto_caldo",
+   "frase": "Il 18 novembre nell'area di Bari la temperatura media è stata di 19 °C, circa 6 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 5% dei giorni più caldi di questo periodo negli ultimi 30 anni."
   },
   {
    "slug": "catania",
@@ -197,16 +197,16 @@
     18
    ],
    "valori_orari": {
-    "00": 15.62,
-    "06": 14.86,
-    "12": 23.68,
-    "18": 18.67
+    "00": 18.16,
+    "06": 16.96,
+    "12": 24.77,
+    "18": 20.5
    },
-   "normale": 14.5,
-   "media_giornaliera": 18.21,
-   "anomalia": 3.71,
-   "classe": "caldo",
-   "frase": "Il 17 novembre nell'area di Catania la temperatura media è stata di 18 °C, circa 4 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 5% dei giorni più caldi di questo periodo negli ultimi 30 anni."
+   "normale": 14.35,
+   "media_giornaliera": 20.1,
+   "anomalia": 5.75,
+   "classe": "molto_caldo",
+   "frase": "Il 18 novembre nell'area di Catania la temperatura media è stata di 20 °C, circa 6 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 5% dei giorni più caldi di questo periodo negli ultimi 30 anni."
   },
   {
    "slug": "verona",
@@ -222,16 +222,16 @@
     18
    ],
    "valori_orari": {
-    "00": 5.87,
-    "06": 6.61,
-    "12": 8.43,
-    "18": 8.42
+    "00": 8.16,
+    "06": 7.21,
+    "12": 10.27,
+    "18": 8.25
    },
-   "normale": 9.08,
-   "media_giornaliera": 7.34,
-   "anomalia": -1.74,
+   "normale": 8.88,
+   "media_giornaliera": 8.48,
+   "anomalia": -0.4,
    "classe": "nella_norma",
-   "frase": "Il 17 novembre nell'area di Verona la temperatura media è stata di 7 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 18 novembre nell'area di Verona la temperatura media è stata di 8 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "venezia",
@@ -247,16 +247,16 @@
     18
    ],
    "valori_orari": {
-    "00": 6.37,
-    "06": 5.11,
-    "12": 8.68,
-    "18": 8.92
+    "00": 8.16,
+    "06": 7.46,
+    "12": 9.77,
+    "18": 7.5
    },
-   "normale": 10.5,
-   "media_giornaliera": 7.27,
-   "anomalia": -3.23,
+   "normale": 10.33,
+   "media_giornaliera": 8.23,
+   "anomalia": -2.1,
    "classe": "freddo",
-   "frase": "Il 17 novembre nell'area di Venezia la temperatura media è stata di 7 °C, circa 3 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
+   "frase": "Il 18 novembre nell'area di Venezia la temperatura media è stata di 8 °C, circa 2 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
   },
   {
    "slug": "padova",
@@ -272,16 +272,16 @@
     18
    ],
    "valori_orari": {
-    "00": 5.12,
-    "06": 4.61,
-    "12": 8.43,
-    "18": 8.42
+    "00": 7.66,
+    "06": 7.46,
+    "12": 9.52,
+    "18": 7.75
    },
-   "normale": 8.74,
-   "media_giornaliera": 6.65,
-   "anomalia": -2.09,
-   "classe": "freddo",
-   "frase": "Il 17 novembre nell'area di Padova la temperatura media è stata di 7 °C, circa 2 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
+   "normale": 8.54,
+   "media_giornaliera": 8.1,
+   "anomalia": -0.44,
+   "classe": "nella_norma",
+   "frase": "Il 18 novembre nell'area di Padova la temperatura media è stata di 8 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "cagliari",
@@ -297,16 +297,16 @@
     18
    ],
    "valori_orari": {
-    "00": 15.62,
-    "06": 15.36,
-    "12": 22.68,
-    "18": 19.42
+    "00": 18.16,
+    "06": 20.21,
+    "12": 23.52,
+    "18": 20.5
    },
-   "normale": 14.12,
-   "media_giornaliera": 18.27,
-   "anomalia": 4.15,
-   "classe": "caldo",
-   "frase": "Il 17 novembre nell'area di Cagliari la temperatura media è stata di 18 °C, circa 4 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 5% dei giorni più caldi di questo periodo negli ultimi 30 anni."
+   "normale": 13.99,
+   "media_giornaliera": 20.6,
+   "anomalia": 6.61,
+   "classe": "eccezionale",
+   "frase": "Il 18 novembre nell'area di Cagliari la temperatura media è stata di 21 °C, circa 7 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È un valore oltre ogni giornata di questo periodo nei 30 anni di riferimento."
   }
  ]
 }
