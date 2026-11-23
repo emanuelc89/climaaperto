@@ -1,6 +1,6 @@
 {
- "giorno": "2026-11-21",
- "generato_utc": "2026-11-22T13:21:07+00:00",
+ "giorno": "2026-11-22",
+ "generato_utc": "2026-11-23T07:21:08+00:00",
  "completo": true,
  "metodo": "media delle analisi ECMWF (IFS, passo 0) delle ore 00/06/12/18 UTC, confrontata con il normale 1991-2020 da ERA5 calcolato allo stesso modo",
  "fonte_presente": "ECMWF Open Data, analisi IFS, licenza CC BY 4.0",
@@ -22,16 +22,16 @@
     18
    ],
    "valori_orari": {
-    "00": 10.36,
-    "06": 8.84,
-    "12": 18.12,
-    "18": 12.38
+    "00": 10.85,
+    "06": 12.96,
+    "12": 16.58,
+    "18": 15.68
    },
-   "normale": 11.04,
-   "media_giornaliera": 12.42,
-   "anomalia": 1.38,
-   "classe": "nella_norma",
-   "frase": "Il 21 novembre nell'area di Roma la temperatura media è stata di 12 °C, nella norma per questo periodo dell'anno."
+   "normale": 10.88,
+   "media_giornaliera": 14.02,
+   "anomalia": 3.14,
+   "classe": "caldo",
+   "frase": "Il 22 novembre nell'area di Roma la temperatura media è stata di 14 °C, circa 3 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020)."
   },
   {
    "slug": "milano",
@@ -47,16 +47,16 @@
     18
    ],
    "valori_orari": {
-    "00": 5.61,
-    "06": 2.09,
-    "12": 14.12,
-    "18": 7.63
+    "00": 5.85,
+    "06": 5.96,
+    "12": 8.08,
+    "18": 7.43
    },
-   "normale": 7.77,
-   "media_giornaliera": 7.36,
-   "anomalia": -0.41,
+   "normale": 7.56,
+   "media_giornaliera": 6.83,
+   "anomalia": -0.73,
    "classe": "nella_norma",
-   "frase": "Il 21 novembre nell'area di Milano la temperatura media è stata di 7 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 22 novembre nell'area di Milano la temperatura media è stata di 7 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "napoli",
@@ -72,16 +72,16 @@
     18
    ],
    "valori_orari": {
-    "00": 12.86,
-    "06": 11.34,
-    "12": 16.62,
-    "18": 12.88
+    "00": 11.35,
+    "06": 11.21,
+    "12": 15.33,
+    "18": 14.93
    },
-   "normale": 10.97,
-   "media_giornaliera": 13.42,
-   "anomalia": 2.45,
+   "normale": 10.81,
+   "media_giornaliera": 13.2,
+   "anomalia": 2.39,
    "classe": "caldo",
-   "frase": "Il 21 novembre nell'area di Napoli la temperatura media è stata di 13 °C, circa 2 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020)."
+   "frase": "Il 22 novembre nell'area di Napoli la temperatura media è stata di 13 °C, circa 2 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020)."
   },
   {
    "slug": "torino",
@@ -97,16 +97,16 @@
     18
    ],
    "valori_orari": {
-    "00": 10.36,
-    "06": 6.84,
-    "12": 16.12,
-    "18": 9.38
+    "00": 8.1,
+    "06": 6.46,
+    "12": 8.08,
+    "18": 5.68
    },
-   "normale": 6.48,
-   "media_giornaliera": 10.67,
-   "anomalia": 4.19,
-   "classe": "caldo",
-   "frase": "Il 21 novembre nell'area di Torino la temperatura media è stata di 11 °C, circa 4 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 5% dei giorni più caldi di questo periodo negli ultimi 30 anni."
+   "normale": 6.3,
+   "media_giornaliera": 7.08,
+   "anomalia": 0.78,
+   "classe": "nella_norma",
+   "frase": "Il 22 novembre nell'area di Torino la temperatura media è stata di 7 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "bologna",
@@ -122,16 +122,16 @@
     18
    ],
    "valori_orari": {
-    "00": 9.86,
-    "06": 5.34,
-    "12": 13.62,
-    "18": 8.63
+    "00": 4.35,
+    "06": 5.46,
+    "12": 9.58,
+    "18": 7.43
    },
-   "normale": 8.73,
-   "media_giornaliera": 9.36,
-   "anomalia": 0.63,
+   "normale": 8.52,
+   "media_giornaliera": 6.7,
+   "anomalia": -1.82,
    "classe": "nella_norma",
-   "frase": "Il 21 novembre nell'area di Bologna la temperatura media è stata di 9 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 22 novembre nell'area di Bologna la temperatura media è stata di 7 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "firenze",
@@ -147,16 +147,16 @@
     18
    ],
    "valori_orari": {
-    "00": 11.36,
-    "06": 10.34,
-    "12": 15.62,
-    "18": 11.88
+    "00": 9.85,
+    "06": 10.71,
+    "12": 15.33,
+    "18": 11.43
    },
-   "normale": 8.59,
-   "media_giornaliera": 12.3,
-   "anomalia": 3.71,
+   "normale": 8.42,
+   "media_giornaliera": 11.83,
+   "anomalia": 3.41,
    "classe": "caldo",
-   "frase": "Il 21 novembre nell'area di Firenze la temperatura media è stata di 12 °C, circa 4 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020)."
+   "frase": "Il 22 novembre nell'area di Firenze la temperatura media è stata di 12 °C, circa 3 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020)."
   },
   {
    "slug": "bari",
@@ -172,16 +172,16 @@
     18
    ],
    "valori_orari": {
-    "00": 13.86,
-    "06": 13.59,
-    "12": 19.87,
-    "18": 13.38
+    "00": 11.6,
+    "06": 12.21,
+    "12": 15.33,
+    "18": 15.93
    },
-   "normale": 12.18,
-   "media_giornaliera": 15.17,
-   "anomalia": 2.99,
-   "classe": "caldo",
-   "frase": "Il 21 novembre nell'area di Bari la temperatura media è stata di 15 °C, circa 3 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020)."
+   "normale": 12.02,
+   "media_giornaliera": 13.77,
+   "anomalia": 1.75,
+   "classe": "nella_norma",
+   "frase": "Il 22 novembre nell'area di Bari la temperatura media è stata di 14 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "catania",
@@ -197,16 +197,16 @@
     18
    ],
    "valori_orari": {
-    "00": 14.86,
-    "06": 13.34,
-    "12": 21.87,
-    "18": 16.88
+    "00": 13.1,
+    "06": 13.46,
+    "12": 22.33,
+    "18": 19.93
    },
-   "normale": 13.9,
-   "media_giornaliera": 16.74,
-   "anomalia": 2.84,
+   "normale": 13.75,
+   "media_giornaliera": 17.2,
+   "anomalia": 3.45,
    "classe": "caldo",
-   "frase": "Il 21 novembre nell'area di Catania la temperatura media è stata di 17 °C, circa 3 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 10% dei giorni più caldi di questo periodo negli ultimi 30 anni."
+   "frase": "Il 22 novembre nell'area di Catania la temperatura media è stata di 17 °C, circa 3 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 10% dei giorni più caldi di questo periodo negli ultimi 30 anni."
   },
   {
    "slug": "verona",
@@ -222,16 +222,16 @@
     18
    ],
    "valori_orari": {
-    "00": 5.11,
-    "06": 4.84,
-    "12": 10.87,
-    "18": 6.88
+    "00": 6.35,
+    "06": 6.46,
+    "12": 7.58,
+    "18": 8.18
    },
-   "normale": 8.3,
-   "media_giornaliera": 6.92,
-   "anomalia": -1.38,
+   "normale": 8.09,
+   "media_giornaliera": 7.14,
+   "anomalia": -0.95,
    "classe": "nella_norma",
-   "frase": "Il 21 novembre nell'area di Verona la temperatura media è stata di 7 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 22 novembre nell'area di Verona la temperatura media è stata di 7 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "venezia",
@@ -247,16 +247,16 @@
     18
    ],
    "valori_orari": {
-    "00": 5.11,
-    "06": 5.09,
-    "12": 10.87,
-    "18": 6.38
+    "00": 5.85,
+    "06": 5.96,
+    "12": 8.33,
+    "18": 8.18
    },
-   "normale": 9.8,
-   "media_giornaliera": 6.86,
-   "anomalia": -2.94,
+   "normale": 9.62,
+   "media_giornaliera": 7.08,
+   "anomalia": -2.54,
    "classe": "freddo",
-   "frase": "Il 21 novembre nell'area di Venezia la temperatura media è stata di 7 °C, circa 3 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
+   "frase": "Il 22 novembre nell'area di Venezia la temperatura media è stata di 7 °C, circa 3 gradi sotto il normale per questo periodo dell'anno (riferimento 1991-2020)."
   },
   {
    "slug": "padova",
@@ -272,16 +272,16 @@
     18
    ],
    "valori_orari": {
-    "00": 5.61,
-    "06": 4.59,
-    "12": 10.37,
-    "18": 6.38
+    "00": 4.85,
+    "06": 5.46,
+    "12": 6.83,
+    "18": 7.68
    },
-   "normale": 7.94,
-   "media_giornaliera": 6.74,
-   "anomalia": -1.2,
+   "normale": 7.73,
+   "media_giornaliera": 6.2,
+   "anomalia": -1.53,
    "classe": "nella_norma",
-   "frase": "Il 21 novembre nell'area di Padova la temperatura media è stata di 7 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 22 novembre nell'area di Padova la temperatura media è stata di 6 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "cagliari",
@@ -297,16 +297,16 @@
     18
    ],
    "valori_orari": {
-    "00": 13.86,
-    "06": 11.84,
-    "12": 20.62,
-    "18": 15.38
+    "00": 13.85,
+    "06": 13.21,
+    "12": 22.83,
+    "18": 17.18
    },
-   "normale": 13.57,
-   "media_giornaliera": 15.42,
-   "anomalia": 1.85,
-   "classe": "nella_norma",
-   "frase": "Il 21 novembre nell'area di Cagliari la temperatura media è stata di 15 °C, nella norma per questo periodo dell'anno."
+   "normale": 13.46,
+   "media_giornaliera": 16.77,
+   "anomalia": 3.31,
+   "classe": "caldo",
+   "frase": "Il 22 novembre nell'area di Cagliari la temperatura media è stata di 17 °C, circa 3 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 10% dei giorni più caldi di questo periodo negli ultimi 30 anni."
   }
  ]
 }
