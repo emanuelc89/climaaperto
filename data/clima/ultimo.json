@@ -1,6 +1,6 @@
 {
- "giorno": "2026-11-26",
- "generato_utc": "2026-11-27T13:21:04+00:00",
+ "giorno": "2026-11-27",
+ "generato_utc": "2026-11-28T07:21:21+00:00",
  "completo": true,
  "metodo": "media delle analisi ECMWF (IFS, passo 0) delle ore 00/06/12/18 UTC, confrontata con il normale 1991-2020 da ERA5 calcolato allo stesso modo",
  "fonte_presente": "ECMWF Open Data, analisi IFS, licenza CC BY 4.0",
@@ -22,16 +22,16 @@
     18
    ],
    "valori_orari": {
-    "00": 14.43,
-    "06": 12.91,
-    "12": 15.25,
-    "18": 10.87
+    "00": 9.19,
+    "06": 9.77,
+    "12": 13.93,
+    "18": 10.56
    },
-   "normale": 10.35,
-   "media_giornaliera": 13.36,
-   "anomalia": 3.01,
-   "classe": "caldo",
-   "frase": "Il 26 novembre nell'area di Roma la temperatura media è stata di 13 °C, circa 3 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020)."
+   "normale": 10.2,
+   "media_giornaliera": 10.86,
+   "anomalia": 0.66,
+   "classe": "nella_norma",
+   "frase": "Il 27 novembre nell'area di Roma la temperatura media è stata di 11 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "milano",
@@ -47,16 +47,16 @@
     18
    ],
    "valori_orari": {
-    "00": 8.18,
-    "06": 7.41,
-    "12": 10.0,
-    "18": 7.37
+    "00": 4.44,
+    "06": 5.77,
+    "12": 9.18,
+    "18": 5.56
    },
-   "normale": 6.83,
-   "media_giornaliera": 8.24,
-   "anomalia": 1.41,
+   "normale": 6.65,
+   "media_giornaliera": 6.24,
+   "anomalia": -0.41,
    "classe": "nella_norma",
-   "frase": "Il 26 novembre nell'area di Milano la temperatura media è stata di 8 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 27 novembre nell'area di Milano la temperatura media è stata di 6 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "napoli",
@@ -72,16 +72,16 @@
     18
    ],
    "valori_orari": {
-    "00": 13.93,
-    "06": 12.41,
-    "12": 14.25,
-    "18": 11.62
+    "00": 10.19,
+    "06": 8.52,
+    "12": 14.68,
+    "18": 10.56
    },
-   "normale": 10.31,
-   "media_giornaliera": 13.05,
-   "anomalia": 2.74,
-   "classe": "caldo",
-   "frase": "Il 26 novembre nell'area di Napoli la temperatura media è stata di 13 °C, circa 3 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020)."
+   "normale": 10.17,
+   "media_giornaliera": 10.99,
+   "anomalia": 0.82,
+   "classe": "nella_norma",
+   "frase": "Il 27 novembre nell'area di Napoli la temperatura media è stata di 11 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "torino",
@@ -97,16 +97,16 @@
     18
    ],
    "valori_orari": {
-    "00": 5.93,
-    "06": 5.66,
-    "12": 8.5,
-    "18": 5.87
+    "00": 4.19,
+    "06": 3.52,
+    "12": 6.18,
+    "18": 6.06
    },
-   "normale": 5.65,
-   "media_giornaliera": 6.49,
-   "anomalia": 0.84,
+   "normale": 5.49,
+   "media_giornaliera": 4.99,
+   "anomalia": -0.5,
    "classe": "nella_norma",
-   "frase": "Il 26 novembre nell'area di Torino la temperatura media è stata di 6 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 27 novembre nell'area di Torino la temperatura media è stata di 5 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "bologna",
@@ -122,16 +122,16 @@
     18
    ],
    "valori_orari": {
-    "00": 8.18,
-    "06": 6.66,
-    "12": 8.5,
-    "18": 7.62
+    "00": 7.19,
+    "06": 6.52,
+    "12": 8.18,
+    "18": 6.31
    },
-   "normale": 7.8,
-   "media_giornaliera": 7.74,
-   "anomalia": -0.06,
+   "normale": 7.63,
+   "media_giornaliera": 7.05,
+   "anomalia": -0.58,
    "classe": "nella_norma",
-   "frase": "Il 26 novembre nell'area di Bologna la temperatura media è stata di 8 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 27 novembre nell'area di Bologna la temperatura media è stata di 7 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "firenze",
@@ -147,16 +147,16 @@
     18
    ],
    "valori_orari": {
-    "00": 12.18,
-    "06": 8.91,
-    "12": 11.25,
-    "18": 8.87
+    "00": 8.19,
+    "06": 7.52,
+    "12": 12.68,
+    "18": 7.81
    },
-   "normale": 7.87,
-   "media_giornaliera": 10.3,
-   "anomalia": 2.43,
-   "classe": "caldo",
-   "frase": "Il 26 novembre nell'area di Firenze la temperatura media è stata di 10 °C, circa 2 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020)."
+   "normale": 7.72,
+   "media_giornaliera": 9.05,
+   "anomalia": 1.33,
+   "classe": "nella_norma",
+   "frase": "Il 27 novembre nell'area di Firenze la temperatura media è stata di 9 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "bari",
@@ -172,16 +172,16 @@
     18
    ],
    "valori_orari": {
-    "00": 15.18,
-    "06": 15.16,
-    "12": 19.0,
-    "18": 14.12
+    "00": 12.94,
+    "06": 12.77,
+    "12": 17.43,
+    "18": 11.31
    },
-   "normale": 11.49,
-   "media_giornaliera": 15.86,
-   "anomalia": 4.37,
+   "normale": 11.36,
+   "media_giornaliera": 13.61,
+   "anomalia": 2.25,
    "classe": "caldo",
-   "frase": "Il 26 novembre nell'area di Bari la temperatura media è stata di 16 °C, circa 4 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 5% dei giorni più caldi di questo periodo negli ultimi 30 anni."
+   "frase": "Il 27 novembre nell'area di Bari la temperatura media è stata di 14 °C, circa 2 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020)."
   },
   {
    "slug": "catania",
@@ -197,16 +197,16 @@
     18
    ],
    "valori_orari": {
-    "00": 15.43,
-    "06": 15.41,
-    "12": 23.25,
-    "18": 16.87
+    "00": 14.19,
+    "06": 13.27,
+    "12": 19.93,
+    "18": 14.81
    },
-   "normale": 13.22,
-   "media_giornaliera": 17.74,
-   "anomalia": 4.52,
-   "classe": "molto_caldo",
-   "frase": "Il 26 novembre nell'area di Catania la temperatura media è stata di 18 °C, circa 5 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 5% dei giorni più caldi di questo periodo negli ultimi 30 anni."
+   "normale": 13.08,
+   "media_giornaliera": 15.55,
+   "anomalia": 2.47,
+   "classe": "caldo",
+   "frase": "Il 27 novembre nell'area di Catania la temperatura media è stata di 16 °C, circa 2 gradi sopra il normale per questo periodo dell'anno (riferimento 1991-2020). È tra il 10% dei giorni più caldi di questo periodo negli ultimi 30 anni."
   },
   {
    "slug": "verona",
@@ -222,16 +222,16 @@
     18
    ],
    "valori_orari": {
-    "00": 9.18,
-    "06": 8.66,
-    "12": 8.25,
-    "18": 7.37
+    "00": 6.69,
+    "06": 7.27,
+    "12": 8.93,
+    "18": 6.56
    },
-   "normale": 7.37,
-   "media_giornaliera": 8.36,
-   "anomalia": 0.99,
+   "normale": 7.19,
+   "media_giornaliera": 7.36,
+   "anomalia": 0.17,
    "classe": "nella_norma",
-   "frase": "Il 26 novembre nell'area di Verona la temperatura media è stata di 8 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 27 novembre nell'area di Verona la temperatura media è stata di 7 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "venezia",
@@ -247,16 +247,16 @@
     18
    ],
    "valori_orari": {
-    "00": 9.18,
-    "06": 8.16,
-    "12": 9.75,
-    "18": 7.37
+    "00": 6.44,
+    "06": 5.27,
+    "12": 10.18,
+    "18": 6.81
    },
-   "normale": 8.98,
-   "media_giornaliera": 8.61,
-   "anomalia": -0.37,
+   "normale": 8.82,
+   "media_giornaliera": 7.17,
+   "anomalia": -1.65,
    "classe": "nella_norma",
-   "frase": "Il 26 novembre nell'area di Venezia la temperatura media è stata di 9 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 27 novembre nell'area di Venezia la temperatura media è stata di 7 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "padova",
@@ -272,16 +272,16 @@
     18
    ],
    "valori_orari": {
-    "00": 9.18,
-    "06": 8.16,
-    "12": 9.0,
-    "18": 7.12
+    "00": 5.69,
+    "06": 4.27,
+    "12": 9.43,
+    "18": 5.56
    },
-   "normale": 7.0,
-   "media_giornaliera": 8.36,
-   "anomalia": 1.36,
+   "normale": 6.81,
+   "media_giornaliera": 6.24,
+   "anomalia": -0.57,
    "classe": "nella_norma",
-   "frase": "Il 26 novembre nell'area di Padova la temperatura media è stata di 8 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 27 novembre nell'area di Padova la temperatura media è stata di 6 °C, nella norma per questo periodo dell'anno."
   },
   {
    "slug": "cagliari",
@@ -297,16 +297,16 @@
     18
    ],
    "valori_orari": {
-    "00": 15.43,
-    "06": 13.66,
-    "12": 15.5,
-    "18": 13.62
+    "00": 10.44,
+    "06": 9.27,
+    "12": 15.43,
+    "18": 12.31
    },
-   "normale": 13.01,
-   "media_giornaliera": 14.55,
-   "anomalia": 1.54,
+   "normale": 12.88,
+   "media_giornaliera": 11.86,
+   "anomalia": -1.02,
    "classe": "nella_norma",
-   "frase": "Il 26 novembre nell'area di Cagliari la temperatura media è stata di 15 °C, nella norma per questo periodo dell'anno."
+   "frase": "Il 27 novembre nell'area di Cagliari la temperatura media è stata di 12 °C, nella norma per questo periodo dell'anno."
   }
  ]
 }
